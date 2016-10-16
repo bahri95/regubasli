@@ -1,0 +1,228 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style/a-load-style.css" />
+<title>Medical Information System</title>
+</head>
+<body class="common">
+<div class="page">
+	<div class="header">
+    	<img src="img/red-cross.gif" alt="" />
+        <h1>Medical Information System</h1>
+        <h2>Ikatan Ahli Bedah Indonesia (IKABI)</h2>
+    </div>
+    <div class="navigation">
+        <ul>
+        	<li class="back-home"><a href="">Homepage</a></li>
+        	<li><a href="index.html"><img src="img/dashboard-icon.png" alt="" />Dashboard</a></li>
+        	<li class="active"><a href="table-view.html"><img src="img/private-icon.png" alt="" />Private Area</a></li>
+        	<li><a href="mail-inbox.html"><img src="img/mail-icon.png" alt="" />Messages Area</a></li>
+        </ul>
+    	<div class="logout-button">
+        	<a href="">logout</a>
+        </div>
+    </div>
+    <div class="main-content">
+    	<div class="content">
+        	<div class="head-content">
+            	<h3>Manajemen Data Rumah Sakit</h3>
+                <div class="tab-nav">
+                	<ul>
+                    	<li><a href="table-view.html">View Data</a></li>
+                    	<li><a href="table-edit.html" class="tab-nav-active"><img src="img/add-icon.gif" alt="" /> Add Data</a></li>
+                    </ul>
+                </div>
+                <div class="ffhack"></div>
+            </div>
+        	<div class="notification red">
+            	<img src="img/red-icon-notification.gif" alt="" />
+                <p><strong>Error :</strong> Your Message Failed To Send<br />1. nama beres</p>
+                <div class="ffhack"></div>
+            </div>
+            <div class="notification green">
+            	<img src="img/green-icon-notification.gif" alt="" />
+                <p><strong>Succed :</strong> Your Message Has Been Send</p>
+                <div class="ffhack"></div>
+            </div>
+        	<form action="" method="get">
+        	<div class="content-left">
+            	<table class="table-input" width="100%">
+                	<tr class="headrow">
+                    	<th colspan="2">Table Data Rumah Sakit</th>
+                    </tr>
+                    <tr>
+                    	<td>Nama Rumah Sakit<br /><em>Hospital Name</em></td>
+                        <td><input type="text" name="nama" value="" />
+                        	<input class="edit-button" type="button" value="Cari" /></td>
+                    </tr>
+                    <tr>
+                        <td>Photo<br /><em>Photo</em></td>
+                        <td><img class="photo-view" src="img/big-product.jpg" alt="" /></td>
+                    </tr>
+                    <tr>
+                    	<td>Jenis Rumah Sakit<br /><em>Hospital Type</em></td>
+                        <td>
+                            <select name="jenis">
+                            	<option>Satu</option>
+                            	<option>Dua</option>
+                            	<option>Tiga</option>
+                            </select>
+                            <input type="text" name="nama" value="" />
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>Alamat<br /><em>Address</em></td>
+                        <td><textarea name="alamat" cols="20" rows="4"></textarea></td>
+                    </tr>
+                    <tr>
+                    	<td>Propinsi</td>
+                        <td>
+                            <select name="propinsi">
+                            	<option>Nangroe Aceh Darussalam</option>
+                            	<option>Sumatra Barat</option>
+                            	<option>Sumatra Selatan</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>Kota</td>
+                        <td>
+                            <select name="kota">
+                            	<option>Jakarta</option>
+                            	<option>Tangerang</option>
+                            	<option>Depok</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>Telepon</td>
+                        <td><input type="text" name="tlp" value="" /></td>
+                    </tr>
+                    <tr>
+                    	<td>Fax</td>
+                        <td><input type="text" name="fax" value="" /></td>
+                    </tr>
+                    <tr>
+                    	<td>&nbsp;</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                    	<th colspan="2">Daftar Fasilitas</th>
+                    </tr>
+                    <tr>
+                    	<td colspan="2">Fasilitas Penunjang Operasi</td>
+                    </tr>
+                    <tr>
+                    	<td colspan="2"><textarea name="fpo" cols="47" rows="5"></textarea></td>
+                    </tr>
+                    <tr>
+                    	<td colspan="2">Fasilitas Operasi Canggih</td>
+                    </tr>
+                    <tr>
+                    	<td colspan="2"><textarea name="fpo" cols="47" rows="5"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="content-right">
+            	<table class="table-input" width="100%">
+                    <tr>
+                    	<th colspan="3">Daftar Fasilitas</th>
+                    </tr>
+                    <tr>
+                    	<td><label><input class="chkbox" type="checkbox" name="1" />Radiologi</label></td>
+                        <td><label><input class="chkbox" type="checkbox" name="2" />Penyakit Mata</label></td>
+                        <td><label><input class="chkbox" type="checkbox" name="3" />Bedah Umum</label></td>
+                    </tr>
+                    <tr>
+                    	<td><label><input class="chkbox" type="checkbox" name="4" />Parasitologi</label></td>
+                        <td><label><input class="chkbox" type="checkbox" name="5" />Penyakit THT</label></td>
+                        <td><label><input class="chkbox" type="checkbox" name="6" />Bedah Urologi</label></td>
+                    </tr>
+                    <tr>
+                    	<td><label><input class="chkbox" type="checkbox" name="7" />Patologi Anatomi</label></td>
+                        <td><label><input class="chkbox" type="checkbox" name="8" />Penyakit Paru</label></td>
+                        <td><label><input class="chkbox" type="checkbox" name="9" />Bedah Tulang</label></td>
+                    </tr>
+                    <tr>
+                    	<td><label><input class="chkbox" type="checkbox" name="10" />Neurologi</label></td>
+                        <td><label><input class="chkbox" type="checkbox" name="11" />Psikiater</label></td>
+                        <td><label><input class="chkbox" type="checkbox" name="12" />Bedah Plastik</label></td>
+                    </tr>
+                    <tr>
+                    	<td><label><input class="chkbox" type="checkbox" name="13" />Penyakit Dalam</label></td>
+                        <td><label><input class="chkbox" type="checkbox" name="14" />Anestesi</label></td>
+                        <td><label><input class="chkbox" type="checkbox" name="15" />Gizi Klinik</label></td>
+                    </tr>
+                    <tr>
+                    	<td><label><input class="chkbox" type="checkbox" name="16" />Penyakit Anak</label></td>
+                        <td><label><input class="chkbox" type="checkbox" name="17" />Neuro Anestesi</label></td>
+                        <td><label><input class="chkbox" type="checkbox" name="18" />Fisioterapi</label></td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3"><label><input class="chkbox" type="checkbox" name="19" />Spesialis rehabilitasi Medik</label></td>
+                    </tr>
+                    <tr>
+                    	<td><label><input class="chkbox" type="radio" name="16" />Penyakit Anak</label></td>
+                        <td><label><input class="chkbox" type="radio" name="16" />Neuro Anestesi</label></td>
+                        <td><label><input class="chkbox" type="radio" name="16" />Fisioterapi</label></td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3">
+                        	<label><input class="chkbox" type="radio" name="16" />Penyakit Anak</label>
+                            <label><input class="chkbox" type="radio" name="16" />Neuro Anestesi</label>
+                            <label><input class="chkbox" type="radio" name="16" />Fisioterapi</label>
+                        	<label><input class="chkbox" type="radio" name="16" />Penyakit Anak</label>
+                            <label><input class="chkbox" type="radio" name="16" />Neuro Anestesi</label>
+                            <label><input class="chkbox" type="radio" name="16" />Fisioterapi</label>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3">Spesialis Lain</td>
+                    </tr>
+                    <tr>
+                    	<td colspan="3"><textarea name="fpo" cols="47" rows="5"></textarea></td>
+                    </tr>
+                    <tr>
+                    	<th></th>
+                    	<th colspan="2">
+                        	<input class="edit-button" type="submit" value="Save" />
+                            <input class="edit-button" type="reset" value="Reset" />
+                            <input class="edit-button" type="button" value="Cancel" />
+                        </th>
+                    </tr>
+                </table>            
+            </div>
+            </form>
+        </div>
+        <div class="sidebar">
+        	<div class="side-menu">
+            	<h3>Private Menu</h3>
+                <ul>
+                	<li><a href="" class="side-active">Style Table</a><!--[if IE 7]><!--><!--<![endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+                    	<ul>
+                        	<li><a href="table-view.html">Table View</a></li>
+                        	<li><a href="table-Edit.html">Table Edit/Input</a></li>
+                            <li><a href="table-detail.html">Table Detail</a></li>
+                        	<li><a href="view.html">Sample View</a></li>
+                        	<li><a href="input.html">Sample Input</a></li>
+                        	<li><a href="edit.html">Sample Edit</a></li>
+                            <li><a href="detail.html">Sample Detail</a></li>
+                        </ul><!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                    </li>
+                    <li><a href="standart-product.html">View Standart Product</a><!--[if IE 7]><!--><!--<![endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+                    	<ul>
+                        	<li><a href="list-equipment.html">Tool &amp; Equipment</a></li>
+                        	<li><a href="detail-equipment.html">Detail equipment</a></li>
+                        </ul><!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                    </li>
+                    <li><a href="vendor.html">Vendor Spot</a></li>
+                    <li><a href="user-level.html">User Level</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="ffhack"></div>
+    </div>
+</div>
+</body>
+</html>

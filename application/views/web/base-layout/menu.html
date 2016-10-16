@@ -1,0 +1,134 @@
+<header id="header" class="sticky-style-2">
+
+            <div class="container clearfix">
+
+                <!-- Logo
+                ============================================= -->
+                <div id="logo">
+                    <a href="index.html" class="standard-logo" data-dark-logo="{$BASEURL}/doc/banner/asli.png"><img src="{$BASEURL}/doc/banner/asli.png" alt="Canvas Logo"></a>
+                    <a href="index.html" class="retina-logo" data-dark-logo="{$BASEURL}/doc/banner/asli.png"><img src="{$BASEURL}/doc/banner/asli.png" alt="Canvas Logo"></a>
+                </div><!-- #logo end -->
+
+                <div class="top-advert">
+                    <img src="{$BASEURL}/doc/banner/banner.jpg" alt="Ad">
+                </div>
+
+            </div>
+
+            <div id="header-wrap">
+
+                <!-- Primary Navigation
+                ============================================= -->
+                <nav id="primary-menu" class="style-2">
+
+                    <div class="container clearfix">
+
+                        <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+
+                        <ul>
+                            
+                             <li class="current"><a href="index.html"><div>HOME</div></a>
+                                
+                            </li>
+                            <li><a href="index.html"><div>PROFIL ASLI</div></a>
+                            <ul>
+                                    {foreach name=profil from=$profil item=rs}
+                                    <li><a href="{$BASEURL}index.php/public/profil/detail/{$rs.id_info}"><div>PROFIL {$rs.nama}</div></a>
+                                    </li>
+                                    {/foreach}
+                                     
+                                </ul>
+                                    
+                                
+                            </li>
+                            <li><a href="#"><div>PROFIL RELAWAN</div></a>
+                                <ul>
+                                    <li><a href="#"><div>RELAWAN RAHMAD SUMUT</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div>RELAWAN SUSNO SUMSEL</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div>RELAWAN GIDOT KALBAR</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div>RELAWAN ACHMAD RIAU</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div>RELAWAN ULLAH SULSEL</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div>RELAWAN IHWAN KALTIM</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div>RELAWAN ERWIN DKI</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div>RELAWAN MUDATSIR BANTEN</div></a>
+                                        
+                                    </li>
+                                </ul>
+                            </li>
+                            
+                            <li><a href="shop.html"><div>BERITA</div></a>
+                                <ul>
+                                    <li><a href="shop.html"><div>KEGIATAN AGUS SILVY</div></a></li>
+                                    <li><a href="shop-3.html"><div>KEGIATAN RELAWAN</div></a>
+                                        <ul>
+                                    <li><a href="#"><div>RELAWAN RAHMAD SUMUT</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div>RELAWAN SUSNO SUMSEL</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div></i>RELAWAN GIDOT KALBAR</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div></i>RELAWAN ACHMAD RIAU</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div></i>RELAWAN ULLAH SULSEL</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div>RELAWAN IHWAN KALTIM</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div>RELAWAN ERWIN DKI</div></a>
+                                        
+                                    </li>
+                                     <li><a href="#"><div>RELAWAN MUDATSIR </div></a>
+                                        
+                                    </li>
+                                        </ul>
+                                    </li>
+                                    
+                                </ul>
+                            </li>
+                           <li><a href="index.html"><div>PHOTO</div></a>
+                                
+                            </li>
+                            <li><a href="index.html"><div>VIDEO</div></a>
+                                
+                            </li>
+
+                            <li><a href="index.html"><div>KONTAK</div></a>
+                                
+                            </li>
+                        </ul>
+
+                        <!-- Top Search
+                        ============================================= -->
+                        <div id="top-search">
+                            <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
+                            <form action="search.html" method="get">
+                                <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+                            </form>
+                        </div><!-- #top-search end -->
+
+                    </div>
+
+                </nav><!-- #primary-menu end -->
+
+            </div>
+
+        </header><!-- #header end -->

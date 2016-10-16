@@ -1,0 +1,123 @@
+/* CSS Document */
+/* Create by <name>, <date>
+
+/* common	---------------------------------------------------------------- */
+
+.common {
+	margin: 0px;
+	padding: 0px;
+	background-color: #030303;
+	background-image: url("img/common-bg.jpg");
+	font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+}
+
+.ffhack {
+	clear: both;
+}
+
+/* content	---------------------------------------------------------------- */
+
+
+
+/* sidebar	---------------------------------------------------------------- */
+
+
+
+/* table	---------------------------------------------------------------- */
+
+
+
+/* element	---------------------------------------------------------------- */
+
+.loginWrapper {
+	background: #ffffff;
+	border: 2px solid #ffffff;
+	overflow: hidden;
+	width: 300px;
+	margin: 100px auto;
+	padding: 0px;
+}
+
+.loginBox-head {
+	background: url('img/login-head-bg.gif') left top repeat-x;
+	width: 300px;
+	height: 55px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.loginBox-head h1 {
+	margin: 0px;
+	padding: 15px 10px 10px 10px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	color: #FFFFFF;
+}
+
+.loginBox-body {
+	background: url('img/login-bg.jpg') left top repeat-x;
+	color: #365074;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	overflow: hidden;
+	width: 280px;
+	height: 153px;
+	margin: 0px;
+	padding: 10px;
+}
+
+.loginBox-body label {
+	clear: both;
+	color: #365074;
+	display: block;
+	float: left;
+	font-weight: bold;
+	width: 70px;
+	margin: 0px 0px 0px 40px;
+	padding: 3px 0px;
+}
+
+.loginBox-body p {
+	margin: 0px 0px 10px 0px;
+	padding: 0px;
+}
+
+.loginBox-body p img {
+	float: left;
+	margin: 0px 5px 5px 0px;
+	padding: 0px;
+}
+
+.loginBox-body a {
+	color: #cf7525;
+	text-decoration: none;
+}
+
+.loginBox-body a:hover {
+	text-decoration: underline;
+}
+
+.loginBox-body strong {
+	color: #cf7525;
+}
+
+.loginBox-body input {
+	float: left;
+	font-size: 11px;
+	margin: 0px 0px 5px 0px;
+	padding: 2px 0px;
+}
+
+.loginBox-body form {
+	margin: 0px;
+	padding: 0px;
+}
+
+.button {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+	background-image: url("img/bg-button.png");
+	width: 40px;
+	height: 20px;
+}

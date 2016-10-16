@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style/a-load-style.css" />
+<title>Medical Information System</title>
+</head>
+<body class="common">
+<div class="page">
+	<div class="header">
+    	<img src="img/red-cross.gif" alt="" />
+        <h1>Medical Information System</h1>
+        <h2>Ikatan Ahli Bedah Indonesia (IKABI)</h2>
+    </div>
+    <div class="navigation">
+        <ul>
+        	<li class="back-home"><a href="">Homepage</a></li>
+        	<li><a href="index.html"><img src="img/dashboard-icon.png" alt="" />Dashboard</a></li>
+        	<li class="active"><a href="table-view.html"><img src="img/private-icon.png" alt="" />Private Area</a></li>
+        	<li><a href="mail-inbox.html"><img src="img/mail-icon.png" alt="" />Messages Area</a></li>
+        </ul>
+    	<div class="logout-button">
+        	<a href="">logout</a>
+        </div>
+    </div>
+    <div class="main-content">
+    	<div class="content">
+        	<div class="head-content">
+            	<h3>Manajemen Data Rumah Sakit</h3>
+                <div class="tab-nav">
+                	<ul>
+                    	<li><a href="table-view.html" class="tab-nav-active">View Data</a></li>
+                    	<li><a href="table-edit.html"><img src="img/add-icon.gif" alt="" /> Add Data</a></li>
+                    </ul>
+                </div>
+                <div class="ffhack"></div>
+            </div>
+            <div class="search-box">
+                <h3>Search Data Presentasi</h3>
+                <table class="table-search" width="70%">
+                    <tr>
+                        <th>Cari Berdasarkan</th>
+                        <td>
+                            <label><input class="radio" type="radio" name="16" />Presenter</label>
+                            <label><input class="radio" type="radio" name="16" />Ruang</label>
+                            <label><input class="radio" type="radio" name="16" />Pembimbing</label>
+                            <label><input class="radio" type="radio" name="16" />Judul Presentasi</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Masukkan Kata Pencarian</th>
+                        <td><input name="keyword" type="text" value="" size="50" maxlength="50" /></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input class="submit" name="submit" type="submit" value="Search" /><input class="submit" name="submit" type="submit" value="Advanced Search" /></td>
+                    </tr>
+                </table>
+            </div>
+        	<form action="" method="get">
+            	<div class="pageRow">
+                	<div class="pageInfo">
+                    	<p><strong>100</strong> Data ditemukan untuk pencarian <strong>Rumah Sakit</strong> di daerah <strong>Jember</strong></p>
+                    </div>
+                    <div class="pageNav">
+                    	<ul>
+                        	<li><a href="">&lt;&lt;</a></li>
+                        	<li><a href="">&lt;</a></li>
+                        	<li><p><strong>1 - 10</strong> Dari <strong>200</strong></p></li>
+                        	<li><a href="">&gt;</a></li>
+                        	<li><a href="">&gt;&gt;</a></li>
+                        </ul>
+                    </div>
+                    <div class="ffhack"></div>
+                </div>
+                <table class="table-view" width="100%">
+                    <tr>
+                        <th rowspan="2">No.</th>
+                        <th rowspan="2">Nama Rumah Sakit</th>
+                        <th rowspan="2">Alamat</th>
+                        <th rowspan="2">No. Telp</th>
+                        <th rowspan="2">Jml Dokter</th>
+                        <th rowspan="2">Jml Specialis</th>
+                        <th colspan="2">Action</th>
+                        </tr>
+                    <tr>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr>
+                        <td><label><input type="checkbox" name="1" />1</label></td>
+                        <td><a href="">RSCM</a></td>
+                        <td>Gak Tahu</td>
+                        <td>021 - 21212121</td>
+                        <td>120 Buah</td>
+                        <td>50 Biji</td>
+                        <td colspan="2" class="content-center"><a href="" class="button-edit">Edit</a><a href="table-detail.html" class="button-edit">Detail</a></td>
+                    </tr>
+                    <tr class="blink-row">
+                        <td><label><input type="checkbox" name="2" />2</label></td>
+                        <td><a href="#">RS Pertamina</a></td>
+                        <td>Gak Tahu</td>
+                        <td>021 - 21212121</td>
+                        <td>120 Buah</td>
+                        <td>50 Biji</td>
+                        <td colspan="2" class="content-center"><a href="" class="button-edit">Edit</a><a href="table-detail.html" class="button-edit">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="checkbox" name="3" />3</label></td>
+                        <td>RSCM</td>
+                        <td>Gak Tahu</td>
+                        <td>021 - 21212121</td>
+                        <td>120 Buah</td>
+                        <td>50 Biji</td>
+                        <td colspan="2" class="content-center"><a href="" class="button-edit">Edit</a><a href="table-detail.html" class="button-edit">Detail</a></td>
+                    </tr>
+                    <tr class="blink-row">
+                        <td><label><input type="checkbox" name="4" />4</label></td>
+                        <td>RSCM</td>
+                        <td>Gak Tahu</td>
+                        <td>021 - 21212121</td>
+                        <td>120 Buah</td>
+                        <td>50 Biji</td>
+                        <td colspan="2" class="content-center"><a href="" class="button-edit">Edit</a><a href="table-detail.html" class="button-edit">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="checkbox" name="5" />5</label></td>
+                        <td>RSCM</td>
+                        <td>Gak Tahu</td>
+                        <td>021 - 21212121</td>
+                        <td>120 Buah</td>
+                        <td>50 Biji</td>
+                        <td colspan="2" class="content-center"><a href="" class="button-edit">Edit</a><a href="table-detail.html" class="button-edit">Detail</a></td>
+                    </tr>
+                    <tr class="blink-row">
+                        <td><label><input type="checkbox" name="6" />6</label></td>
+                        <td>RSCM</td>
+                        <td>Gak Tahu</td>
+                        <td>021 - 21212121</td>
+                        <td>120 Buah</td>
+                        <td>50 Biji</td>
+                        <td colspan="2" class="content-center"><a href="" class="button-edit">Edit</a><a href="table-detail.html" class="button-edit">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="checkbox" name="7" />7</label></td>
+                        <td>RSCM</td>
+                        <td>Gak Tahu</td>
+                        <td>021 - 21212121</td>
+                        <td>120 Buah</td>
+                        <td>50 Biji</td>
+                        <td colspan="2" class="content-center"><a href="" class="button-edit">Edit</a><a href="table-detail.html" class="button-edit">Detail</a></td>
+                    </tr>
+                    <tr class="blink-row">
+                        <td><label><input type="checkbox" name="8" />8</label></td>
+                        <td>RSCM</td>
+                        <td>Gak Tahu</td>
+                        <td>021 - 21212121</td>
+                        <td>120 Buah</td>
+                        <td>50 Biji</td>
+                        <td colspan="2" class="content-center"><a href="" class="button-edit">Edit</a><a href="table-detail.html" class="button-edit">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="checkbox" name="9" />9</label></td>
+                        <td>RSCM</td>
+                        <td>Gak Tahu</td>
+                        <td>021 - 21212121</td>
+                        <td>120 Buah</td>
+                        <td>50 Biji</td>
+                        <td colspan="2" class="content-center"><a href="" class="button-edit">Edit</a><a href="table-detail.html" class="button-edit">Detail</a></td>
+                    </tr>
+                    <tr class="blink-row">
+                        <td><label><input type="checkbox" name="10" />10</label></td>
+                        <td>RSCM</td>
+                        <td>Gak Tahu</td>
+                        <td>021 - 21212121</td>
+                        <td>120 Buah</td>
+                        <td>50 Biji</td>
+                        <td colspan="2" class="content-center"><a href="" class="button-edit">Edit</a><a href="table-detail.html" class="button-edit">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="checkbox" name="11" />11</label></td>
+                        <td>RSCM</td>
+                        <td>Gak Tahu</td>
+                        <td>021 - 21212121</td>
+                        <td>120 Buah</td>
+                        <td>50 Biji</td>
+                        <td colspan="2" class="content-center"><a href="" class="button-edit">Edit</a><a href="table-detail.html" class="button-edit">Detail</a></td>
+                    </tr>
+                    <tr class="blink-row">
+                        <td><label><input type="checkbox" name="12" />12</label></td>
+                        <td>RSCM</td>
+                        <td>Gak Tahu</td>
+                        <td>021 - 21212121</td>
+                        <td>120 Buah</td>
+                        <td>50 Biji</td>
+                        <td colspan="2" class="content-center"><a href="" class="button-edit">Edit</a><a href="table-detail.html" class="button-edit">Detail</a></td>
+                    </tr>
+                    <tr>
+                        <td><label><input type="checkbox" name="13" />13</label></td>
+                        <td>RSCM</td>
+                        <td>Gak Tahu</td>
+                        <td>021 - 21212121</td>
+                        <td>120 Buah</td>
+                        <td>50 Biji</td>
+                        <td colspan="2" class="content-center"><a href="" class="button-edit">Edit</a><a href="table-detail.html" class="button-edit">Detail</a></td>
+                    </tr>
+                </table>
+            	<div class="pageRow">
+                	<div class="pageInfo">
+                    	<p><strong>100</strong> Data ditemukan untuk pencarian <strong>Rumah Sakit</strong> di daerah <strong>Jember</strong></p>
+                    </div>
+                    <div class="pageNav">
+                    	<ul>
+                        	<li><a href="">&lt;&lt;</a></li>
+                        	<li><a href="">&lt;</a></li>
+                        	<li><p><strong>1 - 10</strong> Dari <strong>200</strong></p></li>
+                        	<li><a href="">&gt;</a></li>
+                        	<li><a href="">&gt;&gt;</a></li>
+                        </ul>
+                    </div>
+                    <div class="ffhack"></div>
+                </div>
+            </form>
+        </div>
+        <div class="sidebar">
+        	<div class="side-menu">
+            	<h3>Private Menu</h3>
+                <ul>
+                	<li><a href="">Style Table</a><!--[if IE 7]><!--><!--<![endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+                    	<ul>
+                        	<li><a href="table-view.html">Table View</a></li>
+                        	<li><a href="table-Edit.html">Table Edit/Input</a></li>
+                            <li><a href="table-detail.html">Table Detail</a></li>
+                        	<li><a href="view.html">Sample View</a></li>
+                        	<li><a href="input.html">Sample Input</a></li>
+                        	<li><a href="edit.html">Sample Edit</a></li>
+                            <li><a href="detail.html">Sample Detail</a></li>
+                        </ul><!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                    </li>
+                    <li><a href="standart-product.html">View Standart Product</a><!--[if IE 7]><!--><!--<![endif]--><!--[if lte IE 6]><table><tr><td><![endif]-->
+                    	<ul>
+                        	<li><a href="list-equipment.html">Tool &amp; Equipment</a></li>
+                        	<li><a href="detail-equipment.html">Detail equipment</a></li>
+                        </ul><!--[if lte IE 6]></td></tr></table></a><![endif]-->
+                    </li>
+                    <li><a href="vendor.html">Vendor Spot</a></li>
+                    <li><a href="user-level.html">User Level</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="ffhack"></div>
+    </div>
+</div>
+</body>
+</html>

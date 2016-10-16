@@ -1,0 +1,484 @@
+/* CSS Document */
+/* created by nick29-2008 */
+
+table.table-snap-profile  {
+	border-collapse: collapse;
+	margin: 3px 0px;
+	padding: 0px 0px;
+}
+
+.table-snap-profile th {
+	border-bottom: 1px solid #d8e8c2;
+	color: #60793f;
+	text-align: left;
+	vertical-align: top;
+	margin: 0px 0px;
+	padding: 2px 2px;
+}
+
+.table-snap-profile td {
+	border-bottom: 1px solid #d8e8c2;
+	color: #5273a0;
+	text-align: left;
+	vertical-align: top;
+	margin: 0px 0px;
+	padding: 2px 2px;
+}
+
+.table-chart {
+	background-color: #FFFFFF;
+	border-collapse: collapse;
+	border-left: 1px solid #d9d9d9;
+	margin: 0px 0px 0px 1px;
+	padding: 0px 0px 0px 0px;
+}
+
+.table-chart th {
+	background-color: #f4f1eb;
+	background-image: url('../img/th-tablechart-bg.gif');
+	background-repeat: repeat-x;
+	border: 1px solid #d9d9d9;
+	color: #666666;
+	margin: 0px 0px 0px 0px;
+	padding: 3px 0px;
+}
+
+.table-chart td {
+	border-left: 1px solid #d9d9d9;
+	border-bottom: 1px solid #d9d9d9;
+	border-right: 1px solid #d9d9d9;
+	color: #666666;
+	margin: 0px 0px 0px 0px;
+	padding: 3px 3px;
+}
+
+.table-chart th.th-span  {
+	width: 17px;
+}
+
+.table-chart .blinkrow td {
+	background-color: #f7f4ee;
+}
+
+/*==========================================================*/
+
+.table-input {
+	background-color: #dcebd0;
+	border-collapse: collapse;
+	color: #43761d;
+	font-size: 11px;
+	text-align: left;
+	vertical-align: top;
+	margin: 0px 0px 5px 0px;
+	padding: 0px 0px;
+}
+
+.table-input th {
+	background-color: #cfe4be;
+	border-bottom: 1px solid #c6deb2;
+	border-top: 1px solid #c6deb2;
+	color: #43761d;
+	font-size: 12px;
+	vertical-align: top;
+	margin: 0px 0px;
+	padding: 5px 10px;
+}
+
+.table-input .headrow th  {
+	background-color: #91b277;
+	border-bottom: 1px solid #729656;
+	border-top: 1px solid #729656;
+	color: #FFFFFF;
+}
+
+.table-input td {
+	background-color: #dcebd0;
+	border-bottom: 1px solid #c6deb2;
+	vertical-align: top;
+	margin: 0px 0px;
+	padding: 5px 5px 5px 10px;
+}
+
+.table-input td input,textarea {
+	border: 1px solid #afc99a;
+	display: block;
+	float: left;
+	font-size: 11px;
+	margin: 0px 4px 0px 0px;
+	padding: 2px 3px;
+}
+
+.table-input td select {
+	border: 1px solid #afc99a;
+	float: left;
+	font-size: 11px;
+	margin: 0px 4px 1px 0px;
+	padding: 1px 0px;
+}
+
+.table-input td em {
+	color: #666666;
+	font-size: 10px;
+}
+
+.table-input td label {
+	display: block;
+	float: left;
+	margin: 0px 0px 0px 0px;
+	padding: 1px 10px 1px 0px;
+}
+
+.table-input td option {
+	border-bottom: 1px solid #eaeaea;
+	display: block;
+	margin: 0px 0px;
+	padding: 0px 3px;
+}
+
+.table-input img.photo-view {
+	border: 2px solid #FFFFFF;
+	width: 100px;
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+
+.table-input input.chkbox {
+	border: none;
+	display: block;
+	float: left;
+	font-size: 11px;
+	margin: -1px 5px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.table-input input.edit-button {
+	background-color: #7fb555;
+	background-image: url('../img/edit-button-bg.gif');
+	background-position: left top;
+	background-repeat: repeat-x;
+	border: none;
+	color: #FFFFFF;
+	display: block;
+	float: left;
+	font-size: 12px;
+	text-align: center;
+	margin: 0px 3px 0px 0px;
+	padding: 2px 7px;
+}
+
+.table-input input.edit-button:hover {
+	background-color: #649f35;
+	background-image: url('../img/edithover-button-bg.gif');
+}
+
+.table-detail {
+	background-color: #ecd3a8;
+	border-collapse: collapse;
+	color: #43761d;
+	font-size: 11px;
+	text-align: left;
+	vertical-align: top;
+	margin: 0px 0px 5px 0px;
+	padding: 0px 0px;
+}
+
+.table-detail th {
+	background-color: #ecd3a8;
+	border-bottom: 1px solid #e7c38d;
+	border-top: 1px solid #e7c38d;
+	color: #75541b;
+	font-size: 11px;
+	font-weight: normal;
+	vertical-align: top;
+	margin: 0px 0px;
+	padding: 5px 10px;
+}
+
+.table-detail td {
+	background-color: #ecd3a8;
+	border-bottom: 1px solid #e7c38d;
+	color: #000000;
+	font-size: 12px;
+	vertical-align: top;
+	margin: 0px 0px;
+	padding: 5px 5px 5px 10px;
+}
+
+.table-detail .headrow th  {
+	background-color: #bf9246;
+	border-bottom: 1px solid #b08231;
+	border-top: 1px solid #b08231;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.table-detail .headrow td  {
+	background-color: #e7c383;
+	border-bottom: 1px solid #d89f5a;
+	border-top: 1px solid #d89f5a;
+	color: #75541b;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.table-view {
+	border-left: 1px dotted #c6c6c6;
+	color: #515151;
+	margin: 0px 0px;
+	padding: 0px 0px;
+	border-collapse: collapse;
+}
+
+.table-view th {
+	background-color: #7c93c1;
+	background-image: url('../img/th-table-view-bg.gif');
+	background-repeat: repeat-x;
+	border-bottom: 1px solid #9eb5dc;
+	border-right: 1px solid #9eb5dc;
+	color: #FFFFFF;
+	margin: 0px 0px;
+	padding: 1px 0px;
+}
+
+.table-view td {
+	border-bottom: 1px solid #e5e5e5;
+	border-right: 1px dotted #c6c6c6;
+	margin: 0px 0px;
+	padding: 4px 3px;
+}
+
+.table-view a {
+	color: #5a75a2;
+	text-decoration: none;
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+
+.table-view a:hover {
+}
+
+.table-view label input {
+	margin: 0px 5px 0px 0px;
+	padding: 0px 0px;
+}
+
+.table-view .blink-row {
+	background-color: #f4f4f6;
+}
+
+.table-view a.button-edit {
+	background-color: #ebad5d;
+	background-image: url('../img/button-bg.gif');
+	background-repeat: repeat-x;
+	border: 1px solid #d89844;
+	color: #FFFFFF;
+	display: inline;
+	text-align: center;
+	text-decoration: none;
+	margin: 0px 1px;
+	padding: 1px 7px;	
+}
+
+.table-view a:hover.button-edit {
+	background-color: #ff934b;
+	background-image: url('../img/button-bg-hover.gif');
+	background-repeat: repeat-x;
+	border: 1px solid #f07a2b;
+}
+
+.table-view td.content-center {
+	text-align: center;
+}
+
+.table-search {
+	border-collapse: collapse;
+}
+
+.table-search th {
+	background-image: url('../img/search-th-bg.gif');
+	background-position: left top;
+	background-repeat: no-repeat;
+	color: #555555;
+	font-weight: normal;
+	text-align: left;
+	vertical-align: top;
+	margin: 0px;
+	padding: 1px 0px 3px 12px;
+}
+
+.table-search td {
+	color: #4e6ba5;
+	margin: 0px;
+	padding: 1px 0px 3px 0px;
+}
+
+.table-search input {
+	border: 1px solid #b4bed6;
+	font-size: 11px;
+	margin: 0px;
+	padding: 2px;
+}
+
+.table-search input.radio {
+	border: none;
+	width: 15px;
+	margin: 0px 5px -2px 0px;
+	padding: 0px 5px;
+}
+
+.table-search input.submit {
+	background-color: #abc7de;
+	background-image: url('../img/search-submit-bg.gif');
+	background-position: left top;
+	background-repeat: repeat-x;
+	border: 1px solid #c6d5ec;
+	color: #536aa5;
+	margin: 0px 3px 0px 0px;
+	padding: 2px 7px;
+}
+
+.table-search input.submit:hover {
+	background-color: #8ba9c4;
+	background-image: url('../img/search-submit-bghover.gif');
+	border: 1px solid #ffffff;
+	color: #ffffff;
+}
+
+.table-search select {
+	border: 1px solid #b4bed6;
+	font-size: 11px;	
+	margin: 0px;
+	padding: 2px;
+}
+
+.table-search option {
+	width: 250px;
+}
+
+.table-search label {
+	margin: 0px;
+	padding: 0px 5px;
+}
+
+.table-inbox-mail {
+	border-collapse: collapse;
+}
+
+.table-inbox-mail td {
+	background-color: #f8fcf2;
+	border-bottom: 1px solid #e2e2e2;
+	padding: 3px 0px;
+}
+
+.table-inbox-mail tr:hover td {
+	background-color: #ebf4ff;
+}
+
+.table-inbox-mail td a {
+	color: #858585;
+	text-decoration: none;
+}
+
+.table-inbox-mail td a img {
+	border: none;
+	margin: 1px 0px 0px 0px;
+}
+
+.table-inbox-mail .unread td {
+	background-color: #FFFFFF;
+}
+
+.table-inbox-mail .unread td a {
+	color: #6487b7;
+	font-weight: bold;
+}
+
+.table-compose {
+	border-collapse: collapse;
+	margin: 5px 0px
+}
+
+.table-compose {
+	border-collapse: collapse;
+}
+
+.table-compose th {
+	color: #000000;
+	text-align: right;
+	padding: 2px 5px;
+}
+
+.table-compose td {
+	color: #2C00D1;
+	padding: 1px 15px 2px 0px;
+}
+
+.table-compose input {
+	color: #000000;
+	border: 1px solid #cecece;
+	width: 100%;
+	margin: 0px;
+	padding: 2px 2px;
+}
+
+.table-compose input.file {
+	color: #000000;
+	border: 1px solid #cecece;
+	margin: 0px;
+	padding: 2px 2px;
+}
+
+.table-compose label {
+	color: #000000;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 10px 0px 0px;
+}
+
+.table-compose input.radio {
+	color: #000000;
+	border: none;
+	width: 20px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.table-compose select {
+	color: #000000;
+	font-size: 11px;
+	width: 200px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.table-compose textarea {
+	color: #000000;
+	border: 1px solid #cecece;
+	width: 100%;
+	padding: 2px 2px;
+}
+
+.table-user-select {
+	border-collapse: collapse;
+	margin: 0px 0px;
+	padding: 0px;
+}
+
+.table-user-select th {
+	color: #000000;
+	text-align: right;
+	padding: 2px 3px;
+}
+
+.table-user-select td {
+	color: #2C00D1;
+	padding: 1px 0px 3px 3px;
+}
+
+.table-user-select select {
+	color: #000000;
+	font-size: 11px;
+	width: 150px;
+	margin: 0px;
+	padding: 0px;
+}

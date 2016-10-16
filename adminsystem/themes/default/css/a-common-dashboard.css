@@ -1,0 +1,123 @@
+/* CSS Document */
+/* created by nick29-2008 */
+
+.common {
+	background-color: #030303;
+	background-image: url("../img/common-bg.jpg");
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+
+.page {
+	border: 1px solid #7b99c3;
+	width: 970px;
+	margin: 10px auto;
+	padding: 0px 0px;
+}
+
+.header {
+	background: #FFFFFF url('../img/header-bg.jpg') left top repeat-x;
+	overflow: hidden;
+	height: 50px;
+	margin: 0px 0px 0px 0px;
+	padding: 10px 10px;
+}
+
+.header h1 {
+	color: #343434;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 18px;
+	font-weight: normal;
+	margin: 0px 0px 0px 10px;
+	padding: 6px 0px 3px 0px;
+}
+
+.header h2 {
+	color: #ffffff;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0px 0px 0px 10px;
+	padding: 0px 0px 0px 0px;
+}
+
+.header h3 {
+	color: #FFFFFF;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 20px;
+	font-weight: normal;
+	margin: 0px 0px 0px 10px;
+	padding: 10px 0px 0px 0px;
+}
+
+.header img {
+	float: left;
+	margin: 0px 10px 0px 5px;
+	padding: 0px 0px;
+}
+
+.navigation {
+	background: #88a6cf url('../img/navigation-bg.jpg') left top repeat-x;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 33px;
+	margin: 0px 0px;
+	padding: 2px 0px 0px 0px;
+}
+
+.navigation ul {
+	font-weight: bold;
+	margin: 0px 0px;
+	padding: 0px 0px;
+}
+
+.navigation li {
+	float: left;
+	list-style: none;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.navigation a {
+	background: url('../img/a-navigation-bg.gif') left top repeat-x;
+	border: 1px solid #b4c3da;
+	border-bottom: none;
+	color: #ffffff;
+	display: block;
+	float: left;
+	text-decoration: none;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	height: 21px;
+	margin: 0px 1px 0px 0px;
+	padding: 9px 20px 1px 13px;
+}
+
+.navigation a:hover {
+	background: #7e9ac2 url('../img/a-navigation-bghover.gif') left top repeat-x;
+	border: 1px solid #b4c3da;
+	border-bottom: none;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	color: #FFFFFF;
+}
+
+.navigation a img {
+	border: none;
+	width: 18px;
+	height: 15px;
+	margin: 0px 7px -3px 0px;
+	padding: 0px;
+}
+
+.main-content {
+	background-color: #FFFFFF;
+	border-top: none;
+	clear: both;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 10px 0px;
+}
+
+.ffhack {
+	clear: both;
+}

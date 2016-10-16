@@ -1,0 +1,54 @@
+				<div class="container clearfix">
+
+					<div class="tabs divcenter nobottommargin clearfix" id="tab-login-register" style="max-width: 500px;">
+
+                        <div class="tab-container">
+
+                            <div class="tab-content clearfix" id="tab-login">
+                                <div class="panel panel-default nobottommargin">
+                                	<div class="panel-body" style="padding: 40px;">
+                                		<form id="login-form" name="login-form" class="nobottommargin" action="{$url_login_process}" method="post">
+
+			                                <h3>Form Login.</h3>
+
+			                                <div class="col_full">
+			                                    <label for="login-form-username">Username:</label>
+			                                    <input type="text" id="login-form-username" name="userid" value="" class="form-control" />
+			                                </div>
+
+			                                <div class="col_full">
+			                                    <label for="login-form-password">Password:</label>
+			                                    <input type="password" id="login-form-password" name="password" value="" class="form-control" />
+			                                </div>
+
+			                                <div class="col_full nobottommargin">
+			                                    <button type="submit" class="button button-3d button-black nomargin" id="login-form-submit" name="login-form-submit" value="login">Login</button>
+			                                    <a href="#" class="fright">Lupa Password?</a>
+			                                </div>
+
+			                            </form>
+                                	</div>
+                                </div>
+                                
+              {if $message neq ''}
+              <div class="b-form-row">
+              <div class="b-form-row">
+                    <div class="b-alert-warning f-alert-warning">
+                      <div class="b-right">
+                        <i class="fa fa-times-circle-o"></i>
+                      </div>
+                      <div class="b-remaining">
+                        <i class="fa fa-exclamation-triangle"></i>{$message}
+                      </div>
+                    </div>
+              
+              </div>
+              </div>
+              {/if}
+                            </div>
+
+                        </div>
+
+                    </div>
+
+				</div>

@@ -1,0 +1,140 @@
+
+ {foreach name=data from=$data item=rs}
+ <div class="container" id="modal-detail-profil{$rs.id_info}" style="display:none;" >
+
+      <div class="row" style="width:100%; height:400px; overflow:auto;">
+
+    
+
+        <div class="col-xs-12  toppad" >
+
+   
+
+   
+
+          <div class="panel panel-info">
+
+            <div class="panel-heading">
+
+              <h3 class="panel-title">{$rs.nama}</h3>
+
+            </div>
+
+            <div class="panel-body">
+
+              <div class="row">
+
+                <div class="col-md-3 col-lg-3 " align="center"><img src="{$BASEURL}doc/profil/{$rs.id_info}/{$rs.foto}" height="100" class="img-circle img-responsive"> </div>
+
+                
+
+               
+
+                <div class=" col-md-9 col-lg-9 "> 
+
+                  <table class="table table-user-information" >
+
+                    <tbody>
+                      <tr>
+
+                        <td>Jabatan</td>
+
+                        <td>{$rs.jabatan}</td>
+
+                      </tr>
+                      <tr>
+
+                        <td>Profil</td>
+
+                        <td>{$rs.content}</td>
+
+                      </tr>
+
+                      <tr>
+
+                        <td>Deskripsi</td>
+
+                        <td>{$rs.deskripsi}</td>
+
+                      </tr>
+
+                     <tr>
+
+                        <td>Pendidikan</td>
+
+                        <td>{$rs.pendidikan}</td>
+
+                      </tr>
+
+                      
+
+                      <tr>
+
+                        <td>Riwayat Jabatan</td>
+
+                        <td>{$rs.riwayat}</td>
+
+                      </tr>
+
+                       
+
+                  
+                       <tr>
+
+                        <td>Penghargaan</td>
+
+                        <td>{$rs.penghargaan}</td>
+
+                      </tr>
+
+                      <tr>
+
+                        <td>No urut menu</td>
+
+                        <td>{$rs.order_num}</td>
+
+                      </tr>
+
+                    
+                    
+      
+                        
+
+                     
+
+                    </tbody>
+
+                  </table>
+
+                  
+
+                
+
+                </div>
+
+              </div>
+
+            </div>
+
+                 
+
+            
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+<div id="modal-detail-asosiasi-footer" style="display:none;">
+
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+</div>
+
+{/foreach}
+

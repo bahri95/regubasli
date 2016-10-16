@@ -1,0 +1,29 @@
+/* CSS Document */
+@import url('fonts/font-awesome/css/font-awesome.min.css');
+/*-- bxslider */
+@import url('js/bxslider/jquery.bxslider.css');
+/*-- flexslider --*/
+@import url('js/flexslider/flexslider.css');
+/*-- bxslider --*/
+@import url('js/radial-progress/style.css');
+/*-- Animate css --*/
+
+@import url('css/animate.css');
+/*-- Bootstrap css --*/
+@import url('css/bootstrap.min.css');
+@import url('js/bootstrap-progressbar/bootstrap-progressbar-3.2.0.min.css');
+/*-- Jquery UI css --*/
+@import url('js/jqueryui/jquery-ui.css');
+@import url('js/jqueryui/jquery-ui.structure.css');
+/*-- Fancybox --*/
+@import url('js/fancybox/jquery.fancybox.css');
+@import url('fonts/fonts.css');
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext);
+@import url(http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic);
+
+@import url('css/main-red.css');
+@import url('js/rs-plugin/css/settings.css');
+@import url('js/rs-plugin/css/settings-custom.css');
+@import url('js/rs-plugin/videojs/video-js.css');
+@import url('css/_all_skins.min.css');
+@import url('css/custom.css');

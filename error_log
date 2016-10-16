@@ -1,0 +1,122 @@
+[29-Jul-2016 03:29:49 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 03:29:52 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 03:29:53 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 03:29:56 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 03:30:09 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 03:30:10 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 03:30:11 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 03:30:11 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 03:30:16 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 03:30:18 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 03:30:30 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 03:33:47 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 03:34:26 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 03:35:13 America/New_York] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/h71721/public_html/application/controllers/public/foto.php on line 65
+[29-Jul-2016 05:57:12 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/informasi/list.html"  on line 36 "{/foreach}" unclosed {if} tag <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 36
+[29-Jul-2016 06:01:14 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/informasi/list.html"  on line 36 "{/foreach}" unclosed {if} tag <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 36
+[29-Jul-2016 06:01:15 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/informasi/list.html"  on line 36 "{/foreach}" unclosed {if} tag <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 36
+[29-Jul-2016 06:01:16 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/informasi/list.html"  on line 36 "{/foreach}" unclosed {if} tag <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 36
+[31-Jul-2016 23:24:32 America/New_York] PHP Parse error:  syntax error, unexpected 'this' (T_STRING) in /home/h71721/public_html/application/core/MY_Controller.php on line 764
+[31-Jul-2016 23:24:35 America/New_York] PHP Parse error:  syntax error, unexpected 'this' (T_STRING) in /home/h71721/public_html/application/core/MY_Controller.php on line 764
+[31-Jul-2016 23:48:48 America/New_York] PHP Parse error:  syntax error, unexpected ''/'' (T_CONSTANT_ENCAPSED_STRING) in /home/h71721/public_html/application/core/MY_Controller.php on line 764
+[01-Aug-2016 00:12:22 America/New_York] PHP Parse error:  syntax error, unexpected '=' in /home/h71721/public_html/application/core/MY_Controller.php on line 768
+[01-Aug-2016 00:12:25 America/New_York] PHP Parse error:  syntax error, unexpected '=' in /home/h71721/public_html/application/core/MY_Controller.php on line 768
+[01-Aug-2016 00:13:26 America/New_York] PHP Parse error:  syntax error, unexpected '=' in /home/h71721/public_html/application/core/MY_Controller.php on line 768
+[01-Aug-2016 00:23:22 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/h71721/public_html/application/core/MY_Controller.php on line 772
+[01-Aug-2016 00:24:17 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/h71721/public_html/application/core/MY_Controller.php on line 772
+[01-Aug-2016 00:25:12 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/h71721/public_html/application/core/MY_Controller.php on line 772
+[01-Aug-2016 00:25:20 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/h71721/public_html/application/core/MY_Controller.php on line 772
+[01-Aug-2016 00:25:50 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/h71721/public_html/application/core/MY_Controller.php on line 772
+[01-Aug-2016 00:25:51 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/h71721/public_html/application/core/MY_Controller.php on line 772
+[01-Aug-2016 00:25:52 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO) in /home/h71721/public_html/application/core/MY_Controller.php on line 772
+[01-Aug-2016 00:42:22 America/New_York] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in /home/h71721/public_html/application/core/MY_Controller.php on line 776
+[01-Aug-2016 00:47:34 America/New_York] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/h71721/public_html/application/core/MY_Controller.php on line 773
+[01-Aug-2016 00:52:24 America/New_York] PHP Fatal error:  Cannot use string offset as an array in /home/h71721/public_html/application/core/MY_Controller.php on line 768
+[01-Aug-2016 00:52:26 America/New_York] PHP Fatal error:  Cannot use string offset as an array in /home/h71721/public_html/application/core/MY_Controller.php on line 768
+[05-Aug-2016 00:36:10 America/New_York] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/h71721/public_html/application/controllers/private/account.php on line 255
+[05-Aug-2016 00:36:14 America/New_York] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/h71721/public_html/application/controllers/private/account.php on line 255
+[05-Aug-2016 00:49:58 America/New_York] PHP Fatal error:  include(): Cannot redeclare class phpmailer in /home/h71721/public_html/system/core/Loader.php on line 834
+[05-Aug-2016 00:50:08 America/New_York] PHP Fatal error:  include(): Cannot redeclare class phpmailer in /home/h71721/public_html/system/core/Loader.php on line 834
+[08-Aug-2016 04:50:10 America/New_York] PHP Parse error:  syntax error, unexpected 'and' (T_LOGICAL_AND) in /home/h71721/public_html/application/controllers/private/propinsi.php on line 170
+[08-Aug-2016 05:59:05 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/h71721/public_html/application/controllers/private/kota.php on line 126
+[08-Aug-2016 06:00:04 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/h71721/public_html/application/controllers/private/kota.php on line 126
+[08-Aug-2016 06:00:22 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/h71721/public_html/application/controllers/private/kota.php on line 126
+[17-Aug-2016 10:21:17 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/informasi/detail.html"  on line 111 "{literal}<script async src="https://static.addtoany.com/menu/page.js"></script>{/literal}" missing or misspelled literal closing tag <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 111
+[17-Aug-2016 10:21:23 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/informasi/detail.html"  on line 111 "{literal}<script async src="https://static.addtoany.com/menu/page.js"></script>{/literal}" missing or misspelled literal closing tag <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 111
+[17-Aug-2016 10:21:37 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/informasi/detail.html"  on line 111 "{literal}<script async src="https://static.addtoany.com/menu/page.js"></script>{/literal}" missing or misspelled literal closing tag <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 111
+[17-Aug-2016 10:21:39 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/informasi/detail.html"  on line 111 "{literal}<script async src="https://static.addtoany.com/menu/page.js"></script>{/literal}" missing or misspelled literal closing tag <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 111
+[18-Aug-2016 00:59:45 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/beritadmsi/detail.html"  on line 128 "<a href="https://twitter.com/share" class="twitter-share-button" data-text="{$data.judul}" data-via="dewan_sawit" data-related="dewan_sawit">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>" unknown tag "var" <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 128
+[18-Aug-2016 01:08:47 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/beritadmsi/detail.html"  on line 135 "<a href="https://plus.google.com/share?url={URL}" onclick="javascript:window.open(this.href," unknown tag "URL" <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 135
+[18-Aug-2016 01:09:56 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/beritadmsi/detail.html"  on line 135 "<a href="https://plus.google.com/share?url={URL}" {literal} onclick="javascript:window.open(this.href," unknown tag "URL" <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 135
+[18-Aug-2016 01:09:58 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/beritadmsi/detail.html"  on line 135 "<a href="https://plus.google.com/share?url={URL}" {literal} onclick="javascript:window.open(this.href," unknown tag "URL" <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 135
+[18-Aug-2016 02:30:53 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/beritadmsi/detail.html"  on line 111 "{/literal}" missing or misspelled literal closing tag <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 111
+[18-Aug-2016 02:30:55 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/beritadmsi/detail.html"  on line 111 "{/literal}" missing or misspelled literal closing tag <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 111
+[18-Aug-2016 02:30:57 America/New_York] PHP Fatal error:  Uncaught  --> Smarty Compiler: Syntax error in template "application/views/web/beritadmsi/detail.html"  on line 111 "{/literal}" missing or misspelled literal closing tag <-- 
+  thrown in /home/h71721/public_html/application/third_party/Smarty/sysplugins/smarty_internal_templatecompilerbase.php on line 111
+[18-Aug-2016 23:38:07 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:38:13 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:38:59 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:39:01 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:39:04 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:40:21 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:42:24 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:42:25 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:42:27 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:42:28 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:42:29 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:42:31 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:42:32 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:43:23 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:43:28 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:43:34 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:01 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:02 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:03 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:04 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:07 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:08 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:09 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:10 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:11 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:12 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:13 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:14 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:49 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:45:50 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:47:39 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:47:40 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:47:51 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:47:53 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[18-Aug-2016 23:48:34 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[19-Aug-2016 00:03:20 America/New_York] PHP Parse error:  syntax error, unexpected end of file, expecting function (T_FUNCTION) in /home/h71721/public_html/application/core/MY_Controller.php on line 1
+[19-Aug-2016 00:05:07 America/New_York] PHP Fatal error:  Class 'MY_Controller' not found in /home/h71721/public_html/application/controllers/public/home.php on line 7
+[19-Aug-2016 00:05:10 America/New_York] PHP Fatal error:  Class 'MY_Controller' not found in /home/h71721/public_html/application/controllers/public/home.php on line 7
+[19-Aug-2016 00:05:11 America/New_York] PHP Fatal error:  Class 'MY_Controller' not found in /home/h71721/public_html/application/controllers/public/home.php on line 7
+[19-Aug-2016 00:05:12 America/New_York] PHP Fatal error:  Class 'MY_Controller' not found in /home/h71721/public_html/application/controllers/public/home.php on line 7
+[19-Aug-2016 00:06:33 America/New_York] PHP Fatal error:  Class 'MY_Controller' not found in /home/h71721/public_html/application/controllers/public/asosiasi.php on line 7
+[19-Aug-2016 00:14:47 America/New_York] PHP Fatal error:  Class 'MY_Controller' not found in /home/h71721/public_html/application/controllers/public/home.php on line 7
+[06-Sep-2016 02:34:03 America/New_York] PHP Parse error:  syntax error, unexpected ':' in /home/h71721/public_html/application/models/hargamodel.php on line 145
+[06-Sep-2016 02:34:05 America/New_York] PHP Parse error:  syntax error, unexpected ':' in /home/h71721/public_html/application/models/hargamodel.php on line 145
+[06-Sep-2016 02:34:09 America/New_York] PHP Parse error:  syntax error, unexpected ':' in /home/h71721/public_html/application/models/hargamodel.php on line 145
+[06-Sep-2016 02:34:36 America/New_York] PHP Parse error:  syntax error, unexpected ':' in /home/h71721/public_html/application/models/hargamodel.php on line 145
+[06-Sep-2016 02:35:47 America/New_York] PHP Parse error:  syntax error, unexpected ':' in /home/h71721/public_html/application/models/hargamodel.php on line 145
+[06-Sep-2016 02:35:51 America/New_York] PHP Parse error:  syntax error, unexpected ':' in /home/h71721/public_html/application/models/hargamodel.php on line 145
+[02-Oct-2016 19:40:47 America/New_York] PHP Fatal error:  Call to a member function clear_post() on a non-object in /home/h71721/public_html/application/controllers/private/foto.php on line 247
+[03-Oct-2016 01:30:15 America/New_York] PHP Parse error:  syntax error, unexpected 'private' (T_PRIVATE) in /home/h71721/public_html/application/controllers/private/video.php on line 330
+[04-Oct-2016 07:57:56 America/New_York] PHP Fatal error:  Call to a member function initialize() on a non-object in /home/h71721/public_html/application/controllers/private/sponsor.php on line 368
+[04-Oct-2016 08:11:33 America/New_York] PHP Parse error:  syntax error, unexpected 'width' (T_STRING), expecting ']' in /home/h71721/public_html/application/controllers/private/sponsor.php on line 368
+[04-Oct-2016 08:11:58 America/New_York] PHP Parse error:  syntax error, unexpected 'width' (T_STRING), expecting ']' in /home/h71721/public_html/application/controllers/private/sponsor.php on line 368

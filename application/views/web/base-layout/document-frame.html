@@ -1,0 +1,37 @@
+
+{include file="web/base-layout/header.html"}
+
+<body class="stretched" style="background-color: #90cde5;">
+    
+    <!-- Document Wrapper
+    ============================================= -->
+    <div id="wrapper" class="clearfix" >
+
+     
+        <section id="content">
+
+            <div class="content-wrap" style="background-color: #90cde5;"  >
+                <div class="container clearfix" >
+                
+                {include file="$template_content"}
+                
+                
+                </div>
+            </div>
+
+        </section><!-- #content end -->
+
+      
+
+    </div><!-- #wrapper end -->
+
+    <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- javascript loaded -->
+    {$LOADJS}
+    <!-- end of loaded javascript -->
+
+</body>
+</html>

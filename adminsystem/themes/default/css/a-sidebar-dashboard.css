@@ -1,0 +1,194 @@
+/* CSS Document */
+/* created by nick29-2008 */
+
+.sidebar {
+	color: #5f5e5e;
+	float: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	width: 166px;
+	margin: 0px 0px;
+	padding: 7px 7px;
+}
+
+.side-menu {
+	background-color: #eff5f9;
+	border: 1px solid #d2dee8;
+	position: relative;
+	margin: 0px 0px;
+	padding: 0px 0px;
+	z-index: 30;
+}
+
+.side-menu h3 {
+	background-image: url('../img/h3-sidemenu-bg.jpg');
+	background-position: left top;
+	background-repeat: repeat-x;
+	border-bottom: 1px solid #d2dee8;
+	color: #5273a0;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: center;
+	margin: 0px 0px;
+	padding: 3px 0px;
+}
+
+.side-menu ul {
+	margin: 0px 0px;
+	padding: 0px 0px;
+	z-index: 30;
+}
+
+.side-menu li {
+	list-style: none;
+	position: relative;
+}
+
+.side-menu a {
+	background-image: url('../img/arrow-blue-bg.gif');
+	background-position: left top;
+	background-repeat: no-repeat;
+	border-bottom: 1px solid #e2ebf0;
+	border-top: 1px solid #f6f9fa;
+	color: #2862a0;
+	display: block;
+	text-decoration: none;
+	margin: 0px 0px;
+	padding: 3px 6px 3px 14px;
+}
+
+.side-menu a:hover {
+	background-image: url('../img/arrow-green-bg.gif');
+	background-color: #e2ecf5;
+	border-top: 1px solid #e2ecf5;
+	color: #5e9414;
+}
+
+.side-menu ul ul {
+	background-color: #eff5f9;
+	border: 1px solid #d2dee8;
+	display: none;
+	position: absolute;
+	top: -1px;
+	left: 150px;
+	width: 164px;
+	margin: 0px 0px 0px 0px;
+	z-index: 50;
+}
+
+.side-menu ul ul li a {
+	background-image: url('../img/arrow-green-bg.gif');
+	background-color: #e2ecf5;
+	border-bottom: 1px solid #D2DEE8;
+	border-top: 1px solid #e2ecf5;
+	color: #5e9414;
+	display: block;
+}
+
+.side-menu ul ul li a:hover {
+	background-color: #eff5f9;
+}
+
+.side-menu ul li:hover a {
+	background-image: url('../img/arrow-green-bg.gif');
+	background-color: #e2ecf5;
+	border-top: 1px solid #e2ecf5;
+	color: #5e9414;
+}
+
+.side-menu ul li:hover ul, .side-menu ul a:hover ul {
+	display: block;
+}
+
+.side-menu ul li:hover ul ul {
+	display: none;
+}
+
+.side-menu ul li:hover ul li:hover ul{
+	display: block;
+}
+
+a.side-active  {
+	background-image: url('../img/arrow-green-bg.gif');
+	background-color: #c9e8ed!important;
+	border-top: 1px solid #e2ecf5;
+	color: #5e9414;
+}
+
+a:hover.side-active  {
+	background-image: url('../img/arrow-green-bg.gif');
+	background-color: #e2ecf5;
+	border-top: 1px solid #e2ecf5;
+	color: #5e9414;
+}
+/*==========================================================*/
+
+.side-mail-menu {
+	font-size: 12px;
+	margin: 0px -8px 0px 0px;
+	padding: 0px 0px;
+}
+
+.side-mail-menu h3 {
+	color: #75a64e;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0px 6px;
+	padding: 3px 0px;
+}
+
+.side-mail-menu ul {
+	margin: 10px 0px 0px 0px;
+	padding: 0px;
+}
+
+.side-mail-menu li {
+	border: 1px solid #fff;
+	border-right: none;
+	list-style: none;
+}
+
+.side-mail-menu a {
+	color: #2c00d1;
+	display: block;
+	padding: 3px 6px 4px 6px;
+}
+
+.side-mail-menu a:hover {
+}
+
+.side-mail-menu li a.chosen-menu {
+	background-color: #ccdaee;
+	background-image: url('../img/side-mail-menu-bg.gif');
+	background-position: left top;
+	background-repeat: no-repeat;
+}
+
+.wrapper {
+}
+
+.wrapper1 {
+	background: #000000;
+	display: block;
+  	filter: alpha(opacity = 80);
+	opacity: 0.8;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 90;
+}
+
+.wrapper2 {
+	background: #FFFFFF;
+	border: 2px solid #717171;
+	-moz-border-radius: 8px;
+	display: block;
+	position: absolute;
+	top: 50px;
+	width: 550px;
+	margin: 0px 0px 0px 180px;
+	padding: 25px;
+	z-index: 100;
+}

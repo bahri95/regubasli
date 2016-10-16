@@ -1,0 +1,48 @@
+
+{include file="web/base-layout/header.html"}
+
+<body class="stretched">
+    
+    <!-- Document Wrapper
+    ============================================= -->
+    <div id="wrapper" class="clearfix">
+        
+        {include file="web/base-layout/menu.html"}
+        {include file="web/base-layout/tittle.html"}
+        <!-- Content
+        ============================================= -->
+        <section id="content">
+
+            <div class="content-wrap">
+                <div class="container clearfix">
+                <div class="postcontent nobottommargin clearfix">
+
+                    
+
+                         {include file="$template_content"}
+
+                       
+                </div>
+               
+                    {include file="web/base-layout/sidebar.html"}
+         
+                
+                </div>
+            </div>
+
+        </section><!-- #content end -->
+
+        {include file="web/base-layout/footer.html"}
+
+    </div><!-- #wrapper end -->
+
+    <!-- Go To Top
+    ============================================= -->
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <!-- javascript loaded -->
+    {$LOADJS}
+    <!-- end of loaded javascript -->
+
+</body>
+</html>

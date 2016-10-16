@@ -1,0 +1,1 @@
+[01-Aug-2016 06:37:15 UTC] PHP Warning:  file_get_contents(../cache/timthumb_int_3f0699268500a23e70aa9d33e5527f65.timthumb.txt): failed to open stream: No such file or directory in /home/h71721/public_html/php_helpers/timthumb.php on line 1036
