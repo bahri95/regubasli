@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-16 05:58:19
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 10:42:06
          compiled from "application\views\web\base-layout\document-detail.html" */ ?>
 <?php /*%%SmartyHeaderCode:131625802fadb732704-76693302%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4fd45d9d989615e3c365b1f147c97186b7468eea' => 
     array (
       0 => 'application\\views\\web\\base-layout\\document-detail.html',
-      1 => 1476428291,
+      1 => 1476693532,
       2 => 'file',
     ),
   ),
@@ -15,13 +15,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_5802fadb847cd4_85715127',
   'variables' => 
   array (
     'LOADJS' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.17',
-  'unifunc' => 'content_5802fadb847cd4_85715127',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_5802fadb847cd4_85715127')) {function content_5802fadb847cd4_85715127($_smarty_tpl) {?>
 <?php echo $_smarty_tpl->getSubTemplate ("web/base-layout/header.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0);?>

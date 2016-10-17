@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 09:33:24
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 10:40:05
          compiled from "application\views\web\informasi\list.html" */ ?>
 <?php /*%%SmartyHeaderCode:3105257ea5a8ec74e15-82286138%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e4e6e2ba2c4c9dc67a36c07649f80b04f7709402' => 
     array (
       0 => 'application\\views\\web\\informasi\\list.html',
-      1 => 1476689603,
+      1 => 1476693602,
       2 => 'file',
     ),
   ),
@@ -57,7 +57,8 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                                 </div>
                                 <div class="entry-c">
                                     <div class="entry-title">
-                                        <h2><a href="blog-single-small.html"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul'];?>
+                                        <h2><a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
+"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul'];?>
 </a></h2>
                                     </div>
                                     <ul class="entry-meta clearfix">
@@ -68,7 +69,8 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                                     <div class="entry-content">
                                         <p><?php echo $_smarty_tpl->tpl_vars['rs']->value['content'];?>
 </p>
-                                        <a href="blog-single-small.html"class="more-link">Selengkapnya...</a>
+                                        <a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
+"class="more-link">Selengkapnya...</a>
                                     </div>
                                 </div>
                             </div>

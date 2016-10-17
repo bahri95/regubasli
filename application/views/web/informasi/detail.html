@@ -1,0 +1,101 @@
+
+                    <!-- Post Content
+                    ============================================= -->
+                    <div class="postcontent nobottommargin clearfix">
+
+                        <div class="single-post nobottommargin">
+
+                            <!-- Single Post
+                            ============================================= -->
+                            <div class="entry clearfix">
+
+                                <!-- Entry Title
+                                ============================================= -->
+                                <div class="entry-title">
+                                    <h2>{$data.judul}</h2>
+                                </div><!-- .entry-title end -->
+
+                                <!-- Entry Meta
+                                ============================================= -->
+                                <ul class="entry-meta clearfix">
+                                    <li><i class="icon-calendar3"></i> {$data.tanggal}</li>
+                                    <li><a href="#"><i class="icon-user"></i> {$data.nama_anggota}</a></li>
+                                </ul><!-- .entry-meta end -->
+
+                                <!-- Entry Content
+                                ============================================= -->
+                                <div class="entry-content notopmargin">
+
+                                    <!-- Entry Image
+                                    ============================================= -->
+                                    <div class="entry-image alignleft">
+                                        <a href="#"><img src="{$data.image}" alt="Blog Single"></a>
+                                        <p><h6><i>{$data.keterangan_gambar}</i></h6></p>
+                                    </div><!-- .entry-image end -->
+
+                                    {$data.content}
+                                    <!-- Post Single - Content End -->
+
+                                    <div class="clear"></div>
+
+                                    <!-- Post Single - Share
+                                    ============================================= -->
+                                    <div class="si-share noborder clearfix">
+                                        <span>Bagikan:</span>
+                                        <div>
+                                            <a href="http://www.facebook.com/sharer/sharer.php?u={$BASEURL}index.php/public/berita/detail/{$data.id_berita}" target="_blank" class="social-icon si-borderless si-facebook">
+                                                <i class="icon-facebook"></i>
+                                                <i class="icon-facebook"></i>
+                                            </a>
+                                            <a href="http://twitter.com/share?url={$BASEURL}index.php/public/berita/detail/{$data.id_berita}&text={$data.judul}" target="_blank" class="social-icon si-borderless si-twitter">
+                                                <i class="icon-twitter"></i>
+                                                <i class="icon-twitter"></i>
+                                            </a>
+                                            <a href="//pinterest.com/pin/create/link/?url={$BASEURL}index.php/public/berita/detail/{$data.id_berita}" target="_blank" class="social-icon si-borderless si-pinterest">
+                                                <i class="icon-pinterest"></i>
+                                                <i class="icon-pinterest"></i>
+                                            </a>
+                                            <a href="https://plus.google.com/share?url={$BASEURL}index.php/public/berita/detail/{$data.id_berita}" target="_blank" class="social-icon si-borderless si-gplus">
+                                                <i class="icon-gplus"></i>
+                                                <i class="icon-gplus"></i>
+                                            </a>
+                                        </div>
+                                    </div><!-- Post Single - Share End -->
+
+                                </div>
+                            </div><!-- .entry end -->
+
+                            <h4>Berita Lainnya :</h4>
+
+                            <div class="related-posts clearfix">
+                                <div class="row">
+                                    
+                                    {if $berita <> ""}
+                                    {foreach name=list_data from=$berita item=brt}
+                                    <div class="col-md-6 bottommargin">
+                                        <div class="mpost clearfix">
+                                            <div class="entry-image">
+                                                <a href="#"><img src="http://{$brt.alamat_website}/doc/berita/{$brt.id_berita}/{$brt.gambar}" alt="Blog Single"></a>
+                                            </div>
+                                            <div class="entry-c">
+                                                <div class="entry-title">
+                                                    <h4><a href="{$url_detail_berita}/{$brt.id_berita}">{$brt.judul}</a></h4>
+                                                </div>
+                                                <ul class="entry-meta clearfix">
+                                                    <li><i class="icon-calendar3"></i> {$brt.tanggal}</li>
+                                                </ul>
+                                                <div class="entry-content">{$brt.intro}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/foreach}
+                                    {/if}
+
+                                </div>
+                            </div>
+
+                                <div class="clear"></div>
+                               
+                        </div>
+
+                    </div><!-- .postcontent end -->

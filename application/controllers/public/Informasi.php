@@ -93,20 +93,14 @@
 
 		public
 		function detail(){
-			$kategori = $this->informasimodel->get_list_kategori();
-			$this->smarty->assign("kategori", $kategori);
+
 			$this->smarty->assign('template_content',"web/informasi/detail.html");
 			$this->load->model('informasimodel');
-			$id_informasi  = $this->uri->segment(5,0);
+			$id_informasi  = $this->uri->segment(4,0);
 			$data = $this->informasimodel->get_informasi_by_id($id_informasi);
 			
 			if(!empty($data)):
-			
-			if($this->act_lang == 'en'):
-			$data['judul'] = $data['judul_english'];
-			$data['content'] = $data['content_english'];
-			$data['keterangan_gambar'] = $data['caption_picture'];
-			endif;
+		
 			$data['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
 			$path = 'doc/informasi/'.$data['id_informasi']."/";
 			
@@ -125,11 +119,6 @@
 			if(!empty($result)):
 			foreach($result as $key=>$data):
 			
-			if($this->act_lang == 'en'):
-			$result[$key]['judul'] = $data['judul_english'];
-			$result[$key]['content'] = $data['content_english'];
-			$result[$key]['kategori'] = $data['kategori_english'];
-			endif;
 			$result[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
 			$path = 'doc/informasi/'.$data['id_informasi']."/";
 			
@@ -140,28 +129,22 @@
 			}
 
 			
-			if($this->act_lang == 'en'){
-				$result[$key]['url_detail'] = site_url('public/informasi/detail/'.$data['id_kategori'].'/'.$data['id_informasi'].'/'.url_title($data['judul_english']));
-				$result[$key]['content'] = strip_tags($this->getIntroText($data['content_english'],300));
-			} else {
+		
 				$result[$key]['url_detail'] = site_url('public/informasi/detail/'.$data['id_kategori'].'/'.$data['id_informasi'].'/'.url_title($data['judul']));
 				$result[$key]['content'] = strip_tags($this->getIntroText($data['content'],300));
-			}
-
+			
 			endforeach;
 			endif;
 			$this->smarty->assign("informasi_list", $result);
 			
-			if($this->act_lang == 'en'){
-				$this->smarty->assign("page_modul", 'Information');
-			} else {
+		
 				$this->smarty->assign("page_modul", 'Informasi');
-			}
+			
 
 			$this->smarty->assign("page_modul_url", site_url('public/informasi'));
 			$this->smarty->assign("page_name", 'Detail Informasi');
 			// display document
-			$this->parser->parse('web/base-layout/document.html');
+			$this->parser->parse('web/base-layout/document-detail.html');
 		}
 
 		public
