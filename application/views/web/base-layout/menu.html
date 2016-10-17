@@ -54,32 +54,13 @@
                             <li><a href="shop.html"><div>BERITA</div></a>
                                 <ul>
                                     <li><a href="{$BASEURL}index.php/public/informasi"><div>KEGIATAN AGUS SILVY</div></a></li>
-                                    <li><a href="shop-3.html"><div>KEGIATAN RELAWAN</div></a>
+                                    <li><a href="#"><div>KEGIATAN RELAWAN</div></a>
                                         <ul>
-                                    <li><a href="#"><div>RELAWAN RAHMAD SUMUT</div></a>
-                                        
+                                        {foreach name=relawan from=$relawan item=rs}
+                                    <li><a href="{$BASEURL}index.php/public/berita"><div>RELAWAN {$rs.nama}</div></a>
                                     </li>
-                                     <li><a href="#"><div>RELAWAN SUSNO SUMSEL</div></a>
-                                        
-                                    </li>
-                                     <li><a href="#"><div></i>RELAWAN GIDOT KALBAR</div></a>
-                                        
-                                    </li>
-                                     <li><a href="#"><div></i>RELAWAN ACHMAD RIAU</div></a>
-                                        
-                                    </li>
-                                     <li><a href="#"><div></i>RELAWAN ULLAH SULSEL</div></a>
-                                        
-                                    </li>
-                                     <li><a href="#"><div>RELAWAN IHWAN KALTIM</div></a>
-                                        
-                                    </li>
-                                     <li><a href="#"><div>RELAWAN ERWIN DKI</div></a>
-                                        
-                                    </li>
-                                     <li><a href="#"><div>RELAWAN MUDATSIR </div></a>
-                                        
-                                    </li>
+                                        {/foreach}
+                                   
                                         </ul>
                                     </li>
                                     

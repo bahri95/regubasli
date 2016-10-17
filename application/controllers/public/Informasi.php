@@ -96,7 +96,7 @@
 
 			$this->smarty->assign('template_content',"web/informasi/detail.html");
 			$this->load->model('informasimodel');
-			$id_informasi  = $this->uri->segment(5,0);
+			$id_informasi  = $this->uri->segment(4,0);
 			$data = $this->informasimodel->get_informasi_by_id($id_informasi);
 			
 			if(!empty($data)):

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 08:28:31
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 13:43:41
          compiled from "application\views\web\base-layout\menu.html" */ ?>
 <?php /*%%SmartyHeaderCode:31215802fa18e9c632-59919313%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4ffd38ebb5448456c5114f4c15490d50ff0a950e' => 
     array (
       0 => 'application\\views\\web\\base-layout\\menu.html',
-      1 => 1476685703,
+      1 => 1476704616,
       2 => 'file',
     ),
   ),
@@ -103,32 +103,19 @@ index.php/public/relawan/detail/<?php echo $_smarty_tpl->tpl_vars['rs']->value['
                                 <ul>
                                     <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
 index.php/public/informasi"><div>KEGIATAN AGUS SILVY</div></a></li>
-                                    <li><a href="shop-3.html"><div>KEGIATAN RELAWAN</div></a>
+                                    <li><a href="#"><div>KEGIATAN RELAWAN</div></a>
                                         <ul>
-                                    <li><a href="#"><div>RELAWAN RAHMAD SUMUT</div></a>
-                                        
+                                        <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['relawan']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
+$_smarty_tpl->tpl_vars['rs']->_loop = true;
+?>
+                                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+index.php/public/berita"><div>RELAWAN <?php echo $_smarty_tpl->tpl_vars['rs']->value['nama'];?>
+</div></a>
                                     </li>
-                                     <li><a href="#"><div>RELAWAN SUSNO SUMSEL</div></a>
-                                        
-                                    </li>
-                                     <li><a href="#"><div></i>RELAWAN GIDOT KALBAR</div></a>
-                                        
-                                    </li>
-                                     <li><a href="#"><div></i>RELAWAN ACHMAD RIAU</div></a>
-                                        
-                                    </li>
-                                     <li><a href="#"><div></i>RELAWAN ULLAH SULSEL</div></a>
-                                        
-                                    </li>
-                                     <li><a href="#"><div>RELAWAN IHWAN KALTIM</div></a>
-                                        
-                                    </li>
-                                     <li><a href="#"><div>RELAWAN ERWIN DKI</div></a>
-                                        
-                                    </li>
-                                     <li><a href="#"><div>RELAWAN MUDATSIR </div></a>
-                                        
-                                    </li>
+                                        <?php } ?>
+                                   
                                         </ul>
                                     </li>
                                     

@@ -439,23 +439,6 @@
 
 		
 
-		if(!empty($data)):
-
-		$pathdok = 'doc/berita/'.$data['id_berita'].'/'.$data['file_berita'];
-
-		
-
-		if(is_file($pathdok)):
-
-		$ukuran =  $this->display_ukuran_file(filesize($pathdok));
-
-		$url_download = site_url('private/berita/process/download/'.$data['id_berita']);
-
-		$data['file_berita'] = '<br />Download File Lampiran : <a href="'.$url_download.'">'.$data['file_berita'].' [ '.$ukuran.']</a><br />';
-
-		endif;
-
-		endif;
 
 		$this->smarty->assign("data", $data);
 
@@ -577,7 +560,7 @@
 
 			// params
 
-			$params = array('id_asosiasi' => $this->input->post('id_asosiasi'),                    
+			$params = array('id_relawan' => $this->input->post('id_relawan'),                    
 				'judul' => $this->input->post('judul'),                    
 				'content' => $this->input->post('content'),                    
 				'tanggal' => $this->input->post('tanggal'),
