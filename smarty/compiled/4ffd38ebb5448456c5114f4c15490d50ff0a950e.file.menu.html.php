@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 06:12:01
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 08:28:31
          compiled from "application\views\web\base-layout\menu.html" */ ?>
 <?php /*%%SmartyHeaderCode:31215802fa18e9c632-59919313%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4ffd38ebb5448456c5114f4c15490d50ff0a950e' => 
     array (
       0 => 'application\\views\\web\\base-layout\\menu.html',
-      1 => 1476677391,
+      1 => 1476685703,
       2 => 'file',
     ),
   ),
@@ -60,7 +60,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
                         <ul>
                             
-                             <li class="current"><a href="index.html"><div>HOME</div></a>
+                             <li class="current"><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+"><div>HOME</div></a>
                                 
                             </li>
                             <li><a href="index.html"><div>PROFIL ASLI</div></a>
@@ -100,7 +101,8 @@ index.php/public/relawan/detail/<?php echo $_smarty_tpl->tpl_vars['rs']->value['
                             
                             <li><a href="shop.html"><div>BERITA</div></a>
                                 <ul>
-                                    <li><a href="shop.html"><div>KEGIATAN AGUS SILVY</div></a></li>
+                                    <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+index.php/public/informasi"><div>KEGIATAN AGUS SILVY</div></a></li>
                                     <li><a href="shop-3.html"><div>KEGIATAN RELAWAN</div></a>
                                         <ul>
                                     <li><a href="#"><div>RELAWAN RAHMAD SUMUT</div></a>
