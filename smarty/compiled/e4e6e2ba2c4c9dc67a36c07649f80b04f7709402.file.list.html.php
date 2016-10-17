@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 10:40:05
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 11:11:54
          compiled from "application\views\web\informasi\list.html" */ ?>
 <?php /*%%SmartyHeaderCode:3105257ea5a8ec74e15-82286138%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e4e6e2ba2c4c9dc67a36c07649f80b04f7709402' => 
     array (
       0 => 'application\\views\\web\\informasi\\list.html',
-      1 => 1476693602,
+      1 => 1476695511,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'informasi_list' => 0,
     'rs' => 0,
+    'pagging' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -82,11 +83,13 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
 
                         <!-- Pagination
                         ============================================= -->
+                        <?php if ($_smarty_tpl->tpl_vars['pagging']->value!='') {?>
+
                         <ul class="pager nomargin">
                             <li class="previous"><a href="#">&larr; Older</a></li>
                             <li class="next"><a href="#">Newer &rarr;</a></li>
                         </ul><!-- .pager end -->
-
+                        <?php }?>
 
                 </div>
 <?php }} ?>

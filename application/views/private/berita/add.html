@@ -52,31 +52,22 @@
     <div class="col-md-9">
       <!-- form update email-->
       <div class="box box-success">
-        <div class="nav-tabs-custom">
-          <ul class="nav nav-tabs">
-            <li class="active">
-              <a href="#tab_1" data-toggle="tab">Indonesia
-              </a>
-            </li>
-            <li>
-              <a href="#tab_2" data-toggle="tab">English
-              </a>
-            </li>
-          </ul>
+      
           <!-- form start -->
           <form id="form" action="{$url_process}" method="post" enctype="multipart/form-data">
-            <div class="tab-content">
+          
               <div class="tab-pane active" id="tab_1">
                 <div class="box-body">
                    <div class="form-group">
                     <input type="hidden" name="id_berita" value="{$data.id_berita}">
-                    <label for="user_name_lama">DMSI & Asosiasi * 
+                    <label for="user_name_lama">Relawan * 
                     </label>
                   
+                       <select name="id_relawan" class="form-control" style="width:40%; ">
                       {foreach name=data from=$data item=result}
-                      <input type="hidden" name="id_asosiasi" value="{$result.id_asosiasi}">
-                      <input type="text" class="form-control" value="{$result.nama_asosiasi}" readonly="readonly">
+                        <option value="{$result.id_relawan}">{$result.nama}</option>
                       {/foreach}
+                    </select>
                 
                   </div>
                   <div class="form-group">
@@ -103,7 +94,7 @@
                     <span>
                       <input type="file" accept="image/*" onchange="loadFile(event)" 
                              style="visibility:hidden; width: 1px;" 
-                             id='foto' name='image_berita'  
+                             id='foto' name='foto'  
                              onchange="$(this).parent().find('span').html($(this).val().replace('C:\\fakepath\\', ''))"  /> 
                       <input class="btn btn-primary" type="button" value="Browse.." onclick="$(this).parent().find('input[type=file]').click();"/> 
                       &nbsp;
@@ -137,32 +128,7 @@
                 <!-- /.box-body -->
               </div>
               <!-- /.tabs pane 1-->
-              <!-- tab 2-->
-              <div class="tab-pane" id="tab_2">
-                <div class="box-body">
-                  <div class="form-group">
-                    <label for="user_name_lama">Judul Berita 
-                      <i>(English)
-                      </i> * 
-                    </label>
-                    <input type="text" name="judul_english" id="judul" value="{$data.judul}" class="form-control" size="50" maxlength="255" />
-                  </div>
-                  <div class="form-group">
-                    <label for="user_name_lama">Isi berita 
-                      <i>(English)
-                      </i> * 
-                    </label>
-                    <textarea name="content_english" cols="72" rows="10">{$data.content}
-                    </textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="user_name_lama">Keterangan Gambar 
-                      <i>(English)
-                      </i> *
-                    </label>
-                    <input type="text" name="caption_picture" value="{$data.keterangan_gambar}" size="100" maxlength="200" class="form-control" />
-                  </div>
-                </div>
+             
                 <!-- /.box-body -->
                 <div class="box-footer">
                   <button type="submit" class="btn btn-primary">

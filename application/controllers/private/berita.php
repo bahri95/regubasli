@@ -11,6 +11,7 @@
 			parent::__construct();
 
 			$this->PrivateAppBase();
+			$this->load->library('image_lib');
 
 		}
 
@@ -60,12 +61,7 @@
 
 			
 
-			if($row['id_asosiasi'] == 100):
-
-			$data[$k]['nama_asosiasi'] = 'DMSI';
-
-			endif;
-
+		
 			endforeach;
 
 			endif;
@@ -174,7 +170,7 @@
 
 		$this->load->model('beritamodel');
 
-		$data = $this->beritamodel->get_list_asosiasi_private();
+		$data = $this->beritamodel->get_list_relawan_private();
 		$this->smarty->assign("data", $data);
 		// url
 
@@ -234,15 +230,11 @@
 
 		// set rules
 
-		$this->notification->check_post('id_asosiasi', 'Asosiasi', 'required');
+		$this->notification->check_post('id_relawan', 'Relawan', 'required');
 
 		$this->notification->check_post('judul', 'Judul', 'required');
 
 		$this->notification->check_post('content', 'Konten', 'required');
-
-		$this->notification->check_post('content_english', 'Konten English', 'required');
-
-		$this->notification->check_post('judul_english', 'Judul English', 'required');
 
 		$this->notification->check_post('tanggal', 'Tanggal', 'required');
 
@@ -254,7 +246,11 @@
 
 			// params
 
-			$params = array('id_asosiasi' => $this->input->post('id_asosiasi'),                    'judul' => $this->input->post('judul'),                    'content' => $this->input->post('content'),                    'tanggal' => $this->input->post('tanggal'),'keterangan_gambar' => $this->input->post('keterangan_gambar'),'judul_english' => $this->input->post('judul_english'),'content_english' => $this->input->post('content_english'),'caption_picture' => $this->input->post('caption_picture'));
+			$params = array('id_relawan' => $this->input->post('id_relawan'),                    
+				'judul' => $this->input->post('judul'),                    
+				'content' => $this->input->post('content'),                    
+				'tanggal' => $this->input->post('tanggal'),
+				'keterangan_gambar' => $this->input->post('keterangan_gambar'));
 
 			// execute
 
@@ -265,59 +261,47 @@
 				$id_berita = $this->db->insert_id();
 
 				
+				if (!empty($_FILES['foto']['tmp_name'])) {
+                   // set rules (kosongkan jika tidak menggunakan batasan sama sekali)
+                   $config['upload_path']  = "doc/berita/" . $id_berita . '/';
 
-				if (!empty($_FILES['image_berita']['tmp_name'])) {
+                   $config['allowed_types']= 'gif|jpg|png|jpeg';
+                   $config['max_size'] = '4000';
+                   
+                   $config['file_name'] = $id_berita.'_'.$_FILES['foto']['name'];
+                    if(!is_dir($config['upload_path'])):
+                    mkdir($config['upload_path']);
+                    endif;
+                   $this->load->library('upload', $config);
+                    // proses upload
+                    if ($this->upload->do_upload("foto")) {
+                    $id_beria = $this->db->insert_id();
+                       $data       = $this->upload->data();
+                        $foto = $data['file_name'];
+                        // //resize
+                        //  $config['image_library'] = 'gd2';
+                        // $config['source_image']  = "doc/informasi/".$id_informasi.'/'.$foto;
+                        // $config['source_image']  = "doc/informasi/".$id_informasi.'/'.$foto;                       
+                        // $config['width']     = '772';
+                        // $config['height']   = '514';
+                        
+                        // $this->image_lib->initialize($config); 
+                        
+                        
+                        // $this->image_lib->resize();
+                        $this->db->set("image",$foto);
 
-					// set file attachment
+                        $this->db->where("id_berita", $id_berita);
 
-					$_FILES['image_berita']['name'] = $id_berita.'_'.$_FILES['image_berita']['name'];
+                        $this->db->update("berita_m");
 
-					$this->uploader->set_file($_FILES['image_berita']);
-
-					// set rules (kosongkan jika tidak menggunakan batasan sama sekali)
-
-					$rules = array('allowed_filesize' => 5120000);
-
-					$this->uploader->set_rules($rules);
-
-					// $this->uploader->set_file_name();
-
-					// direktori
-
-					$dir = 'doc/berita/' . $id_berita . '/';
-
-					// proses upload
-
-					
-
-					if ($this->uploader->upload_image($dir, 1000)) {
-
-						$this->db->set("image",$this->uploader->get_file_name());
-
-						$this->db->where("id_berita", $id_berita);
-
-						$this->db->update("berita_m");
-
-						$_FILES['image_berita']['name'] = 'kecil_'.$_FILES['image_berita']['name'];
-
-						$this->uploader->set_file($_FILES['image_berita']);
-
-						$this->uploader->upload_image($dir, 500);
-
-					} else {
-
-						//echo $this->upload->message;
-
-						$this->notification->set_message("File Gambar gagal diupload");
-
-						$this->notification->sent_notification(false);
-
-					}
-
-
-
-				}
-
+                    } else {
+                        //echo $this->upload->message;
+                        $this->notification->set_message("File Gambar gagal diupload, file gambar tidak memenuhi kriteria");
+                        $this->notification->sent_notification(false);
+                       
+                    }
+                }
 
 
 				
@@ -416,9 +400,9 @@
 
 		// get asosiasi
 
-		$listasosiasi = $this->beritamodel->get_list_asosiasi();
+		$relawan = $this->beritamodel->get_list_relawan_private();
 
-		$this->smarty->assign('listasosiasi', $listasosiasi);
+		$this->smarty->assign('relawan', $relawan);
 
 		// parse url
 
@@ -440,9 +424,8 @@
 
 		if(is_file($path.$data['image'])){
 
-			$url_hapus = site_url('private/berita/process/hapusgambar/')."/".$data['id_berita'];
-
-			$data['image_berita'] = '<img src="'.BASEURL.$path.$data['image'].'" border="0" height="200px"><br /><input type="button" value="Hapus Gambar" onClick="javascript:document.location=\''.$url_hapus.'\';">';
+			
+			$data['image_berita'] = '<img src="'.BASEURL.$path.$data['image'].'" border="0" height="200px">';
 
 		} else {
 
@@ -578,15 +561,11 @@
 
 		// set rules
 
-		$this->notification->check_post('id_asosiasi', 'Asosiasi', 'required');
+		$this->notification->check_post('id_relawan', 'Relawan', 'required');
 
 		$this->notification->check_post('judul', 'Judul', 'required');
 
 		$this->notification->check_post('content', 'Konten', 'required');
-
-		$this->notification->check_post('content_english', 'Konten English', 'required');
-
-		$this->notification->check_post('judul_english', 'Judul English', 'required');
 
 		$this->notification->check_post('tanggal', 'Tanggal', 'required');
 
@@ -598,7 +577,12 @@
 
 			// params
 
-			$params = array('id_asosiasi' => $this->input->post('id_asosiasi'),                    'judul' => $this->input->post('judul'),                    'content' => $this->input->post('content'),                    'tanggal' => $this->input->post('tanggal'),'keterangan_gambar' => $this->input->post('keterangan_gambar'),'judul_english' => $this->input->post('judul_english'),'content_english' => $this->input->post('content_english'),'caption_picture' => $this->input->post('caption_picture'), 'id_berita' => $this->input->post('id_berita'));
+			$params = array('id_asosiasi' => $this->input->post('id_asosiasi'),                    
+				'judul' => $this->input->post('judul'),                    
+				'content' => $this->input->post('content'),                    
+				'tanggal' => $this->input->post('tanggal'),
+				'keterangan_gambar' => $this->input->post('keterangan_gambar'),
+				'id_berita' => $this->input->post('id_berita'));
 
 			// execute
 
@@ -610,58 +594,48 @@
 
 				
 
-				if (!empty($_FILES['image_berita']['name'])) {
+				if (!empty($_FILES['foto']['tmp_name'])) {
+					$this->uploader->remove_dir('doc/berita/'.$id_berita."/");
+                   // set rules (kosongkan jika tidak menggunakan batasan sama sekali)
+                   $config['upload_path']  = "doc/berita/" . $id_berita . '/';
 
-					// set file attachment
+                   $config['allowed_types']= 'gif|jpg|png|jpeg';
+                   $config['max_size'] = '4000';
+                   
+                   $config['file_name'] = $id_berita.'_'.$_FILES['foto']['name'];
+                    if(!is_dir($config['upload_path'])):
+                    mkdir($config['upload_path']);
+                    endif;
+                   $this->load->library('upload', $config);
+                    // proses upload
+                    if ($this->upload->do_upload("foto")) {
+                    $id_berita = $this->input->post('id_berita');
+                       $data       = $this->upload->data();
+                        $foto = $data['file_name'];
+                        // //resize
+                        //  $config['image_library'] = 'gd2';
+                        // $config['source_image']  = "doc/informasi/".$id_informasi.'/'.$foto;
+                        // $config['source_image']  = "doc/informasi/".$id_informasi.'/'.$foto;                       
+                        // $config['width']     = '772';
+                        // $config['height']   = '514';
+                        
+                        // $this->image_lib->initialize($config); 
+                        
+                        
+                        // $this->image_lib->resize();
+                        $this->db->set("image",$foto);
 
-					$_FILES['image_berita']['name'] = $id_berita.'_'.$_FILES['image_berita']['name'];
+                        $this->db->where("id_berita", $id_berita);
 
-					$this->uploader->set_file($_FILES['image_berita']);
+                        $this->db->update("berita_m");
 
-					// set rules (kosongkan jika tidak menggunakan batasan sama sekali)
-
-					$rules = array('allowed_filesize' => 5120000);
-
-					$this->uploader->set_rules($rules);
-
-					//$this->uploader->set_file_name($id_berita);
-
-					// direktori
-
-					$dir = 'doc/berita/' . $id_berita . '/';
-
-					// proses upload
-
-					
-
-					if ($this->uploader->upload_image($dir, 1000)) {
-
-						$this->db->set("image", $this->uploader->get_file_name());
-
-						$this->db->where("id_berita", $id_berita);
-
-						$this->db->update("berita_m");
-
-						$_FILES['image_berita']['name'] = 'kecil_'.$_FILES['image_berita']['name'];
-
-						$this->uploader->set_file($_FILES['image_berita']);
-
-						$this->uploader->upload_image($dir, 500);
-
-					} else {
-
-						$this->notification->set_message("Data gagal diupdate");
-
-						$this->notification->set_message("File Gambar gagal diupload, ".$this->uploader->message);
-
-						$this->notification->sent_notification(false);
-
-					}
-
-
-
-				}
-
+                    } else {
+                        //echo $this->upload->message;
+                        $this->notification->set_message("File Gambar gagal diupload, file gambar tidak memenuhi kriteria");
+                        $this->notification->sent_notification(false);
+                       
+                    }
+                }
 
 
 				

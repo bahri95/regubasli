@@ -52,34 +52,23 @@
     <div class="col-md-9">
       <!-- form update email-->
       <div class="box box-success">
-        <div class="nav-tabs-custom">
-          <ul class="nav nav-tabs">
-            <li class="active">
-              <a href="#tab_1" data-toggle="tab">Indonesia
-              </a>
-            </li>
-            <li>
-              <a href="#tab_2" data-toggle="tab">English
-              </a>
-            </li>
-          </ul>
+      
           <!-- form start -->
           <form id="form" action="{$url_process}" method="post" enctype="multipart/form-data">
-            <div class="tab-content">
+          
               <div class="tab-pane active" id="tab_1">
                 <div class="box-body">
-                  <div class="form-group">
+                   <div class="form-group">
                     <input type="hidden" name="id_berita" value="{$data.id_berita}">
-                    <label for="user_name_lama">DMSI & Asosiasi * 
+                    <label for="user_name_lama">Relawan * 
                     </label>
-                   
-                      {foreach name=list_asosiasi from=$listasosiasi item=result}
-                      {if $data.id_asosiasi eq $result.id_asosiasi}
-                      <input type="hidden" name="id_asosiasi" value="{$result.id_asosiasi}"> 
-                      <input type="text" class="form-control"  value="{$result.nama_asosiasi}" readonly="readonly"> 
-                      {/if}
+                  
+                       <select name="id_relawan" class="form-control" style="width:40%; ">
+                      {foreach name=data from=$relawan item=result}
+                        <option {if $result.id_relawan eq $data.id_relawan}selected="selected"{/if} value="{$result.id_relawan}">{$result.nama}</option>
                       {/foreach}
                     </select>
+                
                   </div>
                   <div class="form-group">
                     <label for="user_name_lama">Judul Berita * 
@@ -94,13 +83,11 @@
                   <div class="form-group">
                     <label for="user_name_lama">Isi Berita
                     </label>
-                    <textarea class="textarea" name="content" cols="72" rows="10">{$data.content}
+                    <textarea name="content" cols="72" rows="10">{$data.content}
                     </textarea>
                   </div>
+                  <div align="center">{$data.image_berita}</div>
                   <div class="form-group">
-                    <div style="text-align:center">{$image_berita}
-                    </div>
-                    <br />
                     <label for="user_name_lama">File Gambar 
                       <i>(Maks 5 Mb)
                       </i>
@@ -108,7 +95,7 @@
                     <span>
                       <input type="file" accept="image/*" onchange="loadFile(event)" 
                              style="visibility:hidden; width: 1px;" 
-                             id='foto' name='image_informasi'  
+                             id='foto' name='foto'  
                              onchange="$(this).parent().find('span').html($(this).val().replace('C:\\fakepath\\', ''))"  /> 
                       <input class="btn btn-primary" type="button" value="Browse.." onclick="$(this).parent().find('input[type=file]').click();"/> 
                       &nbsp;
@@ -137,38 +124,12 @@
                     &nbsp;
                     <span  class="badge badge-important" >
                     </span>
-                    {$data.file_berita}
                   </div>
                 </div>
                 <!-- /.box-body -->
               </div>
               <!-- /.tabs pane 1-->
-              <!-- tab 2-->
-              <div class="tab-pane" id="tab_2">
-                <div class="box-body">
-                  <div class="form-group">
-                    <label for="user_name_lama">Judul Berita 
-                      <i>(English)
-                      </i> * 
-                    </label>
-                    <input type="text" name="judul_english" id="judul" value="{$data.judul_english}" class="form-control" size="50" maxlength="255" />
-                  </div>
-                  <div class="form-group">
-                    <label for="user_name_lama">Isi berita 
-                      <i>(English)
-                      </i> * 
-                    </label>
-                    <textarea name="content_english" cols="72" rows="10">{$data.content_english}
-                    </textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="user_name_lama">Keterangan Gambar 
-                      <i>(English)
-                      </i> *
-                    </label>
-                    <input type="text" name="caption_picture" value="{$data.caption_picture}" size="100" maxlength="200" class="form-control" />
-                  </div>
-                </div>
+             
                 <!-- /.box-body -->
                 <div class="box-footer">
                   <button type="submit" class="btn btn-primary">
@@ -203,4 +164,5 @@
     output.src = URL.createObjectURL(event.target.files[0]);
   };
 </script>
+
 {/literal}
