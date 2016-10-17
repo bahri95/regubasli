@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 05:26:44
-         compiled from "application\views\private\profil\add.html" */ ?>
-<?php /*%%SmartyHeaderCode:3024657ebe9b8a2f8e7-47951876%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 06:03:01
+         compiled from "application\views\private\relawan\relawan-edit.html" */ ?>
+<?php /*%%SmartyHeaderCode:2377458044ce0404f40-64818684%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'a677d17ad1668abc312e99fedaf64452d61d1769' => 
+    'f62f112d57fe9193d78f16edc7abbe34bb85192f' => 
     array (
-      0 => 'application\\views\\private\\profil\\add.html',
-      1 => 1476605633,
+      0 => 'application\\views\\private\\relawan\\relawan-edit.html',
+      1 => 1476676979,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3024657ebe9b8a2f8e7-47951876',
+  'nocache_hash' => '2377458044ce0404f40-64818684',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.17',
-  'unifunc' => 'content_57ebe9b8b39322_18549908',
+  'unifunc' => 'content_58044ce0489c56_22903899',
   'variables' => 
   array (
     'url_private' => 0,
@@ -25,12 +25,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'notification_status' => 0,
     'url_process' => 0,
     'data' => 0,
+    'foto' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57ebe9b8b39322_18549908')) {function content_57ebe9b8b39322_18549908($_smarty_tpl) {?><section class="content-header">
+<?php if ($_valid && !is_callable('content_58044ce0489c56_22903899')) {function content_58044ce0489c56_22903899($_smarty_tpl) {?><section class="content-header">
   <h1>
-   Profil Cagub-Cawagub
+    Profil Relawan    
     <small>panel
     </small>
   </h1>
@@ -46,10 +47,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <a href="<?php echo $_smarty_tpl->tpl_vars['url_list']->value;?>
 ">
         <i class="fa ">
-        </i>  Profil Cagub-Cawagub
+        </i>  Profil Relawan
       </a>
     </li>
-    <li class="active">Tambah Data
+    <li class="active">Edit Data
     </li>
   </ol>
 </section>
@@ -86,39 +87,40 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       <!-- form add -->
       <div class="box box-success">
         <!-- Custom Tabs -->
-      
-      
+        <div class="nav-tabs-custom">
           <form id="form" action="<?php echo $_smarty_tpl->tpl_vars['url_process']->value;?>
 " method="post" enctype="multipart/form-data">
-            <div class="tab-content">
-              
-                <div class="box-body">
+             <div class="box-body">
                 <div class="form-group">
                     <label for="judul">Nama Profil* &nbsp;&nbsp;
                     </label>
-                    <input type="text" class="form-control" name="nama" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['judul'];?>
+                    <input type="hidden" class="form-control" name="id_relawan" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['id_relawan'];?>
+" size="100" maxlength="255"  style="width: 50%;" />
+                    <input type="text" class="form-control" name="nama" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['nama'];?>
 " size="100" maxlength="255"  style="width: 50%;" />
                   </div>
                    <div class="form-group">
                     <label for="judul">Jabatan &nbsp;&nbsp;
                     </label>
-                    <input type="text" class="form-control" name="jabatan" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['judul'];?>
+                    <input type="text" class="form-control" name="jabatan" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['jabatan'];?>
 " size="100" maxlength="255" style="width: 50%;"/>
                   </div>
                
                   
                  
                   <div class="form-group">
-                    <label for="content">Profil *
+                    <label for="content">Isi Profil *
                     </label>
-                    <textarea  name="content">
+                    <textarea  name="content"><?php echo $_smarty_tpl->tpl_vars['data']->value['content'];?>
+
                     </textarea>
                   </div>
 
                    <div class="form-group">
                     <label for="content">Deskripsi *
                     </label>
-                    <textarea  name="deskripsi">
+                    <textarea  name="deskripsi"><?php echo $_smarty_tpl->tpl_vars['data']->value['deskripsi'];?>
+
                     </textarea>
                   </div>
 
@@ -126,7 +128,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                    <div class="form-group">
                     <label for="content">Pendidikan *
                     </label>
-                    <textarea  name="pendidikan">
+                    <textarea  name="pendidikan"><?php echo $_smarty_tpl->tpl_vars['data']->value['pendidikan'];?>
+
                     </textarea>
                   </div>
 
@@ -134,7 +137,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                    <div class="form-group">
                     <label for="content">Riwayat Jabatan *
                     </label>
-                    <textarea  name="riwayat">
+                    <textarea  name="riwayat"><?php echo $_smarty_tpl->tpl_vars['data']->value['jabatan'];?>
+
                     </textarea>
                   </div>
 
@@ -142,9 +146,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                    <div class="form-group">
                     <label for="content">Penghargaan *
                     </label>
-                    <textarea  name="penghargaan">
+                    <textarea  name="penghargaan"><?php echo $_smarty_tpl->tpl_vars['data']->value['penghargaan'];?>
+
                     </textarea>
                   </div>
+
                    <div class="form-group" style="width:10%">
                     <label for="order_num" style="float:left;">No Urut * &nbsp;&nbsp;
                     </label>
@@ -159,6 +165,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                       <i>(Maks 5 Mb)
                       </i>
                     </label>
+
+                    <div style="text-align:center"><?php echo $_smarty_tpl->tpl_vars['foto']->value;?>
+
+                    </div>
+                    <br />
                     <span>
                       <input type="file" accept="image/*" onchange="loadFile(event)" 
                              style="visibility:hidden; width: 1px;" 
@@ -195,7 +206,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                   </a>
                 </div>
                 </form>
-            </div>
       </div>
       <!-- /.tab customs -->
     </div>
@@ -204,7 +214,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   </div>
 <!-- /.row -->
 </section>
-
 <!-- /.content -->
 
 <script type="text/javascript">

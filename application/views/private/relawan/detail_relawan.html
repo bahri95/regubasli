@@ -1,8 +1,8 @@
 
- {foreach name=data from=$asosiasi item=rs}
- <div class="container" id="modal-detail-asosiasi{$rs.id_asosiasi}" style="display:none;" >
+ {foreach name=data from=$data item=rs}
+ <div class="container" id="modal-detail-relawan{$rs.id_relawan}" style="display:none;" >
 
-      <div class="row">
+      <div class="row" style="width:100%; height:400px; overflow:auto;">
 
     
 
@@ -16,7 +16,7 @@
 
             <div class="panel-heading">
 
-              <h3 class="panel-title">{$rs.nama_asosiasi}</h3>
+              <h3 class="panel-title">{$rs.nama}</h3>
 
             </div>
 
@@ -24,7 +24,7 @@
 
               <div class="row">
 
-                <div class="col-md-3 col-lg-3 " align="center"><img src="{$BASEURL}doc/asosiasi/{$rs.id_asosiasi}/{$rs.logo_asosiasi}" height="100" class="img-circle img-responsive"> </div>
+                <div class="col-md-3 col-lg-3 " align="center"><img src="{$BASEURL}doc/relawan/{$rs.id_relawan}/{$rs.foto}" height="100" class="img-circle img-responsive"> </div>
 
                 
 
@@ -32,37 +32,37 @@
 
                 <div class=" col-md-9 col-lg-9 "> 
 
-                  <table class="table table-user-information">
+                  <table class="table table-user-information" >
 
                     <tbody>
                       <tr>
 
-                        <td>Provinsi</td>
+                        <td>Jabatan</td>
 
-                        <td>{$rs.nama_propinsi}</td>
+                        <td>{$rs.jabatan}</td>
 
                       </tr>
                       <tr>
 
-                        <td>Kota</td>
+                        <td>Profil</td>
 
-                        <td>{$rs.nama_kota}</td>
+                        <td>{$rs.content}</td>
 
                       </tr>
 
                       <tr>
 
-                        <td>Alamat</td>
+                        <td>Deskripsi</td>
 
-                        <td>{$rs.alamat}</td>
+                        <td>{$rs.deskripsi}</td>
 
                       </tr>
 
                      <tr>
 
-                        <td>Kode Pos</td>
+                        <td>Pendidikan</td>
 
-                        <td>{$rs.kodepos}</td>
+                        <td>{$rs.pendidikan}</td>
 
                       </tr>
 
@@ -70,9 +70,9 @@
 
                       <tr>
 
-                        <td>Email</td>
+                        <td>Riwayat Jabatan</td>
 
-                        <td><a href="mailto:{$rs.email}">{$rs.email}</a></td>
+                        <td>{$rs.riwayat}</td>
 
                       </tr>
 
@@ -81,29 +81,22 @@
                   
                        <tr>
 
-                        <td>Telepon</td>
+                        <td>Penghargaan</td>
 
-                        <td>{$rs.telepon}</td>
+                        <td>{$rs.penghargaan}</td>
 
                       </tr>
 
                       <tr>
 
-                        <td>Fax</td>
+                        <td>No urut menu</td>
 
-                        <td>{$rs.fax}</td>
+                        <td>{$rs.order_num}</td>
 
                       </tr>
 
                     
-                      <tr>
-
-                        <td>Website</td>
-
-                        <td><a href="{$rs.website}">{$rs.website}</a></td>
-
-                      </tr>
-
+                    
       
                         
 

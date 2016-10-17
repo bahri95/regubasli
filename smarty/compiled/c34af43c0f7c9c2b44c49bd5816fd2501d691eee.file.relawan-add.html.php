@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 05:26:44
-         compiled from "application\views\private\profil\add.html" */ ?>
-<?php /*%%SmartyHeaderCode:3024657ebe9b8a2f8e7-47951876%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 05:25:28
+         compiled from "application\views\private\relawan\relawan-add.html" */ ?>
+<?php /*%%SmartyHeaderCode:349358033854438611-30293135%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    'a677d17ad1668abc312e99fedaf64452d61d1769' => 
+    'c34af43c0f7c9c2b44c49bd5816fd2501d691eee' => 
     array (
-      0 => 'application\\views\\private\\profil\\add.html',
-      1 => 1476605633,
+      0 => 'application\\views\\private\\relawan\\relawan-add.html',
+      1 => 1476674529,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3024657ebe9b8a2f8e7-47951876',
+  'nocache_hash' => '349358033854438611-30293135',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.17',
-  'unifunc' => 'content_57ebe9b8b39322_18549908',
+  'unifunc' => 'content_580338544a5c37_89661081',
   'variables' => 
   array (
     'url_private' => 0,
@@ -28,7 +28,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_57ebe9b8b39322_18549908')) {function content_57ebe9b8b39322_18549908($_smarty_tpl) {?><section class="content-header">
+<?php if ($_valid && !is_callable('content_580338544a5c37_89661081')) {function content_580338544a5c37_89661081($_smarty_tpl) {?><section class="content-header">
   <h1>
    Profil Cagub-Cawagub
     <small>panel
@@ -96,18 +96,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <div class="form-group">
                     <label for="judul">Nama Profil* &nbsp;&nbsp;
                     </label>
-                    <input type="text" class="form-control" name="nama" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['judul'];?>
-" size="100" maxlength="255"  style="width: 50%;" />
+                    <input type="text" class="form-control" name="nama"  size="100" maxlength="255"  style="width: 50%;" />
                   </div>
                    <div class="form-group">
                     <label for="judul">Jabatan &nbsp;&nbsp;
                     </label>
-                    <input type="text" class="form-control" name="jabatan" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['judul'];?>
-" size="100" maxlength="255" style="width: 50%;"/>
+                    <input type="text" class="form-control" name="jabatan"  size="100" maxlength="255" style="width: 50%;"/>
                   </div>
-               
-                  
-                 
+
                   <div class="form-group">
                     <label for="content">Profil *
                     </label>

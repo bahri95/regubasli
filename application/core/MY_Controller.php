@@ -74,7 +74,7 @@
             if(!empty($databerita)):
             foreach($databerita as $row):
             
-            if($row['id_asosiasi'] == '100'){
+            if($row['id_relawan'] == '100'){
                 $databerita['url_detail'] = site_url('public/beritadmsi/detail/'.$row['id_berita'].'/'.url_title($row['judul_english']));
                 $databerita['kategori'] = 'DMSI News';
             } else {
@@ -97,7 +97,7 @@
             if(!empty($databerita)):
             foreach($databerita as $row):
             
-            if($row['id_asosiasi'] == '100'){
+            if($row['id_relawan'] == '100'){
                 $databerita['url_detail'] = site_url('public/beritadmsi/detail/'.$row['id_berita'].'/'.url_title($row['judul']));
                 $databerita['kategori'] = 'Berita DMSI';
             } else {
@@ -161,7 +161,7 @@
             if(!empty($dataagenda)):
             foreach($dataagenda as $row):
             
-            if($row['id_asosiasi'] == '100'){
+            if($row['id_relawan'] == '100'){
                 $dataagenda['url_detail'] = site_url('public/kegiatandmsi/detail/'.$row['id_agenda'].'/'.url_title($row['judul_english']));
                 $dataagenda['kategori'] = 'DMSI Event';
             } else {
@@ -184,7 +184,7 @@
             if(!empty($dataagenda)):
             foreach($dataagenda as $row):
             
-            if($row['id_asosiasi'] == '100'){
+            if($row['id_relawan'] == '100'){
                 $dataagenda['url_detail'] = site_url('public/kegiatandmsi/detail/'.$row['id_agenda'].'/'.url_title($row['judul_agenda']));
                 $dataagenda['kategori'] = 'Event DMSI';
             } else {
@@ -418,7 +418,7 @@
 
             $this->smarty->assign('homeurl', site_url('public/home'));
             $this->smarty->assign('baseurl', BASEURL);
-            $this->smarty->assign('url_menu_anggota', site_url('public/asosiasi'));
+            $this->smarty->assign('url_menu_anggota', site_url('public/relawan'));
             $this->smarty->assign('url_menu_berita_anggota', site_url('public/beritaanggota'));
             $this->smarty->assign('url_menu_kegiatan_anggota', site_url('public/kegiatananggota'));
             $this->smarty->assign('url_menu_profil', site_url('public/profil/detail'));
@@ -440,10 +440,16 @@
             $this->smarty->assign('url_menu_bagan', site_url('public/bagan'));
             $this->smarty->assign('url_menu_forum', site_url('public/forum'));
             $this->smarty->assign('url_menu_harga', site_url('public/harga'));
+            //profil asli
             $this->load->model('profilmodel');
             $profil = $this->profilmodel->get_list_profil();
            
             $this->smarty->assign('profil', $profil);
+            //profil Relawan
+            $this->load->model('relawanmodel');
+             $relawan = $this->relawanmodel->get_list_relawan();
+           
+            $this->smarty->assign('relawan', $relawan);
             // page data
             $segments = $this->uri->total_segments();
             
@@ -474,14 +480,14 @@
             $this->db->limit(1);
             $kontak = $this->db->get()->row_array();
             $this->smarty->assign('kontakinfo', $kontak);
-            $this->load->model('asosiasimodel');
-            $asosiasi = $this->asosiasimodel->get_data_asosiasi_all_public();
+            $this->load->model('relawanmodel');
+            $relawan = $this->relawanmodel->get_list_relawan();
             
-            if($asosiasi <> ''){
-            foreach($asosiasi as $key=>$data):
-            $asosiasi[$key]['url_detail'] = site_url('public/asosiasi/profil/'.$data['id_asosiasi'].'/'.url_title($data['nama_asosiasi']));
+            if($relawan <> ''){
+            foreach($relawan as $key=>$data):
+            $relawan[$key]['url_detail'] = site_url('public/relawan/profil/'.$data['id_relawan'].'/'.url_title($data['nama']));
             endforeach;
-            $this->smarty->assign('asosiasifooter', $asosiasi);
+            $this->smarty->assign('relawanfooter', $relawan);
             }
             //get data berita 
             $this->load->library('datetimemanipulation');
@@ -526,39 +532,11 @@
             
             if(!empty($profil)):
             foreach($profil as $key=>$row):
-            $profil[$key]['url_detail'] = site_url('public/profil/detail/'.$row['id_info'].'/'.url_title($row['judul']));
+            $profil[$key]['url_detail'] = site_url('public/profil/detail/'.$row['id_info'].'/'.url_title($row['nama']));
             endforeach;
             endif;
             $this->smarty->assign('profil_side', $profil);
-            //get data kegiatan footer
-            $this->db->select('*');
-            $this->db->from('agenda_m');
-            $this->db->order_by('tanggal_mulai', 'DESC');
-            $this->db->limit(3);
-            $data = $this->db->get()->result_array();
-            
-            if(!empty($data)):
-            foreach($data as $key=>$row):
-            
-            if($this->act_lang == 'en'):
-            $data[$key]['tanggal_mulai'] = $this->datetimemanipulation->GetFullDateWithDayEn($row['tanggal_mulai']);
-            $data[$key]['tanggal_selesai'] = $this->datetimemanipulation->GetFullDateWithDayEn($row['tanggal_selesai']);
-            
-            if($row['id_asosiasi'] == '100'):
-            $data[$key]['url_detail'] = site_url('public/kegiatandmsi/detail/'.$row['id_agenda'].'/'.url_title($row['judul_english'])); else :
-            $data[$key]['url_detail'] = site_url('public/kegiatananggota/detail/'.$row['id_agenda'].'/'.url_title($row['judul_english']));
-            endif; else :
-            $data[$key]['tanggal_mulai'] = $this->datetimemanipulation->GetFullDateWithDay($row['tanggal_mulai']);
-            $data[$key]['tanggal_selesai'] = $this->datetimemanipulation->GetFullDateWithDay($row['tanggal_selesai']);
-            
-            if($row['id_asosiasi'] == '100'):
-            $data[$key]['url_detail'] = site_url('public/kegiatandmsi/detail/'.$row['id_agenda'].'/'.url_title($row['judul_agenda'])); else :
-            $data[$key]['url_detail'] = site_url('public/kegiatananggota/detail/'.$row['id_agenda'].'/'.url_title($row['judul_agenda']));
-            endif;
-            endif;
-            endforeach;
-            endif;
-            $this->smarty->assign("kegiatanfooter", $data);
+          
         }
 
         private
@@ -569,7 +547,7 @@
             if(!empty($this->id_user)) {
                 $this->smarty->assign('user_login', true);
                 // link
-                $this->smarty->assign("url_logout_admin_process", site_url("private/loginadmin/process_logout_admin"));
+                $this->smarty->assign("url_logout_admin_process", site_url("public/login"));
                 $this->smarty->assign("url_private", site_url("private/dashboard"));
                 // load
                 $this->load->model('accountmodel');
@@ -660,8 +638,7 @@
             // display user login 
             $this->_display_user_login();
          
-            //anggota baru
-            $this->_load_anggota();
+           
         }
 
         private
@@ -692,32 +669,7 @@
             $this->smarty->assign("url_aspirasi_jawab", site_url("private/aspirasi/process/jawab"));
         }
 
-        private
-        function _load_anggota(){
-            $this->load->model('registrasimodel');
-            //jumlah aspirasi
-            $jumlah_anggota_baru = $this->registrasimodel->get_jumlah_anggota_baru();
-            $this->smarty->assign('jumlah_anggota_baru', $jumlah_anggota_baru);
-            // jumlah anggota baru
-            $data_anggota = $this->registrasimodel->get_list_anggota();
-            $this->smarty->assign('data_anggota', $data_anggota);
-            // jumlah anggota baru
-            $data_anggota_baru = $this->registrasimodel->get_list_anggota_baru();
-            $this->smarty->assign('data_anggota_baru', $data_anggota_baru);
-            $data_anggota_disetujui = $this->registrasimodel->get_list_anggota_disetujui();
-            $this->smarty->assign('data_anggota_disetujui', $data_anggota_disetujui);
-            // jumlah anggota yang sudah di setujui
-            $jumlah_anggota_disetujui = $this->registrasimodel->get_jumlah_anggota_disetujui();
-            $this->smarty->assign('jumlah_anggota_disetujui', $jumlah_anggota_disetujui);
-            // process anggota disetujui
-            $this->smarty->assign("url_process_anggota_disetujui", site_url("private/registrasi/process/disetujui"));
-            // process anggota disetujui
-            $this->smarty->assign("url_process_anggota_ditolak", site_url("private/registrasi/process/ditolak"));
-            $this->smarty->assign("url_anggota_list", site_url("private/registrasi"));
-            $this->smarty->assign("url_anggota_disetujui", site_url("private/registrasi/disetujui"));
-             
-        }
-
+       
         private
         function _load_private_js() {
             $this->layout->load_javascript("js/admin/jquery.min.js");
@@ -1243,7 +1195,7 @@ FOTO DAN VIDEO TERBARU";
                 $label['petunjuk1'] = 'Isikan Nama Anda Secara Lengkap';
                 $label['petunjuk2'] = 'isikan Kolom Objek dengan memilih ke pihak mana Aspirasi ini di tunjukan';
                 $label['petunjuk3'] = 'DMSI = Pihak Utama DMSI';
-                $label['petunjuk4'] = 'Selain DMSI = Salah satu pihak Anggota Asosiasi DMSI';
+                $label['petunjuk4'] = 'Selain DMSI = Salah satu pihak Anggota relawan DMSI';
                 $label['petunjuk5'] = 'Email diisi dengan email Anda';
                 $label['petunjuk6'] = 'Tanggal diisi dengan tanggal Anda mengirim pesan Aspirasi ini';
                 $label['petunjuk7'] = 'Pesan Aspirasi diisi dengan pesan Aspirasi anda, di sarankan sopan dan baik';

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-09-27 11:54:28
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 03:22:51
          compiled from "application\views\private\base-layout\document.html" */ ?>
 <?php /*%%SmartyHeaderCode:2591957ea41d4ef6163-08257629%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '985f90fb749eb9e3b279a3440dc676881793741a' => 
     array (
       0 => 'application\\views\\private\\base-layout\\document.html',
-      1 => 1473302624,
+      1 => 1476667369,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_57ea41d50f0432_78593878',
   'variables' => 
   array (
     'site_description' => 0,
@@ -37,8 +39,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'LOADJSCRUD' => 1,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.17',
-  'unifunc' => 'content_57ea41d50f0432_78593878',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57ea41d50f0432_78593878')) {function content_57ea41d50f0432_78593878($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml">  <head>    <meta charset="UTF-8">    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>    <meta name='description' content='<?php echo $_smarty_tpl->tpl_vars['site_description']->value;?>
 ' />    <meta name='keywords' content='<?php echo $_smarty_tpl->tpl_vars['site_keyword']->value;?>

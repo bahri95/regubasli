@@ -334,7 +334,7 @@ $db['default']['password'] = "";
 
 
 
-$db['default']['database'] = "h71721_dmsinew";
+$db['default']['database'] = "db_regub";
 
 
 

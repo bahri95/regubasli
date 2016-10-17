@@ -134,7 +134,7 @@
 
 
 
-$config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'].'/dmsinew/adminsystem/';
+$config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'].'/regubasli/adminsystem/';
 
 
 
