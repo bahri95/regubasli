@@ -146,9 +146,9 @@
 
         function process_sosmed_add($params) {
 
-            $sql = "INSERT INTO sosmed_m (nama, id_logo ,link , urutan, status)
+            $sql = "INSERT INTO sosmed_m (nama, id_logo ,link , urutan, status, pengikut)
 
-                VALUES (?, ?, ?, ?, ?)";
+                VALUES (?, ?, ?, ?, ?, ?)";
 
             return $this->db->query($sql, $params);
 
@@ -160,7 +160,7 @@
 
         function process_sosmed_edit($params) {
 
-            $sql = "UPDATE sosmed_m SET nama = ?, id_logo = ?, link = ?, urutan = ?, status = ?
+            $sql = "UPDATE sosmed_m SET nama = ?, id_logo = ?, link = ?, urutan = ?, status = ?, pengikut = ?
 
                  WHERE id_sosmed = ? ";
 

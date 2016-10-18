@@ -111,20 +111,7 @@
                     </label>
                     <input type="text" name="keterangan_gambar" value="{$data.keterangan_gambar}" size="100" maxlength="200" class="form-control" />
                   </div>
-                  <div class="form-group">
-                    <label for="user_name_lama">File Lampiran 
-                      <i>(Maks 10 Mb)
-                      </i>
-                    </label>
-                    <input  type="file" 
-                           style="visibility:hidden; width: 1px;" 
-                           id='foto' name='file'  
-                           onchange="$(this).parent().find('span').html($(this).val().replace('C:\\fakepath\\', ''))"  /> 
-                    <input class="btn btn-primary" type="button" value="Browse.." onclick="$(this).parent().find('input[type=file]').click();"/> 
-                    &nbsp;
-                    <span  class="badge badge-important" >
-                    </span>
-                  </div>
+                 
                 </div>
                 <!-- /.box-body -->
               </div>

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 12:59:50
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 02:57:51
          compiled from "application\views\private\berita\edit.html" */ ?>
 <?php /*%%SmartyHeaderCode:670957ec5e577155f9-99830456%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3dd96487477d0603c313d224719f480e0c4d8766' => 
     array (
       0 => 'application\\views\\private\\berita\\edit.html',
-      1 => 1476701989,
+      1 => 1476752193,
       2 => 'file',
     ),
   ),
@@ -159,20 +159,7 @@ $_smarty_tpl->tpl_vars['result']->_loop = true;
                     <input type="text" name="keterangan_gambar" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['keterangan_gambar'];?>
 " size="100" maxlength="200" class="form-control" />
                   </div>
-                  <div class="form-group">
-                    <label for="user_name_lama">File Lampiran 
-                      <i>(Maks 10 Mb)
-                      </i>
-                    </label>
-                    <input  type="file" 
-                           style="visibility:hidden; width: 1px;" 
-                           id='foto' name='file'  
-                           onchange="$(this).parent().find('span').html($(this).val().replace('C:\\fakepath\\', ''))"  /> 
-                    <input class="btn btn-primary" type="button" value="Browse.." onclick="$(this).parent().find('input[type=file]').click();"/> 
-                    &nbsp;
-                    <span  class="badge badge-important" >
-                    </span>
-                  </div>
+                 
                 </div>
                 <!-- /.box-body -->
               </div>

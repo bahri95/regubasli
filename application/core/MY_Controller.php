@@ -25,20 +25,16 @@
             $this->base_load_app();
             // view app data
             $this->base_view_app();
-            //set bahasa
-            $this->_set_language();
-            //nama judul
-            $this->_display_nama_judul();
-            //nama menu
-            $this->_display_nama_menu();
+   
+
             //banner
             $this->_display_banner();
             //sosmed
             $this->_display_sosmed();
             //
             $this->_display_banner_atas();
-            //label
-            $this->_display_label();
+       
+      
 
             //foto
             $this->_display_foto();
@@ -49,13 +45,92 @@
             //video
             $this->_display_video();
 
-            
-            // //share
-            // if($this->uri->segment(4,0) <> '' or $this->uri->segment(5,0) <> ''):
-            // $this->_display_share();
-            // endif;
+            //berita relawan utama
+            $this->berita_relawan_utama();
+
+            //berita relawan anggota
+            $this->berita_relawan_anggota();
+
+            //berita gubernur
+            $this->beritacagub_cawagub();
+        
         }
         
+        public function berita_relawan_utama(){
+            // get data
+            $this->load->model('beritamodel');
+            $result = $this->beritamodel->get_berita_relawan_utama();
+        
+            if(!empty($result)):
+            foreach($result as $key=>$data):
+            $path = 'doc/berita/'.$data['id_berita']."/";
+            if(is_file($path.$data['image'])){
+                $result[$key]['image'] = BASEURL.$path.$data['image'];
+            } else {
+                $result[$key]['image']= BASEURL.'doc/tmp.default.jpg';
+            }
+                $result[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
+                $result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_berita'].'/'.url_title($data['judul']));
+                $result[$key]['content'] = strip_tags($this->getIntroText($data['content'],100));
+            endforeach;
+            endif;
+            $this->smarty->assign("berita_list", $result);
+            $this->smarty->assign("page_modul", 'Berita');
+            $this->smarty->assign("page_modul_url", site_url('public/berita'));
+        }
+
+        public function berita_relawan_anggota(){
+            // get data
+            $this->load->model('beritamodel');
+            $result = $this->beritamodel->get_berita_relawan_anggota();
+        
+            if(!empty($result)):
+            foreach($result as $key=>$data):
+            $path = 'doc/berita/'.$data['id_berita']."/";
+            if(is_file($path.$data['image'])){
+                $result[$key]['image'] = BASEURL.$path.$data['image'];
+            } else {
+                $result[$key]['image']= BASEURL.'doc/tmp.default.jpg';
+            }
+                $result[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
+                $result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_berita'].'/'.url_title($data['judul']));
+                $result[$key]['content'] = strip_tags($this->getIntroText($data['content'],100));
+            endforeach;
+            endif;
+            $this->smarty->assign("berita_list_anggota", $result);
+            $this->smarty->assign("page_modul", 'Berita');
+            $this->smarty->assign("page_modul_url", site_url('public/berita'));
+        }
+
+        public function beritacagub_cawagub(){
+            //berita cagub-cawagub
+            // get data
+            $this->load->model('informasimodel');
+            $result = $this->informasimodel->get_list_informasi_home();
+           
+            
+            if(!empty($result)):
+            foreach($result as $key=>$data):
+            
+            
+            $path = 'doc/informasi/'.$data['id_informasi']."/";
+            
+            if(is_file($path.$data['image'])){
+                $result[$key]['image'] = BASEURL.$path.$data['image'];
+            } else {
+                $result[$key]['image']= BASEURL.'doc/tmp.default.jpg';
+            }
+
+            
+            
+                $result[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
+                $result[$key]['url_detail'] = site_url('public/informasi/detail/'.$data['id_informasi'].'/'.url_title($data['judul']));
+                $result[$key]['content'] = strip_tags($this->getIntroText($data['content'],100));
+            
+            endforeach;
+            endif;
+            $this->smarty->assign("informasi_list", $result);
+        }
         public 
         function _display_share()
         {
@@ -321,10 +396,7 @@
             
             if(is_file($path.$data['foto'])){
                 
-                if($this->act_lang == 'en'){
-                    $result[$key]['judul_foto'] = $data['judul_english'];
-                    $result[$key]['nama_album'] = $data['nama_english'];
-                }
+              
 
                 $result[$key]['foto'] = BASEURL.$path.$data['foto'];
             } else {
@@ -418,28 +490,7 @@
 
             $this->smarty->assign('homeurl', site_url('public/home'));
             $this->smarty->assign('baseurl', BASEURL);
-            $this->smarty->assign('url_menu_anggota', site_url('public/relawan'));
-            $this->smarty->assign('url_menu_berita_anggota', site_url('public/beritaanggota'));
-            $this->smarty->assign('url_menu_kegiatan_anggota', site_url('public/kegiatananggota'));
-            $this->smarty->assign('url_menu_profil', site_url('public/profil/detail'));
-            $this->smarty->assign('url_menu_pengumuman', site_url('public/pengumuman'));
-            $this->smarty->assign('url_menu_kegiatan_dmsi', site_url('public/kegiatandmsi'));
-            $this->smarty->assign('url_menu_berita_dmsi', site_url('public/beritadmsi'));
-            $this->smarty->assign('url_menu_berita_anggota', site_url('public/beritaanggota'));
-            $this->smarty->assign('url_menu_video', site_url('public/video'));
-            $this->smarty->assign('url_menu_aspirasi', site_url('public/aspirasi'));
-            $this->smarty->assign('url_menu_regulasi', site_url('public/regulasi'));
-            $this->smarty->assign('url_menu_download', site_url('public/download'));
-            $this->smarty->assign('url_menu_kontak', site_url('public/kontak'));
-            $this->smarty->assign('url_menu_registrasi', site_url('public/registrasi'));
-            $this->smarty->assign('url_menu_opini', site_url('public/opini'));
-            $this->smarty->assign('url_menu_sesebi', site_url('public/sesebi'));
-            $this->smarty->assign('url_menu_foto', site_url('public/foto'));
-            $this->smarty->assign('url_menu_sponsor', site_url('public/sponsor'));
-            $this->smarty->assign('url_menu_program', site_url('public/program'));
-            $this->smarty->assign('url_menu_bagan', site_url('public/bagan'));
-            $this->smarty->assign('url_menu_forum', site_url('public/forum'));
-            $this->smarty->assign('url_menu_harga', site_url('public/harga'));
+           
             //profil asli
             $this->load->model('profilmodel');
             $profil = $this->profilmodel->get_list_profil();
@@ -467,9 +518,7 @@
                 $this->int_parent = $current_page['id_parent'];
             }
 
-            // title
-        
-            $this->_set_language();
+      
         }
 
         private
@@ -500,10 +549,8 @@
             if(!empty($berita)):
             foreach($berita as $key=>$row):
             
-            if($this->act_lang  == 'en'):
-            $berita[$key]['judul'] = $row['judul_english'];
-            $berita[$key]['content'] = $row['content_english'];
-            endif;
+          
+           
             $path = 'doc/berita/'.$row['id_berita'].'/';
             
             if(is_file($path.$row['image'])){
@@ -513,13 +560,9 @@
             }
 
             
-            if($this->act_lang == 'en'){
-                $berita[$key]['url_detail'] = site_url('public/beritadmsi/detail/'.$row['id_berita'].'/'.url_title($row['judul_english']));
-                $berita[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDayEn($row['tanggal']);
-            } else {
+            
                 $berita[$key]['url_detail'] = site_url('public/beritadmsi/detail/'.$row['id_berita'].'/'.url_title($row['judul']));
                 $berita[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($row['tanggal']);
-            }
 
             endforeach;
             endif;
@@ -641,33 +684,7 @@
            
         }
 
-        private
-        function _load_aspirasi(){
-            $this->load->model('aspirasimodel');
-            //jumlah aspirasi
-            $jumlah_aspirasi = $this->aspirasimodel->get_jumlah_aspirasi();
-            $this->smarty->assign('jumlah_aspirasi', $jumlah_aspirasi);
-            //jumlah aspirasi verifikasi
-            $jumlah_aspirasi_ver = $this->aspirasimodel->get_jumlah_aspirasi_verifikasi();
-            $this->smarty->assign('jumlah_aspirasi_ver', $jumlah_aspirasi_ver);
-            //jumlah aspirasi jawaban
-            $jumlah_aspirasi_jaw = $this->aspirasimodel->get_jumlah_aspirasi_jawaban();
-            $this->smarty->assign('jumlah_aspirasi_jaw', $jumlah_aspirasi_jaw);
-            //data aspirasi
-            $data_aspirasi = $this->aspirasimodel->get_data_aspirasi();
-            $this->smarty->assign('data_aspirasi', $data_aspirasi);
-            $this->smarty->assign("url_aspirasi_list", site_url("private/aspirasi"));
-            $this->smarty->assign("url_aspirasi_verifikasi", site_url("private/aspirasi/process/verifikasi"));
-            $this->smarty->assign("url_aspirasi_list_verifikasi", site_url("private/aspirasi/verifikasi"));
-            $this->smarty->assign("url_aspirasi_list_jawaban", site_url("private/aspirasi/jawaban"));
-            // by id
-            $params = $this->uri->segment(4,0);
-            $data_aspirasi_by_id = $this->aspirasimodel->get_data_aspirasi_by_id($params);
-            $this->smarty->assign('data_aspirasi_by_id', $data_aspirasi_by_id);
-            //read aspirasi
-            $this->smarty->assign("url_aspirasi_hapus", site_url("private/aspirasi/process/hapus"));
-            $this->smarty->assign("url_aspirasi_jawab", site_url("private/aspirasi/process/jawab"));
-        }
+       
 
        
         private
@@ -963,130 +980,9 @@
             return $intro;
         }
 
-        private
-        function _set_language() {
-            $uri_addr = $this->session->userdata('uri_adr');
-            //echo $uri_addr;exit;
-            // echo strpos($uri_addr, "process") ; exit;
-            $this->act_lang = $this->session->userdata('act-lang');
-            
-            if(empty($this->act_lang)):
-            $this->session->set_userdata('act-lang','id');
-            $this->act_lang = 'id';
-            endif;
-            $lang = $this->uri->segment(3);
-            
-            if($lang == 'en' OR $lang == 'id'):
-                $this->session->set_userdata('act-lang', $lang);
-                $this->act_lang = $lang;
-                //$arr_uri = explode("/public/",$uri_addr);
-                if(strpos($uri_addr, "home") > 1):
-                    redirect('public/home'); 
-                endif;
-                if(strpos($uri_addr, "process") > 1):
-                    redirect('public/home'); 
-                else :
-                    redirect($uri_addr);
-                endif;
-            endif;
-            
-            if($lang != 'process' OR $lang != 'loginadmin'):
-            $this->smarty->assign("url_lang_id", site_url("public/lang/id"));
-            $this->smarty->assign("url_lang_en", site_url("public/lang/en")); else :
-            $uri_addr = site_url('public/home');
-            $this->smarty->assign("url_lang_id", site_url("public/lang/id"));
-            $this->smarty->assign("url_lang_en", site_url("public/lang/en"));
-            endif;
-            $uri_addr = $this->uri->segment(1).'/'.$this->uri->segment(2).'/'.$this->uri->segment(3).'/'.$this->uri->segment(4).'/'.$this->uri->segment(5).'/'.$this->uri->segment(6);
-            $this->session->set_userdata('uri_adr', $uri_addr);
-            //echo $this->session->userdata('uri_adr');exit;
-            $this->smarty->assign("actlang", $this->act_lang);
-            $this->smarty->assign("act_lang", $this->act_lang);
-        }
+       
 
-        private
-        function _display_nama_judul(){
-            
-            if($this->act_lang  == 'en'){
-                $judul['berita_dmsi'] = "DMSI NEWS AND MEMBER";
-                $judul['berita_anggota'] = "DMSI MEMBER NEWS";
-                $judul['anggota'] = "DMSI MEMBER";
-                $judul['harga'] = "MARKET PRICE";
-                $judul['judul_album_video'] = "
-THE LATEST PHOTOS AND VIDEOS";
-            } else {
-                $judul['berita_dmsi'] = 'BERITA DMSI DAN ANGGOTA';
-                $judul['berita_anggota'] = 'BERITA ANGGOTA DMSI';
-                $judul['anggota'] = "ANGGOTA DMSI";
-                $judul['harga'] = "HARGA PASAR";
-                $judul['judul_album_video'] = "
-FOTO DAN VIDEO TERBARU";
-            }
-
-            $this->smarty->assign('judul', $judul);
-        }
-
-        private
-        function _display_nama_menu(){
-            $this->load->model('profilmodel');
-            $profil = $this->profilmodel->get_list_profil();
-            $this->smarty->assign("profil", $profil);
-
-            if($this->act_lang  == 'en'){
-                $menu['home'] = "Home";
-                $menu['tentang_dmsi'] = "About DMSI";
-                $menu['visi'] = "Vision and Mission";
-                $menu['berita_dmsi'] = "News DMSI";
-                $menu['event_dmsi'] = "Event DMSI";
-                $menu['anggota_dmsi'] = "Member DMSI";
-                $menu['profil_anggota'] = "Member Profil";
-                $menu['berita_anggota'] = "News Members";
-                $menu['event_anggota'] = "Event Member";
-                $menu['informasi'] = "Information";
-                $menu['wawasan'] = "Insight";
-                $menu['opini'] = "Opinions";
-                $menu['sesebi'] = "Various";
-                $menu['infografis'] = "Infographics";
-                $menu['program'] = "Action Programme DMSI";
-                $menu['bagan'] = "Organizational Structure";
-                
-                $menu['harga'] = "Market Prices";
-                $menu['grafik'] = "Market Price";
-                $menu['foto'] = "Photo Gallery";
-                $menu['video'] = "Video Gallery";
-                $menu['regulasi'] = "Regulation";
-                $menu['aspirasi'] = "Aspiration";
-                $menu['kontak'] = "Contact";
-                $menu['menu_aktif'] = $this->uri->segment(2);
-            } else {
-                $menu['home'] = "Beranda";
-                $menu['tentang_dmsi'] = "Tentang DMSI";
-                $menu['visi'] = "Visi dan Misi";
-                $menu['berita_dmsi'] = "Berita DMSI";
-                $menu['event_dmsi'] = "Event DMSI";
-                $menu['anggota_dmsi'] = "Anggota DMSI";
-                $menu['profil_anggota'] = "Profil Anggota";
-                $menu['berita_anggota'] = "Berita Anggota";
-                $menu['event_anggota'] = "Event Anggota";
-                $menu['informasi'] = "Informasi";
-                $menu['wawasan'] = "Wawasan";
-                $menu['opini'] = "Opini";
-                $menu['sesebi'] = "Serba-Serbi";
-                $menu['infografis'] = "Infografis";
-                $menu['program'] = "Program Aksi DMSI";
-                $menu['bagan'] = "Struktur Organisasi";
-                $menu['harga'] = "Harga Pasar";
-                $menu['grafik'] = "Harga Pasar";
-                $menu['foto'] = "Galeri Foto";
-                $menu['video'] = "Galeri Video";
-                $menu['regulasi'] = "Regulasi";
-                $menu['aspirasi'] = "Aspirasi";
-                $menu['kontak'] = "Kontak";
-                $menu['menu_aktif'] = $this->uri->segment(2);
-            }
-
-            $this->smarty->assign('menu', $menu);
-        }
+        
 
         private
         function _display_banner(){
@@ -1097,21 +993,14 @@ FOTO DAN VIDEO TERBARU";
             if(!empty($databanner)):
             foreach($databanner as $k=>$row):
             
-            if($this->act_lang == 'en'){
-                $pathdok_en = 'doc/banner_en/'.$row['id_banner'].'/'.$row['banner_english'];
-                
-                if(!is_file($pathdok_en)):
-                $databanner[$k]['banner'] = ''; else :
-                $databanner[$k]['banner'] = BASEURL.$pathdok_en;
-                endif;
-            } else {
+           
                 $pathdok = 'doc/banner/'.$row['id_banner'].'/'.$row['banner'];
                 
                 if(!is_file($pathdok)):
                 $databanner[$k]['banner'] = ''; else :
                 $databanner[$k]['banner'] = BASEURL.$pathdok;
                 endif;
-            }
+
 
             // endif;
             endforeach;
