@@ -65,33 +65,57 @@
                                 </div>
                             </div><!-- .entry end -->
 
-                            <h4>Berita Lainnya :</h4>
+                             <h4>Related Posts:</h4>
 
                             <div class="related-posts clearfix">
-                                <div class="row">
-                                    
-                                    {if $berita <> ""}
-                                    {foreach name=list_data from=$berita item=brt}
-                                    <div class="col-md-6 bottommargin">
-                                        <div class="mpost clearfix">
-                                            <div class="entry-image">
-                                                <a href="#"><img src="http://{$brt.alamat_website}/doc/berita/{$brt.id_berita}/{$brt.gambar}" alt="Blog Single"></a>
+
+                                <div class="col_half nobottommargin">
+                                      {foreach name=informasi_list from=$informasi_list item=rs}
+                                    <div class="mpost clearfix">
+                                        <div class="entry-image">
+                                            <img src="{$rs.image}" alt="Blog Single">
+                                        </div>
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="{$rs.url_detail}">{$rs.judul}</a></h4>
                                             </div>
-                                            <div class="entry-c">
-                                                <div class="entry-title">
-                                                    <h4><a href="{$url_detail_berita}/{$brt.id_berita}">{$brt.judul}</a></h4>
-                                                </div>
-                                                <ul class="entry-meta clearfix">
-                                                    <li><i class="icon-calendar3"></i> {$brt.tanggal}</li>
-                                                </ul>
-                                                <div class="entry-content">{$brt.intro}</div>
+                                            <ul class="entry-meta clearfix">
+                                                <li><i class="icon-calendar3"></i> {$rs.tanggal}</li>
+                                                
+                                            </ul>
+                                            
+                                        </div>
+                                    </div>
+                                    {/foreach}
+
+                                  
+
+                                </div>
+
+                                <div class="col_half nobottommargin col_last">
+                                {if $informasi_list_kedua neq '' }
+                                    {foreach name=informasi_list_kedua from=$informasi_list_kedua item=rs}
+                                    <div class="mpost clearfix">
+                                        <div class="entry-image">
+                                            <img src="{$rs.image}" alt="Blog Single">
+                                        </div>
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="{$rs.url_detail}">{$rs.judul}</a></h4>
                                             </div>
+                                            <ul class="entry-meta clearfix">
+                                                <li><i class="icon-calendar3"></i> {$rs.tanggal}</li>
+                                            
+                                            </ul>
+                                            <div class="entry-content">{$rs.content}</div>
                                         </div>
                                     </div>
                                     {/foreach}
                                     {/if}
+                                    
 
                                 </div>
+
                             </div>
 
                                 <div class="clear"></div>

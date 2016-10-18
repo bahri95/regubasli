@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 04:52:35
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 07:40:50
          compiled from "application\views\web\home\content.html" */ ?>
 <?php /*%%SmartyHeaderCode:202465802fa19103f11-69857447%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1c7df63b2d972c8a947d0f54967fb70bb80d6f0f' => 
     array (
       0 => 'application\\views\\web\\home\\content.html',
-      1 => 1476759153,
+      1 => 1476768903,
       2 => 'file',
     ),
   ),
@@ -27,6 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'berita_list_anggota' => 0,
     'datasosmed' => 0,
     'BASEURL' => 0,
+    'video_list' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -342,14 +343,36 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                                 </div>
 
                                 <div class="widget clearfix">
-                                    <iframe src="http://player.vimeo.com/video/100299651" width="500" height="264" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                                 <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['video_list']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
+$_smarty_tpl->tpl_vars['rs']->_loop = true;
+?>
+                                        <div class="oc-item">
+                                        <div class="iportfolio">
+                                            <div class="portfolio-image">
+                                                <a href="#">
+                                                    <img src="<?php echo $_smarty_tpl->tpl_vars['rs']->value['video_image'];?>
+" alt="Mac Sunglasses">
+                                                </a>
+                                                <div class="portfolio-overlay">
+                                                    <a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['play'];?>
+" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
+                                                    <a href="portfolio-single-video.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                                                </div>
+                                            </div>
+                                            <div class="portfolio-desc">
+                                                <h3><a href="portfolio-single-video.html"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul_video'];?>
+</a></h3>
+                                                <span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                    </div>
                                 </div>
 
 
-                                <div class="widget clearfix">
-                                    <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FEnvato&amp;width=350&amp;height=240&amp;colorscheme=light&amp;show_faces=true&amp;header=true&amp;stream=false&amp;show_border=true&amp;appId=499481203443583" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:350px; height:240px; max-width: 100% !important;" allowTransparency="true"></iframe>
-                                </div>
-
+                                
                             </div>
 
                         </div>

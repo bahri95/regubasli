@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 13:43:51
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 10:05:04
          compiled from "application\views\web\informasi\detail.html" */ ?>
 <?php /*%%SmartyHeaderCode:517357ea5a92c1ca66-60349740%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'db1f0731a776afe05955f2c1aeaae44cc99a72c9' => 
     array (
       0 => 'application\\views\\web\\informasi\\detail.html',
-      1 => 1476703936,
+      1 => 1476777902,
       2 => 'file',
     ),
   ),
@@ -21,9 +21,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'data' => 0,
     'BASEURL' => 0,
-    'berita' => 0,
-    'brt' => 0,
-    'url_detail_berita' => 0,
+    'informasi_list' => 0,
+    'rs' => 0,
+    'informasi_list_kedua' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -109,45 +109,74 @@ index.php/public/berita/detail/<?php echo $_smarty_tpl->tpl_vars['data']->value[
                                 </div>
                             </div><!-- .entry end -->
 
-                            <h4>Berita Lainnya :</h4>
+                             <h4>Related Posts:</h4>
 
                             <div class="related-posts clearfix">
-                                <div class="row">
-                                    
-                                    <?php if ($_smarty_tpl->tpl_vars['berita']->value!='') {?>
-                                    <?php  $_smarty_tpl->tpl_vars['brt'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['brt']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['berita']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['brt']->key => $_smarty_tpl->tpl_vars['brt']->value) {
-$_smarty_tpl->tpl_vars['brt']->_loop = true;
+
+                                <div class="col_half nobottommargin">
+                                      <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['informasi_list']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
+$_smarty_tpl->tpl_vars['rs']->_loop = true;
 ?>
-                                    <div class="col-md-6 bottommargin">
-                                        <div class="mpost clearfix">
-                                            <div class="entry-image">
-                                                <a href="#"><img src="http://<?php echo $_smarty_tpl->tpl_vars['brt']->value['alamat_website'];?>
-/doc/berita/<?php echo $_smarty_tpl->tpl_vars['brt']->value['id_berita'];?>
-/<?php echo $_smarty_tpl->tpl_vars['brt']->value['gambar'];?>
-" alt="Blog Single"></a>
-                                            </div>
-                                            <div class="entry-c">
-                                                <div class="entry-title">
-                                                    <h4><a href="<?php echo $_smarty_tpl->tpl_vars['url_detail_berita']->value;?>
-/<?php echo $_smarty_tpl->tpl_vars['brt']->value['id_berita'];?>
-"><?php echo $_smarty_tpl->tpl_vars['brt']->value['judul'];?>
+                                    <div class="mpost clearfix">
+                                        <div class="entry-image">
+                                            <img src="<?php echo $_smarty_tpl->tpl_vars['rs']->value['image'];?>
+" alt="Blog Single">
+                                        </div>
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
+"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul'];?>
 </a></h4>
-                                                </div>
-                                                <ul class="entry-meta clearfix">
-                                                    <li><i class="icon-calendar3"></i> <?php echo $_smarty_tpl->tpl_vars['brt']->value['tanggal'];?>
-</li>
-                                                </ul>
-                                                <div class="entry-content"><?php echo $_smarty_tpl->tpl_vars['brt']->value['intro'];?>
-</div>
                                             </div>
+                                            <ul class="entry-meta clearfix">
+                                                <li><i class="icon-calendar3"></i> <?php echo $_smarty_tpl->tpl_vars['rs']->value['tanggal'];?>
+</li>
+                                                
+                                            </ul>
+                                            
+                                        </div>
+                                    </div>
+                                    <?php } ?>
+
+                                  
+
+                                </div>
+
+                                <div class="col_half nobottommargin col_last">
+                                <?php if ($_smarty_tpl->tpl_vars['informasi_list_kedua']->value!='') {?>
+                                    <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['informasi_list_kedua']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
+$_smarty_tpl->tpl_vars['rs']->_loop = true;
+?>
+                                    <div class="mpost clearfix">
+                                        <div class="entry-image">
+                                            <img src="<?php echo $_smarty_tpl->tpl_vars['rs']->value['image'];?>
+" alt="Blog Single">
+                                        </div>
+                                        <div class="entry-c">
+                                            <div class="entry-title">
+                                                <h4><a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
+"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul'];?>
+</a></h4>
+                                            </div>
+                                            <ul class="entry-meta clearfix">
+                                                <li><i class="icon-calendar3"></i> <?php echo $_smarty_tpl->tpl_vars['rs']->value['tanggal'];?>
+</li>
+                                            
+                                            </ul>
+                                            <div class="entry-content"><?php echo $_smarty_tpl->tpl_vars['rs']->value['content'];?>
+</div>
                                         </div>
                                     </div>
                                     <?php } ?>
                                     <?php }?>
+                                    
 
                                 </div>
+
                             </div>
 
                                 <div class="clear"></div>

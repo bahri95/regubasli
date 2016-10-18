@@ -1,5 +1,5 @@
 <?php 
-    
+
     if ( ! defined('BASEPATH')) exit('No direct script access allowed');
     class MY_Controller extends CI_Controller {
         // init variable base
@@ -993,14 +993,14 @@
             if(!empty($databanner)):
             foreach($databanner as $k=>$row):
             
-           
+          
                 $pathdok = 'doc/banner/'.$row['id_banner'].'/'.$row['banner'];
                 
                 if(!is_file($pathdok)):
                 $databanner[$k]['banner'] = ''; else :
                 $databanner[$k]['banner'] = BASEURL.$pathdok;
                 endif;
-
+           
 
             // endif;
             endforeach;

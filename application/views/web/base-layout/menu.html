@@ -57,7 +57,7 @@
                                     <li><a href="#"><div>KEGIATAN RELAWAN</div></a>
                                         <ul>
                                         {foreach name=relawan from=$relawan item=rs}
-                                    <li><a href="{$BASEURL}index.php/public/berita"><div>RELAWAN {$rs.nama}</div></a>
+                                    <li><a href="{$BASEURL}index.php/public/berita/relawan/{$rs.id_relawan}"><div>RELAWAN {$rs.nama}</div></a>
                                     </li>
                                         {/foreach}
                                    

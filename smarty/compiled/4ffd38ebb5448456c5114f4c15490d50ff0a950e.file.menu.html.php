@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 13:43:41
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 08:03:57
          compiled from "application\views\web\base-layout\menu.html" */ ?>
 <?php /*%%SmartyHeaderCode:31215802fa18e9c632-59919313%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4ffd38ebb5448456c5114f4c15490d50ff0a950e' => 
     array (
       0 => 'application\\views\\web\\base-layout\\menu.html',
-      1 => 1476704616,
+      1 => 1476770635,
       2 => 'file',
     ),
   ),
@@ -111,7 +111,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['
 $_smarty_tpl->tpl_vars['rs']->_loop = true;
 ?>
                                     <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
-index.php/public/berita"><div>RELAWAN <?php echo $_smarty_tpl->tpl_vars['rs']->value['nama'];?>
+index.php/public/berita/relawan/<?php echo $_smarty_tpl->tpl_vars['rs']->value['id_relawan'];?>
+"><div>RELAWAN <?php echo $_smarty_tpl->tpl_vars['rs']->value['nama'];?>
 </div></a>
                                     </li>
                                         <?php } ?>

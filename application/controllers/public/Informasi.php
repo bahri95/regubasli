@@ -130,12 +130,36 @@
 
 			
 		
-				$result[$key]['url_detail'] = site_url('public/informasi/detail/'.$data['id_kategori'].'/'.$data['id_informasi'].'/'.url_title($data['judul']));
-				$result[$key]['content'] = strip_tags($this->getIntroText($data['content'],300));
+				$result[$key]['url_detail'] = site_url('public/informasi/detail/'.'/'.$data['id_informasi'].'/'.url_title($data['judul']));
+				$result[$key]['content'] = strip_tags($this->getIntroText($data['content'],50));
 			
 			endforeach;
 			endif;
 			$this->smarty->assign("informasi_list", $result);
+
+			//informasi terkait
+			$result2 = $this->informasimodel->get_list_informasi_terkait_kedua();
+			
+			if(!empty($result2)):
+			foreach($result2 as $key=>$data):
+			
+			$result2[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
+			$path = 'doc/informasi/'.$data['id_informasi']."/";
+			
+			if(is_file($path.$data['image'])){
+				$result2[$key]['image'] = BASEURL.$path.$data['image'];
+			} else {
+				$result2[$key]['image']= BASEURL.'doc/tmp.default.jpg';
+			}
+
+			
+		
+				$result2[$key]['url_detail'] = site_url('public/informasi/detail/'.'/'.$data['id_informasi'].'/'.url_title($data['judul']));
+				$result2[$key]['content'] = strip_tags($this->getIntroText($data['content'],50));
+			
+			endforeach;
+			endif;
+			$this->smarty->assign("informasi_list_kedua", $result2);
 			
 		
 				$this->smarty->assign("page_modul", 'Informasi');

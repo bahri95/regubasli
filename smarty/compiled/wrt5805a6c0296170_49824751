@@ -1,17 +1,51 @@
-<!-- Sidebar
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 06:36:16
+         compiled from "application\views\web\base-layout\sidebar.html" */ ?>
+<?php /*%%SmartyHeaderCode:809757ea3d59430500-69691833%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '4aa8bdc77de23e5614b18a829abc45841dc97812' => 
+    array (
+      0 => 'application\\views\\web\\base-layout\\sidebar.html',
+      1 => 1476765370,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '809757ea3d59430500-69691833',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_57ea3d594b13a9_70941456',
+  'variables' => 
+  array (
+    'BASEURL' => 0,
+    'informasi_list' => 0,
+    'rs' => 0,
+    'berita_list' => 0,
+    'berita_list_anggota' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_57ea3d594b13a9_70941456')) {function content_57ea3d594b13a9_70941456($_smarty_tpl) {?><!-- Sidebar
                     ============================================= -->
                     <div class="sidebar nobottommargin col_last clearfix">
                         <div class="sidebar-widgets-wrap">
 
                            
-                            <div class="widget clearfix">
+                             <div class="widget clearfix">
+                                    <img class="aligncenter" src="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+/doc/foto/foto6.jpg" alt="">
+                                </div>
+
+                                <div class="widget clearfix">
 
                                     <div class="tabs nobottommargin clearfix" id="sidebar-tabs">
 
                                         <ul class="tab-nav clearfix">
-                                            <li><a href="#tabs-1">Asli</a></li>
-                                            <li><a href="#tabs-2">Rahmad</a></li>
-                                            <li><a href="#tabs-3">Lain2</a></li>
+                                            <li><a href="#tabs-1">Agus-Sylvi</a></li>
+                                            <li><a href="#tabs-2">Rel. Rahmad</a></li>
+                                            <li><a href="#tabs-3">Rel. Lainnya</a></li>
                                         </ul>
 
                                         <div class="tab-container">
@@ -19,61 +53,88 @@
                                             <div class="tab-content clearfix" id="tabs-1">
                                                 <div id="popular-post-list-sidebar">
 
-                                                     {foreach name=informasi_list from=$informasi_list item=rs}
+                                                     <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['informasi_list']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
+$_smarty_tpl->tpl_vars['rs']->_loop = true;
+?>
                                                     <div class="spost clearfix">
                                                         <div class="entry-image">
-                                                            <a href="{$rs.url_detail}" class="nobg"><img class="img-circle" src="{$rs.image}" alt=""></a>
+                                                            <a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
+" class="nobg"><img class="img-circle" src="<?php echo $_smarty_tpl->tpl_vars['rs']->value['image'];?>
+" alt=""></a>
                                                         </div>
                                                         <div class="entry-c">
                                                             <div class="entry-title">
-                                                                <h4><a href="{$rs.url_detail}">{$rs.judul}</a></h4>
+                                                                <h4><a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
+"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul'];?>
+</a></h4>
                                                             </div>
                                                             <ul class="entry-meta">
-                                                                <li><i class="icon-calendar3"></i>{$rs.tanggal}</li>
+                                                                <li><i class="icon-calendar3"></i><?php echo $_smarty_tpl->tpl_vars['rs']->value['tanggal'];?>
+</li>
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    {/foreach}
+                                                    <?php } ?>
                                                    
                                                 </div>
                                             </div>
                                             <div class="tab-content clearfix" id="tabs-2">
                                                 <div id="recent-post-list-sidebar">
 
-                                                   {foreach name=berita_list from=$berita_list item=rs}
+                                                   <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['berita_list']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
+$_smarty_tpl->tpl_vars['rs']->_loop = true;
+?>
                                                     <div class="spost clearfix">
                                                         <div class="entry-image">
-                                                            <a href="{$rs.url_detail}" class="nobg"><img class="img-circle" src="{$rs.image}" alt=""></a>
+                                                            <a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
+" class="nobg"><img class="img-circle" src="<?php echo $_smarty_tpl->tpl_vars['rs']->value['image'];?>
+" alt=""></a>
                                                         </div>
                                                         <div class="entry-c">
                                                             <div class="entry-title">
-                                                                <h4><a href="{$rs.url_detail}">{$rs.judul}</a></h4>
+                                                                <h4><a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
+"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul'];?>
+</a></h4>
                                                             </div>
                                                             <ul class="entry-meta">
-                                                                <li><i class="icon-calendar3"></i>{$rs.tanggal}</li>
+                                                                <li><i class="icon-calendar3"></i><?php echo $_smarty_tpl->tpl_vars['rs']->value['tanggal'];?>
+</li>
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    {/foreach}
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="tab-content clearfix" id="tabs-3">
-                                                   {foreach name=berita_list_anggota from=$berita_list_anggota item=rs}
+                                                   <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
+ $_from = $_smarty_tpl->tpl_vars['berita_list_anggota']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
+$_smarty_tpl->tpl_vars['rs']->_loop = true;
+?>
 
                                                     <div class="spost clearfix">
                                                         <div class="entry-image">
-                                                            <a href="{$rs.url_detail}" class="nobg"><img class="img-circle" src="{$rs.image}" alt=""></a>
+                                                            <a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
+" class="nobg"><img class="img-circle" src="<?php echo $_smarty_tpl->tpl_vars['rs']->value['image'];?>
+" alt=""></a>
                                                         </div>
                                                         <div class="entry-c">
                                                             <div class="entry-title">
-                                                                <h4><a href="{$rs.url_detail}">{$rs.judul}</a></h4>
+                                                                <h4><a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
+"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul'];?>
+</a></h4>
                                                             </div>
                                                             <ul class="entry-meta">
-                                                                <li><i class="icon-calendar3"></i>{$rs.tanggal}</li>
+                                                                <li><i class="icon-calendar3"></i><?php echo $_smarty_tpl->tpl_vars['rs']->value['tanggal'];?>
+</li>
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    {/foreach}
+                                                    <?php } ?>
                                             </div>
 
                                         </div>
@@ -81,7 +142,6 @@
                                     </div>
 
                                 </div>
-
 
                             <div class="widget clearfix">
 
@@ -166,4 +226,4 @@
 
                         </div>
 
-                    </div><!-- .sidebar end -->
+                    </div><!-- .sidebar end --><?php }} ?>
