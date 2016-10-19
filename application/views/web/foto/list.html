@@ -1,0 +1,87 @@
+
+
+                <div class="container clearfix">
+
+      
+                    <div class="clear"></div>
+
+                    <!-- Portfolio Items
+                    ============================================= -->
+                    <div id="portfolio" class="portfolio-3 clearfix">
+
+                     {if $album_list neq ''}
+                                {foreach name=album_list from=$album_list item=rs_album}
+                       <article class="portfolio-item pf-graphics pf-illustrations">
+                            <div class="portfolio-image">
+                                <div class="fslider" data-arrows="false">
+                                    <div class="flexslider">
+                                        <div class="slider-wrap">
+                                        {if $foto_list neq ''}
+                                            {foreach name=foto_list from=$foto_list item=rs}
+                                            {if $rs.id_album eq $rs_album.id_album}
+                                            <div class="slide"><a href="{$rs.foto}"><img src="{$rs.foto}" alt="Shake It"></a></div>
+                                            {/if}
+                                            {/foreach}
+                                        {/if}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="portfolio-overlay" data-lightbox="gallery">
+                                 {if $foto_list neq ''}
+                                {foreach name=foto_list from=$foto_list item=rs}
+                                  {if $rs.id_album eq $rs_album.id_album}
+                                    <a href="{$rs.foto}" class="left-icon" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
+                                    {/if}
+                                 {/foreach}
+                                 {/if}
+                                </div>
+                            </div>
+                          <div class="portfolio-desc">
+                                <h3>{$rs_album.nama_album}</h3>
+                                
+                            </div>
+                        </article>
+                        {/foreach}
+                        {/if}
+
+
+                       
+
+                        
+                    </div><!-- #portfolio end -->
+
+                    <!-- Portfolio Script
+                    ============================================= -->
+                    <script type="text/javascript">
+
+                        jQuery(window).load(function(){
+
+                            var $container = $('#portfolio');
+
+                            $container.isotope({ transitionDuration: '0.65s' });
+
+                            $('#portfolio-filter a').click(function(){
+                                $('#portfolio-filter li').removeClass('activeFilter');
+                                $(this).parent('li').addClass('activeFilter');
+                                var selector = $(this).attr('data-filter');
+                                $container.isotope({ filter: selector });
+                                return false;
+                            });
+
+                            $('#portfolio-shuffle').click(function(){
+                                $container.isotope('updateSortData').isotope({
+                                    sortBy: 'random'
+                                });
+                            });
+
+                            $(window).resize(function() {
+                                $container.isotope('layout');
+                            });
+
+                        });
+
+                    </script><!-- Portfolio Script End -->
+
+                </div>
+
+

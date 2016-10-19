@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 08:42:03
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 10:35:00
          compiled from "application\views\web\berita\list.html" */ ?>
 <?php /*%%SmartyHeaderCode:232775804bb17386352-73774792%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'af50530f45a450c21fef39812867b0478059c92d' => 
     array (
       0 => 'application\\views\\web\\berita\\list.html',
-      1 => 1476772893,
+      1 => 1476779691,
       2 => 'file',
     ),
   ),
@@ -21,6 +21,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   array (
     'berita_list' => 0,
     'rs' => 0,
+    'page_modul' => 0,
     'pagging' => 0,
   ),
   'has_nocache_code' => false,
@@ -65,7 +66,8 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                                     <ul class="entry-meta clearfix">
                                         <li><i class="icon-calendar3"></i> <?php echo $_smarty_tpl->tpl_vars['rs']->value['tanggal'];?>
 </li>
-                                        <li><i class="icon-folder-open"></i> Berita Relawan</li>
+                                        <li><i class="icon-folder-open"></i> <?php echo $_smarty_tpl->tpl_vars['page_modul']->value;?>
+</li>
                                        
                                     </ul>
                                     <div class="entry-content">

@@ -81,7 +81,7 @@
 			endif;
 			$this->smarty->assign("informasi_list", $result);
 			
-			
+				$this->smarty->assign("page_judul", 'Berita Cagub-Cawagub');
 				$this->smarty->assign("page_modul", 'Informasi');
 		
 
@@ -161,31 +161,15 @@
 			endif;
 			$this->smarty->assign("informasi_list_kedua", $result2);
 			
-		
-				$this->smarty->assign("page_modul", 'Informasi');
+			$this->smarty->assign("page_judul", 'Berita Cagub-Cawagub');
+			$this->smarty->assign("page_modul", 'Informasi');
 			
 
 			$this->smarty->assign("page_modul_url", site_url('public/informasi'));
-			$this->smarty->assign("page_name", 'Detail Informasi');
+			$this->smarty->assign("page_name", 'Detail Berita Caguub-Cawagub');
 			// display document
 			$this->parser->parse('web/base-layout/document-detail.html');
 		}
 
-		public
-		function download(){
-			$this->load->model('informasimodel');
-			$this->load->helper('download');
-			// data
-			$id_informasi= $this->uri->segment(4,0);
-			$data = $this->informasimodel->get_berita_by_id($id_informasi);
-			$dir = 'doc/informasi/' . $id_informasi. '/'.$data['file_informasi'];
-			
-			if(is_file($dir)):
-			$filedata = file_get_contents($dir);
-			force_download($data['file_informasi'], $filedata);
-			exit;
-			endif;
-			redirect('public/informasi/detail/'.$id_pengumuman);
-		}
-
+		
 	}

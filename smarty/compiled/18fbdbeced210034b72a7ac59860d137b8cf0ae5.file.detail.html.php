@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 09:06:19
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 10:46:47
          compiled from "application\views\web\berita\detail.html" */ ?>
 <?php /*%%SmartyHeaderCode:112525804bd4e6e1d40-46810431%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '18fbdbeced210034b72a7ac59860d137b8cf0ae5' => 
     array (
       0 => 'application\\views\\web\\berita\\detail.html',
-      1 => 1476774378,
+      1 => 1476780406,
       2 => 'file',
     ),
   ),
@@ -50,8 +50,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 <ul class="entry-meta clearfix">
                                     <li><i class="icon-calendar3"></i> <?php echo $_smarty_tpl->tpl_vars['data']->value['tanggal'];?>
 </li>
-                                    <li><a href="#"><i class="icon-user"></i> <?php echo $_smarty_tpl->tpl_vars['data']->value['nama_anggota'];?>
-</a></li>
+                                    
                                 </ul><!-- .entry-meta end -->
 
                                 <!-- Entry Content
@@ -135,8 +134,7 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
 </li>
                                                 
                                             </ul>
-                                            <div class="entry-content"><?php echo $_smarty_tpl->tpl_vars['rs']->value['content'];?>
-</div>
+                                          
                                         </div>
                                     </div>
                                     <?php } ?>

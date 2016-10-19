@@ -162,11 +162,16 @@
 
 			
 
-		
+			$id_relawan = $this->uri->segment(4, 0);
 
-				$this->smarty->assign("page_modul", 'Berita Relawan');
+			$data_relawan = $this->beritamodel->get_list_relawan_by_id($id_relawan);
+			foreach ($data_relawan as $key => $value) {
+			$data[][$key]['nama'] = $value['nama'];
+			}
+			
+			$this->smarty->assign("page_modul", 'Berita Relawan '.$data['nama']);
 
-
+			$this->smarty->assign("page_judul", 'Berita Relawan ');
 			$id_relawan = $this->uri->segment(4,0);
 			$this->smarty->assign("page_modul_url", site_url('public/berita/relawan/'.$id_relawan));
 
@@ -190,26 +195,9 @@
 
 			$data = $this->beritamodel->get_berita_by_id($id_berita);
 
-			
-
 			if(!empty($data)):
-
-			
-
-			
-
-		
 			$data['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
-
-			
-
-
-
-
 			$path = 'doc/berita/'.$data['id_berita']."/";
-
-			
-
 			if(is_file($path.$data['image'])){
 
 				$data['image'] = BASEURL.$path.$data['image'];
@@ -275,6 +263,7 @@
 			endforeach;
 
 			endif;
+			
 
 			$this->smarty->assign("berita_list", $result);
 
@@ -328,7 +317,20 @@
 
 			$this->smarty->assign("berita_list_kedua", $result2);
 
+			$id_relawan = $this->uri->segment(4, 0);
+
+			$data_relawan = $this->beritamodel->get_list_relawan_by_id($id_relawan);
+			foreach ($data_relawan as $key => $value) {
+			$data[][$key]['nama'] = $value['nama'];
+			}
+
 			
+			$this->smarty->assign("page_modul", 'Berita Relawan '.$data['nama']);
+			$this->smarty->assign("page_judul", 'Berita Relawan '.$data['nama']);
+			$id_relawan = $this->uri->segment(4,0);
+			$this->smarty->assign("page_modul_url", site_url('public/berita/relawan/'.$id_relawan));
+
+			$this->smarty->assign("page_name", 'Detail Berita Relawan '.$data['nama']);
 			
 
 			// display document

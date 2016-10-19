@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 11:11:54
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 10:16:08
          compiled from "application\views\web\informasi\list.html" */ ?>
 <?php /*%%SmartyHeaderCode:3105257ea5a8ec74e15-82286138%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e4e6e2ba2c4c9dc67a36c07649f80b04f7709402' => 
     array (
       0 => 'application\\views\\web\\informasi\\list.html',
-      1 => 1476695511,
+      1 => 1476778422,
       2 => 'file',
     ),
   ),
@@ -63,8 +63,9 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
 </a></h2>
                                     </div>
                                     <ul class="entry-meta clearfix">
-                                        <li><i class="icon-calendar3"></i> 24th February 2014</li>
-                                        <li><i class="icon-folder-open"></i> <a href="#">Berita Cagub-Cawagub</a></li>
+                                        <li><i class="icon-calendar3"></i> <?php echo $_smarty_tpl->tpl_vars['rs']->value['tanggal'];?>
+</li>
+                                        <li><i class="icon-folder-open"></i> Berita Cagub-Cawagub</li>
                                        
                                     </ul>
                                     <div class="entry-content">

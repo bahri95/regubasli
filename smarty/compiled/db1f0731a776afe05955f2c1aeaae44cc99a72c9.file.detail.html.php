@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 10:05:04
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 10:45:26
          compiled from "application\views\web\informasi\detail.html" */ ?>
 <?php /*%%SmartyHeaderCode:517357ea5a92c1ca66-60349740%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'db1f0731a776afe05955f2c1aeaae44cc99a72c9' => 
     array (
       0 => 'application\\views\\web\\informasi\\detail.html',
-      1 => 1476777902,
+      1 => 1476780151,
       2 => 'file',
     ),
   ),
@@ -50,8 +50,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                 <ul class="entry-meta clearfix">
                                     <li><i class="icon-calendar3"></i> <?php echo $_smarty_tpl->tpl_vars['data']->value['tanggal'];?>
 </li>
-                                    <li><a href="#"><i class="icon-user"></i> <?php echo $_smarty_tpl->tpl_vars['data']->value['nama_anggota'];?>
-</a></li>
+                                  
                                 </ul><!-- .entry-meta end -->
 
                                 <!-- Entry Content

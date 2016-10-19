@@ -40,6 +40,9 @@
                 }
 
                 $this->smarty->assign("foto", $data['foto']);
+                $this->smarty->assign("page_judul", 'Profil Cagub-Cawagub');
+                $this->smarty->assign("page_modul", 'Profil Cagub '. $data['nama']);
+                $this->smarty->assign("page_name", '');
             // display document
             $this->parser->parse('web/base-layout/document-detail.html');
         }
