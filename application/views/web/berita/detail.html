@@ -35,32 +35,16 @@
 
                                     {$data.content}
                                     <!-- Post Single - Content End -->
-
+                                    <div class="line"></div>
                                     <div class="clear"></div>
 
                                     <!-- Post Single - Share
                                     ============================================= -->
-                                    <div class="si-share noborder clearfix">
+                                  
                                         <span>Bagikan:</span>
-                                        <div>
-                                            <a href="http://www.facebook.com/sharer/sharer.php?u={$BASEURL}index.php/public/berita/detail/{$data.id_berita}" target="_blank" class="social-icon si-borderless si-facebook">
-                                                <i class="icon-facebook"></i>
-                                                <i class="icon-facebook"></i>
-                                            </a>
-                                            <a href="http://twitter.com/share?url={$BASEURL}index.php/public/berita/detail/{$data.id_berita}&text={$data.judul}" target="_blank" class="social-icon si-borderless si-twitter">
-                                                <i class="icon-twitter"></i>
-                                                <i class="icon-twitter"></i>
-                                            </a>
-                                            <a href="//pinterest.com/pin/create/link/?url={$BASEURL}index.php/public/berita/detail/{$data.id_berita}" target="_blank" class="social-icon si-borderless si-pinterest">
-                                                <i class="icon-pinterest"></i>
-                                                <i class="icon-pinterest"></i>
-                                            </a>
-                                            <a href="https://plus.google.com/share?url={$BASEURL}index.php/public/berita/detail/{$data.id_berita}" target="_blank" class="social-icon si-borderless si-gplus">
-                                                <i class="icon-gplus"></i>
-                                                <i class="icon-gplus"></i>
-                                            </a>
-                                        </div>
-                                    </div><!-- Post Single - Share End -->
+                                      <span class='st_facebook_vcount' displayText='Facebook'></span>
+                                        <span class='st_twitter_vcount' displayText='Tweet'></span>
+                                    
 
                                 </div>
                             </div><!-- .entry end -->
@@ -123,3 +107,9 @@
                         </div>
 
                     </div><!-- .postcontent end -->
+
+{literal}
+
+<script type="text/javascript" id="st_insights_js" src="http://w.sharethis.com/button/buttons.js?publisher=a4abca36-32a8-4c45-9716-281f17242f3b&product=widget"></script>
+<script type="text/javascript">stLight.options({publisher: "a4abca36-32a8-4c45-9716-281f17242f3b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+{/literal}

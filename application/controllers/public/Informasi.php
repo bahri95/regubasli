@@ -109,10 +109,12 @@
 			} else {
 				$data['image']= '';
 			}
-
+			$data['deskripsi'] = strip_tags($this->getIntroText($data['content'],300));
+			$data['url_detail'] = site_url('public/informasi/detail/'.$data['id_informasi'].'/'.url_title($data['judul']));
 			endif;
 			
 			$this->smarty->assign("data", $data);
+			$this->smarty->assign("share", $data);
 			//informasi terkait
 			$result = $this->informasimodel->get_list_informasi_terkait();
 			

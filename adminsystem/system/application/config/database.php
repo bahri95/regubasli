@@ -310,7 +310,7 @@ $active_record = TRUE;
 
 
 
-$db['default']['hostname'] = "localhost";
+// $db['default']['hostname'] = "localhost";
 
 
 
@@ -318,7 +318,7 @@ $db['default']['hostname'] = "localhost";
 
 
 
-$db['default']['username'] = "root";
+// $db['default']['username'] = "root";
 
 
 
@@ -326,7 +326,7 @@ $db['default']['username'] = "root";
 
 
 
-$db['default']['password'] = "";
+// $db['default']['password'] = "";
 
 
 
@@ -334,8 +334,7 @@ $db['default']['password'] = "";
 
 
 
-$db['default']['database'] = "db_regub";
-
+// $db['default']['database'] = "gubernur_regub";
 
 
 
@@ -366,7 +365,7 @@ $db['default']['database'] = "db_regub";
 
 ///hosting
 
-// $db['default']['hostname'] = "localhost";
+$db['default']['hostname'] = "localhost";
 
 
 
@@ -374,7 +373,7 @@ $db['default']['database'] = "db_regub";
 
 
 
-// $db['default']['username'] = "h71721_taa";
+$db['default']['username'] = "gubernur_regub";
 
 
 
@@ -382,7 +381,7 @@ $db['default']['database'] = "db_regub";
 
 
 
-// $db['default']['password'] = "letmein0101";
+$db['default']['password'] = "N95BTpp$2pwU";
 
 
 
@@ -390,7 +389,7 @@ $db['default']['database'] = "db_regub";
 
 
 
-// $db['default']['database'] = "h71721_dmsinew";
+$db['default']['database'] = "gubernur_regub";
 
 
 

@@ -198,8 +198,8 @@
                         $config['source_image']  = "doc/bantas/".$id_bantas.'/'.$bantas;
                         $config['new_image']  = "doc/bantas/".$id_bantas.'/'.$bantas;
                         
-                        $config['width']     = '1351';
-                        $config['height']   = '154';
+                        $config['width']     = '720';
+                        $config['height']   = '90';
                         
                         $this->image_lib->initialize($config); 
                         

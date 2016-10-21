@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 02:40:27
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 03:15:10
          compiled from "application\views\web\foto\list.html" */ ?>
 <?php /*%%SmartyHeaderCode:2628357ec9ca44be750-30929191%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'cd85aa74c922a518960740d43f19675e07035050' => 
     array (
       0 => 'application\\views\\web\\foto\\list.html',
-      1 => 1476837625,
+      1 => 1476839707,
       2 => 'file',
     ),
   ),
@@ -82,7 +82,8 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                           <div class="portfolio-desc">
                                 <h3><?php echo $_smarty_tpl->tpl_vars['rs_album']->value['nama_album'];?>
 </h3>
-                                
+                                <span>Published : <?php echo $_smarty_tpl->tpl_vars['rs_album']->value['tanggal'];?>
+</span>
                             </div>
                         </article>
                         <?php } ?>

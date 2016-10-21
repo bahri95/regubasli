@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 03:19:09
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 10:28:06
          compiled from "application\views\web\login\content.html" */ ?>
 <?php /*%%SmartyHeaderCode:990158032033908ae7-69174252%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '7eeb8d758bcfd2cecfb68285fa8a25500db387fe' => 
     array (
       0 => 'application\\views\\web\\login\\content.html',
-      1 => 1476666990,
+      1 => 1476865680,
       2 => 'file',
     ),
   ),
@@ -50,7 +50,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 			                                <div class="col_full nobottommargin">
 			                                    <button type="submit" class="button button-3d button-black nomargin" id="login-form-submit" name="login-form-submit" value="login">Login</button>
-			                                    <a href="#" class="fright">Lupa Password?</a>
+			                                    
 			                                </div>
 
 			                            </form>

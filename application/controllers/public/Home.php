@@ -24,6 +24,26 @@
          $this->beritacagub_cawagub();
          $this->gabungan();
          $this->foto();
+         $path = 'doc/home/foto.jpg';
+         $data['judul'] = 'Website Relawan Cagub-Cawagub Agus-Sylvi';
+         $data['url_detail'] = BASEURL;
+         $data['image'] = $path;
+         $data['deskripsi'] = 'Dukungan muncul dari berbagai daerah yang semangat mendukung pasangan
+ASLI, beberapa kelompok relawan siap menggerakan warga daerahnya yang
+tinggal di DKI Jakarta untuk memilih (ASLI) Agus – Sylvi pada pemilihan
+Gubernur DKI Jakarta yang akan diselenggarakan bulan Februari 2017
+Dengan pemanfaatan teknologi informasi yang semakin maju dan terdepan
+ditunjang dengan ibukota yang sudah siap infrastuktur internet pada era mobile
+apps, maka Tim IT Relawan membuat suatu aplikasi berbasis mobile apps dan
+website portal yang diberi nama “Relawan Jakarta ASLI”
+Aplikasi ini akan memetakan suara dukungan kelompok relawan terhadap
+pasangan ASLI Agus – Sylvi sehingga semua relawan akan lebih tegas dan terukur.
+Juga ditunjang oleh Portal gubernurdki.com merupakan website news yang
+berisikan berita, kegiatan, video, photo seputar pasangan Calon Gubernur Agus –
+Sylvi (ASLI) menuju Gubernur DKI 2017 – 2022.
+';
+        $this->smarty->assign('share', $data);
+
 
         // display document
         $this->parser->parse('web/base-layout/document-home.html');
@@ -46,7 +66,7 @@
                 $result[$key]['image']= BASEURL.'doc/tmp.default.jpg';
             }
                 $result[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
-                $result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_berita'].'/'.url_title($data['judul']));
+                $result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_relawan'].'/'.$data['id_berita'].'/'.url_title($data['judul']));
                 $result[$key]['content'] = strip_tags($this->getIntroText($data['content'],100));
             endforeach;
             endif;
@@ -69,7 +89,7 @@
                 $result[$key]['image']= BASEURL.'doc/tmp.default.jpg';
             }
                 $result[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
-                $result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_berita'].'/'.url_title($data['judul']));
+                  $result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_relawan'].'/'.$data['id_berita'].'/'.url_title($data['judul']));
                 $result[$key]['content'] = strip_tags($this->getIntroText($data['content'],100));
             endforeach;
             endif;
@@ -120,7 +140,7 @@
             foreach($databerita as $row):
             
           
-                $databerita['url_detail'] = site_url('public/berita/detail/'.$row['id_berita'].'/'.url_title($row['judul']));
+                $databerita['url_detail'] = site_url('public/berita/detail/'.$row['id_relawan'].'/'.$row['id_berita'].'/'.url_title($row['judul']));
                 $databerita['kategori'] = 'Berita Relawan';
          
 

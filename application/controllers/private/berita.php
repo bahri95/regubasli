@@ -279,16 +279,16 @@
                        $data       = $this->upload->data();
                         $foto = $data['file_name'];
                         // //resize
-                        //  $config['image_library'] = 'gd2';
-                        // $config['source_image']  = "doc/informasi/".$id_informasi.'/'.$foto;
-                        // $config['source_image']  = "doc/informasi/".$id_informasi.'/'.$foto;                       
-                        // $config['width']     = '772';
-                        // $config['height']   = '514';
+                       $config['image_library'] = 'gd2';
+                        $config['source_image']  = "doc/berita/".$id_berita.'/'.$foto;
+                        $config['source_image']  = "doc/berita/".$id_berita.'/'.$foto;                       
+                        $config['width']     = '400';
+                        $config['height']   = '300';
                         
-                        // $this->image_lib->initialize($config); 
+                        $this->image_lib->initialize($config); 
                         
                         
-                        // $this->image_lib->resize();
+                        $this->image_lib->resize();
                         $this->db->set("image",$foto);
 
                         $this->db->where("id_berita", $id_berita);
@@ -595,17 +595,21 @@
                     $id_berita = $this->input->post('id_berita');
                        $data       = $this->upload->data();
                         $foto = $data['file_name'];
-                        // //resize
-                        //  $config['image_library'] = 'gd2';
-                        // $config['source_image']  = "doc/informasi/".$id_informasi.'/'.$foto;
-                        // $config['source_image']  = "doc/informasi/".$id_informasi.'/'.$foto;                       
-                        // $config['width']     = '772';
-                        // $config['height']   = '514';
+                        //resize
+                         $config['image_library'] = 'gd2';
+                        $config['source_image']  = "doc/berita/".$id_berita.'/'.$foto;
+                        $config['source_image']  = "doc/berita/".$id_berita.'/'.$foto;                       
+                        $config['width']     = '400';
+                        $config['height']   = '300';
                         
-                        // $this->image_lib->initialize($config); 
+                        $this->image_lib->initialize($config); 
                         
                         
-                        // $this->image_lib->resize();
+                        $this->image_lib->resize();
+              
+					
+						
+
                         $this->db->set("image",$foto);
 
                         $this->db->where("id_berita", $id_berita);
@@ -622,48 +626,6 @@
 
 
 				
-
-				if(!empty($_FILES['file']['name'])){
-
-					$this->load->library("uploader");
-
-					// set file attachment
-
-					$this->uploader->set_file($_FILES['file']);
-
-					// set rules (kosongkan jika tidak menggunakan batasan sama sekali)
-
-					$rules = array('allowed_filesize' => 11200000);
-
-					$this->uploader->set_rules($rules);
-
-					// direktori
-
-					$dir = 'doc/berita/'.$id_berita.'/';
-
-					
-
-					if ($this->uploader->upload_file($dir)) {
-
-						$this->db->set("file_berita",$this->uploader->get_file_name());
-
-						$this->db->where("id_berita", $id_berita);
-
-						$this->db->update("berita_m");
-
-					} else {
-
-						//echo $this->upload->message;
-
-						$this->notification->set_message("File Gambar gagal diupload");
-
-						$this->notification->sent_notification(false);
-
-					}
-
-
-
-				}
 
 
 

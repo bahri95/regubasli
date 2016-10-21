@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-16 08:38:52
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 10:40:05
          compiled from "application\views\private\dashboard\grafik.html" */ ?>
 <?php /*%%SmartyHeaderCode:85357ea41d54cc9a3-49926665%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2354618920c3460c34a4ed9ec610ef723ad74b27' => 
     array (
       0 => 'application\\views\\private\\dashboard\\grafik.html',
-      1 => 1476349735,
+      1 => 1476866404,
       2 => 'file',
     ),
   ),
@@ -28,9 +28,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'url_opini' => 0,
     'url_sesebi' => 0,
     'berita' => 0,
-    'berita_anggota' => 0,
-    'event' => 0,
-    'event_anggota' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -39,11 +36,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
  dari <?php echo $_smarty_tpl->tpl_vars['total_album']->value;?>
  Album                </td>              <tr/>              <tr>                <td>Video &nbsp;                 </td>                  <td><?php echo $_smarty_tpl->tpl_vars['total_video']->value;?>
                 </td>              </tr>            </table>          </h4>          <p>            &nbsp;          </p>        </div>        <div class="icon">          <i class="glyphicon glyphicon-camera                    ">          </i>        </div>        <a href="#" class="small-box-footer">          Foto dan Video         <!--  <i class="fa fa-arrow-circle-right">          </i> -->        </a>       <!--  <a href="<?php echo $_smarty_tpl->tpl_vars['url_video']->value;?>
-" class="small-box-footer">          Video           <i class="fa fa-arrow-circle-right">          </i>        </a> -->      </div>    </div>    <!-- ./col -->    <div class="col-lg-3 col-xs-6">      <!-- small box -->      <div class="small-box bg-green">        <div class="inner">          <h5>            <table>              <tr>                <td>Informasi &nbsp;                 </td>                <td><?php echo $_smarty_tpl->tpl_vars['total_informasi']->value;?>
+" class="small-box-footer">          Video           <i class="fa fa-arrow-circle-right">          </i>        </a> -->      </div>    </div>    <!-- ./col -->    <div class="col-lg-3 col-xs-6">      <!-- small box -->      <div class="small-box bg-green">        <div class="inner">          <h5>            <table>              <tr>                <td>Berita Cagub-Cawagub&nbsp;                 </td>                <td><?php echo $_smarty_tpl->tpl_vars['total_informasi']->value;?>
                 </td>              <tr/>               <tr>                <td>&nbsp;                 </td>                <td>&nbsp;                 </td>              <tr/>              <tr>                <td>&nbsp;                 </td>                             <tr/>                          </table>          </h5>          <p>            &nbsp;          </p>        </div>        <div class="icon">          <i  class="glyphicon glyphicon-send                    ">          </i>        </div>        <a href="#" class="small-box-footer">          Informasi          <!-- <i class="fa fa-arrow-circle-right">          </i> -->        </a>        <!-- <a href="<?php echo $_smarty_tpl->tpl_vars['url_opini']->value;?>
 " class="small-box-footer">          Opini           <i class="fa fa-arrow-circle-right">          </i>        </a>        <a href="<?php echo $_smarty_tpl->tpl_vars['url_sesebi']->value;?>
-" class="small-box-footer">          Serba-serbi           <i class="fa fa-arrow-circle-right">          </i>        </a> -->      </div>    </div>    <!-- ./col -->    <div class="col-lg-3 col-xs-6">      <!-- small box -->      <div class="small-box bg-yellow">        <div class="inner">          <h4>            <table>              <tr>                <td>Berita DMSI&nbsp;                 </td>                <td><?php echo $_smarty_tpl->tpl_vars['berita']->value;?>
-                </td>              <tr/>              <tr>                <td>Berita Anggota&nbsp;                 </td>                  <td><?php echo $_smarty_tpl->tpl_vars['berita_anggota']->value;?>
-                </td>              </tr>            </table>          </h4>          <p>           &nbsp;          </p>        </div>        <div class="icon">          <i class="glyphicon glyphicon-bullhorn">          </i>        </div>        <a href="#" class="small-box-footer">          Berita          <!--  <i class="fa fa-arrow-circle-right">          </i> -->        </a>             </div>    </div>    <!-- ./col -->    <div class="col-lg-3 col-xs-6">      <!-- small box -->                    <div class="small-box bg-red">                      <div class="inner">                        <h4>                          <table>                            <tr>                              <td>Event DMSI &nbsp;                               </td>                              <td><?php echo $_smarty_tpl->tpl_vars['event']->value;?>
-                              </td>                            <tr/>                            <tr>                              <td>Event Anggota &nbsp;                               </td>                                <td><?php echo $_smarty_tpl->tpl_vars['event_anggota']->value;?>
-                              </td>                            </tr>                                                    </table>                        </h4>                      <p>                        &nbsp;                      </p>                    </div>                    <div class="icon">                      <i class="glyphicon glyphicon-calendar">                      </i>                    </div>                    <a href="#" class="small-box-footer">                      Event                       <!-- <i class="fa fa-arrow-circle-right">                      </i> -->                    </a>                         </div>                </div>                <!-- ./col -->              </div>             </section><!-- /.content --><?php }} ?>
+" class="small-box-footer">          Serba-serbi           <i class="fa fa-arrow-circle-right">          </i>        </a> -->      </div>    </div>    <!-- ./col -->    <div class="col-lg-3 col-xs-6">      <!-- small box -->      <div class="small-box bg-yellow">        <div class="inner">          <h4>            <table>              <tr>                <td>Berita Relawan&nbsp;                 </td>                <td><?php echo $_smarty_tpl->tpl_vars['berita']->value;?>
+                </td>              <tr/>                          </table>          </h4>          <p>           &nbsp;          </p>        </div>        <div class="icon">          <i class="glyphicon glyphicon-bullhorn">          </i>        </div>        <a href="#" class="small-box-footer">          Berita          <!--  <i class="fa fa-arrow-circle-right">          </i> -->        </a>             </div>    </div>    <!-- ./col -->                  </div>             </section><!-- /.content --><?php }} ?>

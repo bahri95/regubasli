@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 10:45:26
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 11:02:33
          compiled from "application\views\web\informasi\detail.html" */ ?>
 <?php /*%%SmartyHeaderCode:517357ea5a92c1ca66-60349740%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'db1f0731a776afe05955f2c1aeaae44cc99a72c9' => 
     array (
       0 => 'application\\views\\web\\informasi\\detail.html',
-      1 => 1476780151,
+      1 => 1476864003,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'data' => 0,
-    'BASEURL' => 0,
     'informasi_list' => 0,
     'rs' => 0,
     'informasi_list_kedua' => 0,
@@ -74,36 +73,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
                                     <!-- Post Single - Share
                                     ============================================= -->
-                                    <div class="si-share noborder clearfix">
-                                        <span>Bagikan:</span>
-                                        <div>
-                                            <a href="http://www.facebook.com/sharer/sharer.php?u=<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
-index.php/public/berita/detail/<?php echo $_smarty_tpl->tpl_vars['data']->value['id_berita'];?>
-" target="_blank" class="social-icon si-borderless si-facebook">
-                                                <i class="icon-facebook"></i>
-                                                <i class="icon-facebook"></i>
-                                            </a>
-                                            <a href="http://twitter.com/share?url=<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
-index.php/public/berita/detail/<?php echo $_smarty_tpl->tpl_vars['data']->value['id_berita'];?>
-&text=<?php echo $_smarty_tpl->tpl_vars['data']->value['judul'];?>
-" target="_blank" class="social-icon si-borderless si-twitter">
-                                                <i class="icon-twitter"></i>
-                                                <i class="icon-twitter"></i>
-                                            </a>
-                                            <a href="//pinterest.com/pin/create/link/?url=<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
-index.php/public/berita/detail/<?php echo $_smarty_tpl->tpl_vars['data']->value['id_berita'];?>
-" target="_blank" class="social-icon si-borderless si-pinterest">
-                                                <i class="icon-pinterest"></i>
-                                                <i class="icon-pinterest"></i>
-                                            </a>
-                                            <a href="https://plus.google.com/share?url=<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
-index.php/public/berita/detail/<?php echo $_smarty_tpl->tpl_vars['data']->value['id_berita'];?>
-" target="_blank" class="social-icon si-borderless si-gplus">
-                                                <i class="icon-gplus"></i>
-                                                <i class="icon-gplus"></i>
-                                            </a>
-                                        </div>
-                                    </div><!-- Post Single - Share End -->
+                                
+                                         <span>Bagikan:</span>
+                                      <span class='st_facebook_vcount' displayText='Facebook'></span>
+                                        <span class='st_twitter_vcount' displayText='Tweet'></span>
+                                 
 
                                 </div>
                             </div><!-- .entry end -->
@@ -183,4 +157,9 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                         </div>
 
                     </div><!-- .postcontent end -->
+
+
+
+<script type="text/javascript" id="st_insights_js" src="http://w.sharethis.com/button/buttons.js?publisher=a4abca36-32a8-4c45-9716-281f17242f3b&product=widget"></script>
+<script type="text/javascript">stLight.options({publisher: "a4abca36-32a8-4c45-9716-281f17242f3b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 <?php }} ?>

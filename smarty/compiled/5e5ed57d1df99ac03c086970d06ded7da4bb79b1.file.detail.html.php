@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 05:29:34
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 10:43:09
          compiled from "application\views\web\profil\detail.html" */ ?>
 <?php /*%%SmartyHeaderCode:363657ea4150c53ce0-75149352%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5e5ed57d1df99ac03c086970d06ded7da4bb79b1' => 
     array (
       0 => 'application\\views\\web\\profil\\detail.html',
-      1 => 1476677314,
+      1 => 1476866558,
       2 => 'file',
     ),
   ),
@@ -63,35 +63,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     <div class="line"></div>
                                     <p><?php echo $_smarty_tpl->tpl_vars['data']->value['content'];?>
 </p>
-                                    <div class="si-share noborder clearfix">
-                                        <span>Share:</span>
-                                        <div>
-                                            <a href="#" class="social-icon si-borderless si-facebook">
-                                                <i class="icon-facebook"></i>
-                                                <i class="icon-facebook"></i>
-                                            </a>
-                                            <a href="#" class="social-icon si-borderless si-twitter">
-                                                <i class="icon-twitter"></i>
-                                                <i class="icon-twitter"></i>
-                                            </a>
-                                            <a href="#" class="social-icon si-borderless si-pinterest">
-                                                <i class="icon-pinterest"></i>
-                                                <i class="icon-pinterest"></i>
-                                            </a>
-                                            <a href="#" class="social-icon si-borderless si-gplus">
-                                                <i class="icon-gplus"></i>
-                                                <i class="icon-gplus"></i>
-                                            </a>
-                                            <a href="#" class="social-icon si-borderless si-rss">
-                                                <i class="icon-rss"></i>
-                                                <i class="icon-rss"></i>
-                                            </a>
-                                            <a href="#" class="social-icon si-borderless si-email3">
-                                                <i class="icon-email3"></i>
-                                                <i class="icon-email3"></i>
-                                            </a>
-                                        </div>
-                                    </div><!-- Product Single - Share End -->
+                                    
 
                                 </div>
 

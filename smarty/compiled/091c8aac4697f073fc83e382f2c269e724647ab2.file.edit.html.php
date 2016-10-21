@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-09-28 18:04:10
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 03:40:30
          compiled from "application\views\private\foto\edit.html" */ ?>
 <?php /*%%SmartyHeaderCode:1674357ebe9fa85b6e7-04228656%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '091c8aac4697f073fc83e382f2c269e724647ab2' => 
     array (
       0 => 'application\\views\\private\\foto\\edit.html',
-      1 => 1473818682,
+      1 => 1476841229,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_57ebe9fa936319_05286867',
   'variables' => 
   array (
     'url_private' => 0,
@@ -23,13 +25,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'notification_status' => 0,
     'url_process' => 0,
     'data' => 0,
-    'image_album' => 0,
-    'id_koleksi' => 0,
-    'url_view_pic_list' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.17',
-  'unifunc' => 'content_57ebe9fa936319_05286867',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_57ebe9fa936319_05286867')) {function content_57ebe9fa936319_05286867($_smarty_tpl) {?><section class="content-header">  <h1>    Album Foto    <small>panel    </small>  </h1>  <ol class="breadcrumb">    <li>      <a href="<?php echo $_smarty_tpl->tpl_vars['url_private']->value;?>
 ">        <i class="fa fa-home">        </i> Home      </a>    </li>    <li>      <a href="<?php echo $_smarty_tpl->tpl_vars['url_list']->value;?>
@@ -38,12 +35,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 .      </div>      <?php }?>    </div>    <?php }?>    <div class="col-md-9">      <!-- form update email-->      <div class="box box-success">        <div class="box-header">          <h3 class="box-title">Tambah Album          </h3>        </div>        <!-- /.box-header -->        <!-- form start -->        <form id="form" action="<?php echo $_smarty_tpl->tpl_vars['url_process']->value;?>
 " method="post" enctype="multipart/form-data">          <div class="box-body">            <div class="form-group">              <label for="user_name_lama">Nama Album *              </label>              <input type="hidden" name="id_album" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['id_album'];?>
 " size="100" maxlength="255" />              <input type="text" name="nama_album" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['nama_album'];?>
-" size="100" maxlength="255" />            </div>            <div class="form-group">              <label for="user_name_lama">Nama Album (                <i>English                </i>) *              </label>              <input type="text" name="nama_english" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['nama_english'];?>
-" size="100" maxlength="255" />            </div>            <div class="form-group">                    <label for="user_name_lama">Tanggal *                    </label>                    <input type="text" name="tanggal" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['tanggal'];?>
-" class="tanggal_album form-control" size="10" maxlength="10" style="width:150px;" />                  </div>            <div class="form-group">              <div style="text-align:center"><?php echo $_smarty_tpl->tpl_vars['image_album']->value;?>
-              </div>              <br />               <label for="user_name_lama">Potongan Gambar <i>(MAX 2 Mb)</i>              </label>               <span>                <input  type="file" accept="image/*" onchange="loadFile(event)"                        style="visibility:hidden; width: 1px;"                        id='foto' name='image_album'                         onchange="$(this).parent().find('span').html($(this).val().replace('C:\\fakepath\\', ''))"  />                 <input class="btn btn-primary" type="button" value="Browse.." onclick="$(this).parent().find('input[type=file]').click();"/>                 &nbsp;                <span  class="badge badge-important" >                </span>              </span>            </div>            <center>              <img id="output" style="height:200px; margin-top:20px;">            </center>            <!--upload foto  -->            <input type="hidden" name="id_koleksi" id="id_koleksi" value="<?php echo $_smarty_tpl->tpl_vars['id_koleksi']->value;?>
-" />            <input type="hidden" name="url_view_list" id="url_view_list" value="<?php echo $_smarty_tpl->tpl_vars['url_view_pic_list']->value;?>
-" />            <input type="hidden" name="nama_koleksi" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['nama_koleksi'];?>
- (<?php echo $_smarty_tpl->tpl_vars['data']->value['nama_khusus'];?>
-)" />          </div>          <!-- /.box-body -->          <div class="box-footer">            <button type="submit" class="btn btn-primary">              <i class="fa fa-save">              </i>  Simpan            </button>            <a href="<?php echo $_smarty_tpl->tpl_vars['url_list']->value;?>
+" size="100" maxlength="255" />            </div>                       <div class="form-group">                    <label for="user_name_lama">Tanggal *                    </label>                    <input type="text" name="tanggal" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['tanggal'];?>
+" class="tanggal_album form-control" size="10" maxlength="10" style="width:150px;" />                  </div>                     </div>          <!-- /.box-body -->          <div class="box-footer">            <button type="submit" class="btn btn-primary">              <i class="fa fa-save">              </i>  Simpan            </button>            <a href="<?php echo $_smarty_tpl->tpl_vars['url_list']->value;?>
 "  class="btn btn-primary">              <i class="fa fa-close">              </i>  Batal            </a>          </div>        </form>      </div>      <!-- /.box -->    </div>    <!-- /.col -->  </div>  <!-- /.row --></section><!-- /.content --><script type="text/javascript">  var loadFile = function(event) {    var output = document.getElementById('output');    output.src = URL.createObjectURL(event.target.files[0]);  };</script><?php }} ?>

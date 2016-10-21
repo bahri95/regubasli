@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 07:40:50
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 11:09:40
          compiled from "application\views\web\home\content.html" */ ?>
 <?php /*%%SmartyHeaderCode:202465802fa19103f11-69857447%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1c7df63b2d972c8a947d0f54967fb70bb80d6f0f' => 
     array (
       0 => 'application\\views\\web\\home\\content.html',
-      1 => 1476768903,
+      1 => 1476868008,
       2 => 'file',
     ),
   ),
@@ -26,7 +26,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'list_foto' => 0,
     'berita_list_anggota' => 0,
     'datasosmed' => 0,
-    'BASEURL' => 0,
     'video_list' => 0,
   ),
   'has_nocache_code' => false,
@@ -85,7 +84,7 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
 </h3>
                                                             </div>
                                                             <div class="text-overlay-meta">
-                                                                <span><?php echo $_smarty_tpl->tpl_vars['rs']->value['content'];?>
+                                                                <span><?php echo $_smarty_tpl->tpl_vars['rs']->value['tanggal'];?>
 </span>
                                                             </div>
                                                         </div>
@@ -232,10 +231,7 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                                     
                                 </div>
 
-                                <div class="widget clearfix">
-                                    <img class="aligncenter" src="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
-/doc/foto/foto6.jpg" alt="">
-                                </div>
+                              
 
                                 <div class="widget clearfix">
 
@@ -356,15 +352,15 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
 " alt="Mac Sunglasses">
                                                 </a>
                                                 <div class="portfolio-overlay">
-                                                    <a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['play'];?>
+                                                    <a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_play'];?>
 " class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-                                                    <a href="portfolio-single-video.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                                                   
                                                 </div>
                                             </div>
                                             <div class="portfolio-desc">
                                                 <h3><a href="portfolio-single-video.html"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul_video'];?>
 </a></h3>
-                                                <span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>
+                                                
                                             </div>
                                         </div>
                                     <?php } ?>

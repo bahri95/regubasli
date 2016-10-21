@@ -75,9 +75,10 @@
             endif;
             $this->smarty->assign("video_list", $result);
             $this->smarty->assign("page_modul", 'Video ');
+             $this->smarty->assign("page_judul", 'Video ');
             $this->smarty->assign("page_modul_url", site_url('public/video'));
             // display document
-            $this->parser->parse('web/base-layout/document-list.html');
+            $this->parser->parse('web/base-layout/document-full.html');
         }
 
         public

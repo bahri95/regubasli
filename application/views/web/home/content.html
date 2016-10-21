@@ -38,7 +38,7 @@
                                                                 <h3>{$rs.judul}</h3>
                                                             </div>
                                                             <div class="text-overlay-meta">
-                                                                <span>{$rs.content}</span>
+                                                                <span>{$rs.tanggal}</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -63,10 +63,10 @@
                                 <div class="col_one_third">
                                     <div class="ipost clearfix">
                                         <div class="entry-image">
-                                            <a href="#"><img class="image_fade" src="{$rs.image}" alt="Image"></a>
+                                            <a href="{$rs.url_detail}"><img class="image_fade" src="{$rs.image}" alt="Image"></a>
                                         </div>
                                         <div class="entry-title">
-                                            <h3><a href="blog-single.html">{$rs.judul}</a></h3>
+                                            <h3><a href="{$rs.url_detail}">{$rs.judul}</a></h3>
                                         </div>
                                         <ul class="entry-meta clearfix">
                                             <li><i class="icon-calendar3"></i>{$rs.tanggal}</li>
@@ -91,7 +91,7 @@
 
                             <div class="col_full masonry-thumbs col-6 bottommargin-lg clearfix" data-big="5" data-lightbox="gallery">
                                    {foreach name=foto from=$list_foto item=rs}
-                                <a href="{$rs.foto}" data-lightbox="gallery-item"><img class="image_fade" src="{$rs.foto}" alt="Gallery Thumb 1"></a>
+                                <a href="{$rs.foto}" data-lightbox="gallery-item" title="{$rs.judul}"><img class="image_fade" src="{$rs.foto}"  alt="Gallery Thumb 1"></a>
                                     {/foreach}
                             </div>
 
@@ -152,9 +152,7 @@
                                     
                                 </div>
 
-                                <div class="widget clearfix">
-                                    <img class="aligncenter" src="{$BASEURL}/doc/foto/foto6.jpg" alt="">
-                                </div>
+                              
 
                                 <div class="widget clearfix">
 
@@ -243,13 +241,13 @@
                                                     <img src="{$rs.video_image}" alt="Mac Sunglasses">
                                                 </a>
                                                 <div class="portfolio-overlay">
-                                                    <a href="{$rs.play}" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-                                                    <a href="portfolio-single-video.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                                                    <a href="{$rs.url_play}" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
+                                                   
                                                 </div>
                                             </div>
                                             <div class="portfolio-desc">
-                                                <h3><a href="portfolio-single-video.html">{$rs.judul_video}</a></h3>
-                                                <span><a href="#">Graphics</a>, <a href="#">UI Elements</a></span>
+                                                <h3>{$rs.judul_video}</h3>
+                                                
                                             </div>
                                         </div>
                                     {/foreach}

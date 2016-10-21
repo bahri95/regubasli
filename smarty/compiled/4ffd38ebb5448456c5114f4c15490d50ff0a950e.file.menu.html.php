@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 01:47:23
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 11:16:22
          compiled from "application\views\web\base-layout\menu.html" */ ?>
 <?php /*%%SmartyHeaderCode:31215802fa18e9c632-59919313%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4ffd38ebb5448456c5114f4c15490d50ff0a950e' => 
     array (
       0 => 'application\\views\\web\\base-layout\\menu.html',
-      1 => 1476834435,
+      1 => 1476868581,
       2 => 'file',
     ),
   ),
@@ -20,9 +20,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'variables' => 
   array (
     'BASEURL' => 0,
+    'image_bantas' => 0,
+    'menu_aktif' => 0,
     'profil' => 0,
     'rs' => 0,
     'relawan' => 0,
+    'url_search_base' => 0,
+    'keyword' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -42,8 +46,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 </div><!-- #logo end -->
 
                 <div class="top-advert">
-                    <img src="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
-/doc/banner/banner.jpg" alt="Ad">
+                    <img src="<?php echo $_smarty_tpl->tpl_vars['image_bantas']->value;?>
+" alt="Ad">
                 </div>
 
             </div>
@@ -59,13 +63,23 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
 
                         <ul>
-                            
+                            <?php if ($_smarty_tpl->tpl_vars['menu_aktif']->value==''||$_smarty_tpl->tpl_vars['menu_aktif']->value=='home') {?> 
                              <li class="current"><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
 "><div>HOME</div></a>
+                            <?php } else { ?>
+                             <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+"><div>HOME</div></a>
+                            <?php }?>
+                            
                                 
                             </li>
-                            <li><a href="index.html"><div>PROFIL ASLI</div></a>
+                            <?php if ($_smarty_tpl->tpl_vars['menu_aktif']->value=='profil'&&$_smarty_tpl->tpl_vars['menu_aktif']->value!='') {?> 
+                            <li class="current"><a href="#"><div>PROFIL ASLI</div></a>
+                            <?php } else { ?>
+                            <li><a href="#"><div>PROFIL ASLI</div></a>
+                            <?php }?>
                             <ul>
+
                                     <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['profil']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
@@ -82,7 +96,11 @@ index.php/public/profil/detail/<?php echo $_smarty_tpl->tpl_vars['rs']->value['i
                                     
                                 
                             </li>
-                            <li><a href="#"><div>PROFIL RELAWAN</div></a>
+                             <?php if ($_smarty_tpl->tpl_vars['menu_aktif']->value=='relawan'&&$_smarty_tpl->tpl_vars['menu_aktif']->value!='') {?> 
+                            <li class="current"><a href="#"><div>PROFIL RELAWAN</div></a>
+                            <?php } else { ?>
+                             <li><a href="#"><div>PROFIL RELAWAN</div></a>
+                             <?php }?>
                                 <ul>
                                     
                                     <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
@@ -98,8 +116,11 @@ index.php/public/relawan/detail/<?php echo $_smarty_tpl->tpl_vars['rs']->value['
                                     <?php } ?>
                                 </ul>
                             </li>
-                            
-                            <li><a href="shop.html"><div>BERITA</div></a>
+                            <?php if ($_smarty_tpl->tpl_vars['menu_aktif']->value=='informasi'||$_smarty_tpl->tpl_vars['menu_aktif']->value=='berita'&&$_smarty_tpl->tpl_vars['menu_aktif']->value!='') {?> 
+                            <li class="current"><a href="#"><div>BERITA</div></a>
+                            <?php } else { ?>
+                            <li><a href="#"><div>BERITA</div></a>
+                            <?php }?>
                                 <ul>
                                     <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
 index.php/public/informasi"><div>KEGIATAN AGUS SILVY</div></a></li>
@@ -122,26 +143,44 @@ index.php/public/berita/relawan/<?php echo $_smarty_tpl->tpl_vars['rs']->value['
                                     
                                 </ul>
                             </li>
+                             <?php if ($_smarty_tpl->tpl_vars['menu_aktif']->value=='foto'&&$_smarty_tpl->tpl_vars['menu_aktif']->value!='') {?> 
+                           <li class="current"><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+index.php/public/foto"><div>PHOTO</div></a>
+                           <?php } else { ?>
                            <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
 index.php/public/foto"><div>PHOTO</div></a>
+                           <?php }?>
                                 
                             </li>
-                            <li><a href="index.html"><div>VIDEO</div></a>
+                             <?php if ($_smarty_tpl->tpl_vars['menu_aktif']->value=='video'&&$_smarty_tpl->tpl_vars['menu_aktif']->value!='') {?> 
+                            <li class="current"><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+index.php/public/video"><div>VIDEO</div></a>
+                            <?php } else { ?>
+                            <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+index.php/public/video"><div>VIDEO</div></a>
+                            <?php }?>
                                 
                             </li>
-
-                            <li><a href="index.html"><div>KONTAK</div></a>
-                                
+                              <?php if ($_smarty_tpl->tpl_vars['menu_aktif']->value=='kontak'&&$_smarty_tpl->tpl_vars['menu_aktif']->value!='') {?> 
+                            <li class="current"><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+index.php/public/kontak"><div>KONTAK</div></a>
+                                <?php } else { ?>
+                            <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+index.php/public/kontak"><div>KONTAK</div></a>
+                                <?php }?>
                             </li>
+                                
                         </ul>
 
                         <!-- Top Search
                         ============================================= -->
                         <div id="top-search">
                             <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
-                            <form action="search.html" method="get">
-                                <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
-                            </form>
+                              <form method="post" action="<?php echo $_smarty_tpl->tpl_vars['url_search_base']->value;?>
+" name="form-search"> 
+                                <input type="text" class="form-control" name="keyword" value="<?php echo $_smarty_tpl->tpl_vars['keyword']->value;?>
+" placeholder="Masukan kata pencarian"/>
+                              </form>
                         </div><!-- #top-search end -->
 
                     </div>

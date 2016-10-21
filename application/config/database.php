@@ -49,15 +49,16 @@
 	$active_group = 'default';
 	$active_record = TRUE;
 	//LOCAL
-	$db['default']['hostname'] = "localhost";
-	$db['default']['username'] = "root";
-	$db['default']['password'] = "";
-	$db['default']['database'] = "db_regub";
-	//ONLINE
 	// $db['default']['hostname'] = "localhost";
-	// $db['default']['username'] = "h71721_taa";
-	// $db['default']['password'] = "letmein0101";
-	// $db['default']['database'] = "h71721_dmsinew";
+	// $db['default']['username'] = "root";
+	// $db['default']['password'] = "";
+	// $db['default']['database'] = "gubernur_regub";
+	//ONLINE
+	$db['default']['hostname'] = "localhost";
+	$db['default']['username'] = "gubernur_regub";
+	$db['default']['password'] = "N95BTpp$2pwU";
+	$db['default']['database'] = "gubernur_regub";
+
 	$db['default']['dbdriver'] = 'mysql';
 	$db['default']['dbprefix'] = '';
 	$db['default']['pconnect'] = TRUE;

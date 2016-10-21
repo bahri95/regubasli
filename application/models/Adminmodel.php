@@ -39,7 +39,7 @@
         // get data
         
         function get_administrator_list() {
-            $sql = "SELECT a.id_user, a.admin_name, a.jenis_kelamin, a.id_relawan, a.jabatan, a.no_telp, a.photo, b.*, d.id_auth, d.auth_name, d.deskripsi, m.nama_kota, m.nama_asosiasi FROM administrator_m a INNER JOIN sys_user_m b ON a.id_user = b.id_user INNER JOIN sys_user_authority_t c ON b.id_user = c.id_user INNER JOIN sys_authority_m d ON c.id_auth = d.id_auth LEFT JOIN relawan_m m ON a.id_relawan = m.id_relawan WHERE a.id_user <> '1'";
+            $sql = "SELECT a.id_user, a.admin_name, a.jenis_kelamin, a.id_relawan, a.jabatan, a.no_telp, a.photo, b.*, d.id_auth, d.auth_name, d.deskripsi,  m.nama FROM administrator_m a INNER JOIN sys_user_m b ON a.id_user = b.id_user INNER JOIN sys_user_authority_t c ON b.id_user = c.id_user INNER JOIN sys_authority_m d ON c.id_auth = d.id_auth LEFT JOIN relawan_m m ON a.id_relawan = m.id_relawan WHERE a.id_user <> '1'";
             $query = $this->db->query($sql);
             
             if ($query->num_rows() > 0) {
@@ -86,7 +86,7 @@
 
         
         function get_administrator_by_id($id_user) {
-            $sql = "SELECT a.admin_name, a.jenis_kelamin, a.id_relawan, a.jabatan, a.no_telp, b.*, d.id_auth, d.auth_name, m.nama_kota , m.nama_propinsi, m.nama_asosiasi FROM administrator_m a INNER JOIN sys_user_m b ON a.id_user = b.id_user INNER JOIN sys_user_authority_t c ON b.id_user = c.id_user INNER JOIN sys_authority_m d ON c.id_auth = d.id_auth LEFT JOIN relawan_m m ON a.id_relawan = m.id_relawan  WHERE b.id_user = ?";
+            $sql = "SELECT a.admin_name, a.jenis_kelamin, a.id_relawan, a.jabatan, a.no_telp, b.*, d.id_auth, d.auth_name, m.nama FROM administrator_m a INNER JOIN sys_user_m b ON a.id_user = b.id_user INNER JOIN sys_user_authority_t c ON b.id_user = c.id_user INNER JOIN sys_authority_m d ON c.id_auth = d.id_auth LEFT JOIN relawan_m m ON a.id_relawan = m.id_relawan  WHERE b.id_user = ?";
             $query = $this->db->query($sql, array($id_user));
             
             if ($query->num_rows() > 0) {

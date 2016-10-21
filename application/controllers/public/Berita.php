@@ -202,7 +202,7 @@
 
 				$data['image'] = BASEURL.$path.$data['image'];
 
-				$share['image'] = BASEURL.$path.$data['image'];
+				
 
 			} else {
 
@@ -210,13 +210,13 @@
 
 			}
 
-
-
+			$data['deskripsi'] = strip_tags($this->getIntroText($data['content'],300));
+			$data['url_detail'] = site_url('public/berita/detail/'.$data['id_relawan'].'/'.$data['id_berita'].'/'.url_title($data['judul']));
 			endif;
 
 			$this->smarty->assign("data", $data);
 
-			$this->smarty->assign("share", $share);
+			$this->smarty->assign("share", $data);
 
 			// get data terkait
 

@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-09-27 13:09:24
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 10:19:12
          compiled from "application\views\private\administrator\edit.html" */ ?>
 <?php /*%%SmartyHeaderCode:2683857ea43a8478336-13002487%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2b7ed1c5e1cfc4539dff4c3c35db9ad455cefb2c' => 
     array (
       0 => 'application\\views\\private\\administrator\\edit.html',
-      1 => 1474974562,
+      1 => 1476865149,
       2 => 'file',
     ),
   ),
@@ -25,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'notification_status' => 0,
     'url_process' => 0,
     'data' => 0,
-    'data_asosiasi' => 0,
-    'result_as' => 0,
     'data_auth' => 0,
     'result_auth' => 0,
   ),
@@ -39,13 +37,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 .      </div>      <?php }?>    </div>    <?php }?>    <form id="form" action="<?php echo $_smarty_tpl->tpl_vars['url_process']->value;?>
 " method="post" nctype="multipart/form-data">      <div class="col-md-6">        <!-- form add -->        <div class="box box-success">          <div class="box-header">            <h3 class="box-title">Tambah Data Pengolah Data            </h3>          </div>          <!-- /.box-header -->          <!-- form start -->          <div class="box-body">            <input type="hidden" name="id_user" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['id_user'];?>
 ">            <div class="form-group">              <label for="admin_name">Nama Pengolah Data *               </label>              <input type="text" name="admin_name" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['admin_name'];?>
-" maxlength="100" id="admin_name" class="form-control" />            </div>            <div class="form-group">              <label for="admin_name">Jenis Kelamin *               </label>              <div class="radio">                <label>                  <input type="radio" name="jenis_kelamin" id="jenis_kelamin1" value="L" <?php if ($_smarty_tpl->tpl_vars['data']->value['jenis_kelamin']=='L') {?>checked="checked"<?php }?>>                  Laki-laki                </label>              </div>              <div class="radio">                <label>                  <input type="radio" name="jenis_kelamin" id="jenis_kelamin2" value="P" <?php if ($_smarty_tpl->tpl_vars['data']->value['jenis_kelamin']=='P') {?>checked="checked"<?php }?>>                  Perempuan                </label>              </div>            </div>            <div class="form-group">              <label for="id_auth">Asosiasi *               </label>              <select name="id_asosiasi" class="form-control">                <?php  $_smarty_tpl->tpl_vars['result_as'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['result_as']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['data_asosiasi']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['result_as']->key => $_smarty_tpl->tpl_vars['result_as']->value) {
-$_smarty_tpl->tpl_vars['result_as']->_loop = true;
-?>                <option value="<?php echo $_smarty_tpl->tpl_vars['result_as']->value['id_asosiasi'];?>
-" <?php if ($_smarty_tpl->tpl_vars['data']->value['id_asosiasi']==$_smarty_tpl->tpl_vars['result_as']->value['id_asosiasi']) {?>selected="selected"<?php }?>><?php echo $_smarty_tpl->tpl_vars['result_as']->value['nama_asosiasi'];?>
-                </option>                <?php } ?>              </select>            </div>            <div class="form-group">              <label for="id_auth">Hak Akses *               </label>              <select name="id_auth" class="form-control">                <?php  $_smarty_tpl->tpl_vars['result_auth'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['result_auth']->_loop = false;
+" maxlength="100" id="admin_name" class="form-control" />            </div>            <div class="form-group">              <label for="admin_name">Jenis Kelamin *               </label>              <div class="radio">                <label>                  <input type="radio" name="jenis_kelamin" id="jenis_kelamin1" value="L" <?php if ($_smarty_tpl->tpl_vars['data']->value['jenis_kelamin']=='L') {?>checked="checked"<?php }?>>                  Laki-laki                </label>              </div>              <div class="radio">                <label>                  <input type="radio" name="jenis_kelamin" id="jenis_kelamin2" value="P" <?php if ($_smarty_tpl->tpl_vars['data']->value['jenis_kelamin']=='P') {?>checked="checked"<?php }?>>                  Perempuan                </label>              </div>            </div>                       <div class="form-group">              <label for="id_auth">Hak Akses *               </label>              <select name="id_auth" class="form-control">                <?php  $_smarty_tpl->tpl_vars['result_auth'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['result_auth']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['data_auth']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['result_auth']->key => $_smarty_tpl->tpl_vars['result_auth']->value) {
 $_smarty_tpl->tpl_vars['result_auth']->_loop = true;

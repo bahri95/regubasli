@@ -110,7 +110,7 @@
 
 
 
-// $config['base_url']	= 'http://'.$_SERVER['HTTP_HOST']."/adminsystem/";
+$config['base_url']	= 'http://'.$_SERVER['HTTP_HOST']."/adminsystem/";
 
 
 
@@ -134,7 +134,7 @@
 
 
 
-$config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'].'/regubasli/adminsystem/';
+// $config['base_url']	= 'http://'.$_SERVER['HTTP_HOST'].'/regubasli/adminsystem/';
 
 
 

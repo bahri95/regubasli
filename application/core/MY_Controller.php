@@ -34,8 +34,7 @@
             //
             $this->_display_banner_atas();
        
-      
-
+           
             //foto
             $this->_display_foto();
 
@@ -53,9 +52,12 @@
 
             //berita gubernur
             $this->beritacagub_cawagub();
+
+           $menu_aktif = $this->uri->segment(2,0);
+           $this->smarty->assign('menu_aktif', $menu_aktif);
         
         }
-        
+       
         public function berita_relawan_utama(){
             // get data
             $this->load->model('beritamodel');
@@ -70,7 +72,7 @@
                 $result[$key]['image']= BASEURL.'doc/tmp.default.jpg';
             }
                 $result[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
-                $result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_berita'].'/'.url_title($data['judul']));
+                $result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_relawan'].'/'.$data['id_berita'].'/'.url_title($data['judul']));
                 $result[$key]['content'] = strip_tags($this->getIntroText($data['content'],100));
             endforeach;
             endif;
@@ -93,7 +95,7 @@
                 $result[$key]['image']= BASEURL.'doc/tmp.default.jpg';
             }
                 $result[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
-                $result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_berita'].'/'.url_title($data['judul']));
+               $result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_relawan'].'/'.$data['id_berita'].'/'.url_title($data['judul']));
                 $result[$key]['content'] = strip_tags($this->getIntroText($data['content'],100));
             endforeach;
             endif;
@@ -131,230 +133,8 @@
             endif;
             $this->smarty->assign("informasi_list", $result);
         }
-        public 
-        function _display_share()
-        {
-            $this->load->model('sharemodel');
-            $array_berita = array();
-            $array_informasi = array();
-            $array_agenda = array();
-            $array_opini = array();
-            $array_sesebi = array();
-            
-            // get data berita
-            $params = $this->uri->segment(4,0);
-            if($this->act_lang =='en'):
-            $databerita = $this->sharemodel->get_pencarian_berita_english($params);
-            
-            if(!empty($databerita)):
-            foreach($databerita as $row):
-            
-            if($row['id_relawan'] == '100'){
-                $databerita['url_detail'] = site_url('public/beritadmsi/detail/'.$row['id_berita'].'/'.url_title($row['judul_english']));
-                $databerita['kategori'] = 'DMSI News';
-            } else {
-                $databerita['url_detail'] = site_url('public/beritaanggota/detail/'.$row['id_berita'].'/'.url_title($row['judul_english']));
-                $databerita['kategori'] = 'DMSI Members News';
-            }
-
-            $pathdok = 'doc/berita/'.$row['id_berita'].'/'.$row['image'];
-            
-            if(is_file($pathdok)):
-            $databerita['image'] = BASEURL.$pathdok;
-            endif;
-            $detail_berita = $databerita['url_detail'];
-            $array_berita[] = array('id_data' => $row['id_berita'], 'judul' => $row['judul_english'],'content' => strip_tags($this->getIntroText($row['content_english'],100)),'image' => $databerita['image'],'kategori' => $databerita['kategori'],'url_detail' => $databerita['url_detail']);
-            endforeach;
-            endif; else :
-            $params = $this->uri->segment(4,0);
-            $databerita = $this->sharemodel->get_pencarian_berita_indo($params);
-            
-            if(!empty($databerita)):
-            foreach($databerita as $row):
-            
-            if($row['id_relawan'] == '100'){
-                $databerita['url_detail'] = site_url('public/beritadmsi/detail/'.$row['id_berita'].'/'.url_title($row['judul']));
-                $databerita['kategori'] = 'Berita DMSI';
-            } else {
-                $databerita['url_detail'] = site_url('public/beritaanggota/detail/'.$row['id_berita'].'/'.url_title($row['judul']));
-                $databerita['kategori'] = 'Berita Anggota DMSI';
-            }
-
-            $pathdok = 'doc/berita/'.$row['id_berita'].'/'.$row['image'];
-            
-            if(is_file($pathdok)):
-            $databerita['image'] = BASEURL.$pathdok;
-            endif;
-            $detail_berita = $databerita['url_detail'];
-            $array_berita[] = array('id_data' => $row['id_berita'], 'judul' => $row['judul'],'content' => strip_tags($this->getIntroText($row['content'],100)),'image' => $databerita['image'],'kategori' => $databerita['kategori'],'url_detail' => $databerita['url_detail']);
-            endforeach;
-            endif;
-            endif;
-            // get data informasi
-            // $params = array_merge($par, $limit);
-            
-            if($this->act_lang =='en'):
-            $params = $this->uri->segment(5,0);
-            $datainformasi = $this->sharemodel->get_pencarian_informasi_english($params);
-            
-            if(!empty($datainformasi)):
-            foreach($datainformasi as $row):
-            $datainformasi['url_detail'] = site_url('public/informasi/detail/'.$row['id_kategori'].'/'.$row['id_informasi'].'/'.url_title($row['judul_english']));
-            $datainformasi['kategori'] = 'Information '.$row['kategori_english'];
-            $pathdok = 'doc/informasi/'.$row['id_informasi'].'/'.$row['image'];
-            
-            if(is_file($pathdok)):
-            $datainformasi['image'] = BASEURL.$pathdok;
-            endif;
-            $detail_informasi = $datainformasi['url_detail'];
-            $array_informasi[] = array('id_data' => $row['id_informasi'], 'judul' => $row['judul_english'],'content' => strip_tags($this->getIntroText($row['content_english'],100)),'image' => $datainformasi['image'],'kategori' => $datainformasi['kategori'],'url_detail' => $datainformasi['url_detail']);
-            endforeach;
-            endif; else :
-            $params = $this->uri->segment(5,0);
-            $datainformasi = $this->sharemodel->get_pencarian_informasi_indo($params);
-            
-            if(!empty($datainformasi)):
-            foreach($datainformasi as $row):
-            $datainformasi['url_detail'] = site_url('public/informasi/detail/'.$row['id_kategori'].'/'.$row['id_informasi'].'/'.url_title($row['judul']));
-            $datainformasi['kategori'] = 'Information '.$row['kategori'];
-            $pathdok = 'doc/informasi/'.$row['id_informasi'].'/'.$row['image'];
-            
-            if(is_file($pathdok)):
-            $datainformasi['image'] = BASEURL.$pathdok;
-            endif;
-            $detail_informasi = $datainformasi['url_detail'];
-            $array_informasi[] = array('id_data' => $row['id_informasi'], 'judul' => $row['judul'],'content' => strip_tags($this->getIntroText($row['content'],100)),'image' => $datainformasi['image'],'kategori' => $datainformasi['kategori'],'url_detail' => $datainformasi['url_detail']);
-            endforeach;
-            endif;
-            endif;
-            // get data agenda
-            
-            if($this->act_lang =='en'):
-            $params = $this->uri->segment(4,0);
-            $dataagenda = $this->sharemodel->get_pencarian_agenda_english($params);
-            
-            if(!empty($dataagenda)):
-            foreach($dataagenda as $row):
-            
-            if($row['id_relawan'] == '100'){
-                $dataagenda['url_detail'] = site_url('public/kegiatandmsi/detail/'.$row['id_agenda'].'/'.url_title($row['judul_english']));
-                $dataagenda['kategori'] = 'DMSI Event';
-            } else {
-                $dataagenda['url_detail'] = site_url('public/kegiatananggota/detail/'.$row['id_agenda'].'/'.url_title($row['judul_english']));
-                $dataagenda['kategori'] = 'DMSI Member Event';
-            }
-
-            $pathdok = 'doc/agenda/'.$row['id_agenda'].'/'.$row['image_agenda'];
-            
-            if(is_file($pathdok)):
-            $dataagenda['image'] = BASEURL.$pathdok;
-            endif;
-            $detail_agenda = $dataagenda['url_detail'];
-            $array_agenda[] = array('id_data' => $row['id_agenda'], 'judul' => $row['judul_english'],'content' => strip_tags($this->getIntroText($row['keterangan_english'],100)),'image' => $dataagenda['image'],'kategori' => $dataagenda['kategori'],'url_detail' => $dataagenda['url_detail']);
-            endforeach;
-            endif; else :
-            $params = $this->uri->segment(4,0);
-            $dataagenda = $this->sharemodel->get_pencarian_agenda_indo($params);
-            
-            if(!empty($dataagenda)):
-            foreach($dataagenda as $row):
-            
-            if($row['id_relawan'] == '100'){
-                $dataagenda['url_detail'] = site_url('public/kegiatandmsi/detail/'.$row['id_agenda'].'/'.url_title($row['judul_agenda']));
-                $dataagenda['kategori'] = 'Event DMSI';
-            } else {
-                $dataagenda['url_detail'] = site_url('public/kegiatananggota/detail/'.$row['id_agenda'].'/'.url_title($row['judul_agenda']));
-                $dataagenda['kategori'] = 'Event Anggota DMSI';
-            }
-
-            $pathdok = 'doc/agenda/'.$row['id_agenda'].'/'.$row['image_agenda'];
-            
-            if(is_file($pathdok)):
-            $dataagenda['image'] = BASEURL.$pathdok;
-            endif;
-            $detail_agenda = $dataagenda['url_detail'];
-            $array_agenda[] = array('id_data' => $row['id_agenda'], 'judul' => $row['judul_agenda'],'content' => strip_tags($this->getIntroText($row['keterangan'],100)),'image' => $dataagenda['image'],'kategori' => $dataagenda['kategori'],'url_detail' => $dataagenda['url_detail']);
-            endforeach;
-            endif;
-            endif;
-            // get data opini
-            // $params = array_merge($par, $limit);
-            
-            if($this->act_lang =='en'):
-            $params = $this->uri->segment(4,0);
-            $dataopini = $this->sharemodel->get_pencarian_opini_english($params);
-            
-            if(!empty($dataopini)):
-            foreach($dataopini as $row):
-            $dataopini['url_detail'] = site_url('public/opini/detail/'.$row['id_opini'].'/'.url_title($row['judul_english']));
-            $dataopini['kategori'] = 'Opinion';
-            $pathdok = 'doc/opini/'.$row['id_opini'].'/'.$row['image'];
-            
-            if(is_file($pathdok)):
-            $dataopini['image'] = BASEURL.$pathdok;
-            endif;
-            $detail_opini = $dataopini['url_detail'];
-            $array_opini[] = array('id_data' => $row['id_opini'], 'judul' => $row['judul_english'],'content' => strip_tags($this->getIntroText($row['content_english'],100)),'image' => $dataopini['image'],'kategori' => $dataopini['kategori'],'url_detail' => $dataopini['url_detail']);
-            endforeach;
-            endif; else :
-            $params = $this->uri->segment(4,0);
-            $dataopini = $this->sharemodel->get_pencarian_opini_indo($params);
-            
-            if(!empty($dataopini)):
-            foreach($dataopini as $row):
-            $dataopini['url_detail'] = site_url('public/opini/detail/'.$row['id_opini'].'/'.url_title($row['judul']));
-            $dataopini['kategori'] = 'Opini';
-            $pathdok = 'doc/opini/'.$row['id_opini'].'/'.$row['image'];
-            
-            if(is_file($pathdok)):
-            $dataopini['image'] = BASEURL.$pathdok;
-            endif;
-            $detail_opini = $dataopini['url_detail'];
-            $array_opini[] = array('id_data' => $row['id_opini'], 'judul' => $row['judul'],'content' => strip_tags($this->getIntroText($row['content'],100)),'image' => $dataopini['image'],'kategori' => $dataopini['kategori'],'url_detail' => $dataopini['url_detail']);
-            endforeach;
-            endif;
-            endif;
-            // get data opini
-            // $params = array_merge($par, $limit);
-            
-            if($this->act_lang =='en'):
-            $params = $this->uri->segment(4,0);
-            $datasesebi = $this->sharemodel->get_pencarian_sesebi_english($params);
-            
-            if(!empty($datasesebi)):
-            foreach($datasesebi as $row):
-            $datasesebi['url_detail'] = site_url('public/sesebi/detail/'.$row['id_sesebi'].'/'.url_title($row['judul_english']));
-            $datasesebi['kategori'] = 'Various';
-            $pathdok = 'doc/sesebi/'.$row['id_sesebi'].'/'.$row['image'];
-            
-            if(is_file($pathdok)):
-            $datasesebi['image'] = BASEURL.$pathdok;
-            endif;
-            $detail_sesebi = $datasesebi['url_detail'];
-            $array_sesebi[] = array('id_data' => $row['id_sesebi'], 'judul' => $row['judul_english'],'content' => strip_tags($this->getIntroText($row['content_english'],100)),'image' => $datasesebi['image'],'kategori' => $datasesebi['kategori'],'url_detail' => $datasesebi['url_detail']);
-            endforeach;
-            endif; else :
-            $params = $this->uri->segment(4,0);
-            $datasesebi = $this->sharemodel->get_pencarian_sesebi_indo($params);
-            
-            if(!empty($datasesebi)):
-            foreach($datasesebi as $row):
-            $datasesebi['url_detail'] = site_url('public/sesebi/detail/'.$row['id_sesebi'].'/'.url_title($row['judul']));
-            $datasesebi['kategori'] = 'Serba-serbi';
-            $pathdok = 'doc/sesebi/'.$row['id_sesebi'].'/'.$row['image'];
-            
-            if(is_file($pathdok)):
-            $datasesebi['image'] = BASEURL.$pathdok;
-            endif;
-            $detail_sesebi = $datasesebi['url_detail'];
-            $array_sesebi[] = array('id_data' => $row['id_sesebi'], 'judul' => $row['judul'],'content' => strip_tags($this->getIntroText($row['content'],100)),'image' => $datasesebi['image'],'kategori' => $datasesebi['kategori'],'url_detail' => $datasesebi['url_detail']);
-            endforeach;
-            endif;
-            endif;
-            $array_hasil = array_merge($array_berita, $array_informasi, $array_agenda, $array_opini, $array_sesebi);
-            $this->smarty->assign("datashare", $array_hasil);
-            
-        }
+   
+       
         public
         function _display_video()
         {
@@ -1017,7 +797,7 @@
             
             if(is_file($path.$data['bantas'])){
                 $url_hapus = site_url('private/bantas/process/hapusgambar/')."/".$data['id_bantas'];
-                $data['bantas'] = '<img class="img-responsive" src="'.BASEURL.$path.$data['bantas'].'" border="0"><br />';
+                $data['bantas'] = ''.BASEURL.$path.$data['bantas'].'';
             } else {
                 $data['bantas']= '-tidak ada gambar- ';
             }
@@ -1033,73 +813,7 @@
             $this->smarty->assign("datasosmed", $datasosmed);
         }
 
-        private
-        function _display_label(){
-            
-            if($this->act_lang == 'en'){
-                $label['selengkapnya'] = 'More';
-                $label['aspirasi'] = 'You can deliver the criticism, suggestions, questions to us through information and tools below will be displayed on the front page.';
-                $label['pesan'] = 'Send a Message';
-                $label['nama'] = 'Name';
-                $label['pekerjaan'] = 'Jobs';
-                $label['objek'] = 'Object';
-                $label['tanggal'] = 'Date';
-                $label['foto'] = 'Photo';
-                $label['judul'] = 'Title';
-                //aspirasi
-                $label['isi_pesan'] = 'Message Body Aspiration';
-                $label['validasi'] = 'Validation Code';
-                $label['sosmed'] = 'Social Media';
-                $label['info'] = 'Contact Info';
-                $label['petunjuk'] = 'Instructions';
-                $label['petunjuk1'] = 'Please Enter Your Full Name';
-                $label['petunjuk2'] = 'fill the column by selecting the Object to which this aspiration in show';
-                $label['petunjuk3'] = 'DMSI = Top Party DMSI';
-                $label['petunjuk4'] = 'In addition to DI = One party DMSI Association Members';
-                $label['petunjuk5'] = 'Email filled with your email';
-                $label['petunjuk6'] = 'Dates stuffed with the date you sent the message this aspiration';
-                $label['petunjuk7'] = 'Message message filled with Aspiration Aspiration you, suggest politely and in good';
-                $label['petunjuk8'] = 'Validation code in the contents in accordance with the code on it';
-                //kontak
-                $label['kontak'] = 'Contact Us';
-                $label['kontak_deskripsi'] = 'You can deliver the criticism, suggestions, questions to us through information and tools below.';
-                $label['subjek'] = 'Subject';
-                $label['pesan_kontak'] = 'the contents of the message';
-                $label['bagikan'] = 'Share';
-            } else {
-                $label['selengkapnya'] = 'Selengkapnya';
-                $label['aspirasi'] = 'Anda dapat menyampaikan kritik, saran, pertanyaan kepada kami melalui informasi dan sarana di bawah ini yang akan ditampilkan di Halaman Depan.';
-                $label['pesan'] = 'Kirim Pesan';
-                $label['nama'] = 'Nama';
-                $label['pekerjaan'] = 'Pekerjaan';
-                $label['objek'] = 'Objek';
-                $label['tanggal'] = 'Tanggal';
-                $label['foto'] = 'Foto';
-                $label['judul'] = 'Judul';
-                $label['isi_pesan'] = 'Isi Pesan Aspirasi';
-                $label['validasi'] = 'Kode Validasi';
-                $label['sosmed'] = 'Sosial Media';
-                $label['info'] = 'Kontak Info';
-                $label['petunjuk'] = 'Petunjuk';
-                $label['petunjuk1'] = 'Isikan Nama Anda Secara Lengkap';
-                $label['petunjuk2'] = 'isikan Kolom Objek dengan memilih ke pihak mana Aspirasi ini di tunjukan';
-                $label['petunjuk3'] = 'DMSI = Pihak Utama DMSI';
-                $label['petunjuk4'] = 'Selain DMSI = Salah satu pihak Anggota relawan DMSI';
-                $label['petunjuk5'] = 'Email diisi dengan email Anda';
-                $label['petunjuk6'] = 'Tanggal diisi dengan tanggal Anda mengirim pesan Aspirasi ini';
-                $label['petunjuk7'] = 'Pesan Aspirasi diisi dengan pesan Aspirasi anda, di sarankan sopan dan baik';
-                $label['petunjuk8'] = 'Kode validasi di isi sesuai dengan kode di atasnya';
-                $label['kontak'] = 'Kontak Kami';
-                $label['kontak_deskripsi'] = 'Anda dapat menyampaikan kritik, saran, pertanyaan kepada kami melalui informasi dan sarana di bawah ini.';
-                $label['subjek'] = 'Subjek';
-                $label['pesan_kontak'] = 'Isi Pesan';
-                $label['bagikan'] = 'Bagikan';
-            }
+       
 
-            $this->smarty->assign('label', $label);
-        }
-
-        // display site data
-        /// END LOG PROCESS
-        //---END PRIVATE BASE SCRIPT--
+        
     }

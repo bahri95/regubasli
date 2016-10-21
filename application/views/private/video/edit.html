@@ -74,21 +74,10 @@
     <div class="col-md-10">
       <!-- form update email-->
       <div class="box box-success">
-        <div class="nav-tabs-custom">
-          <ul class="nav nav-tabs">
-            <li class="active">
-              <a href="#tab_1" data-toggle="tab">Indonesia
-              </a>
-            </li>
-            <li>
-              <a href="#tab_2" data-toggle="tab">English
-              </a>
-            </li> 
-          </ul>
+        
           <!-- form start -->
           <form id="form" action="{$url_process}" method="post" enctype="multipart/form-data">
-            <div class="tab-content">
-              <div class="tab-pane active" id="tab_1">
+          
                 <input type="hidden" name="id_video" id="id_video" value="{$id_video}" />
                 <input type="hidden" name="url-upload" id="url-upload" value="{$url_upload}" />
                 <input type="hidden" name="vid_url" id="vid_url" value="{$url_video}" />
@@ -163,27 +152,9 @@
                   </div>
                 </div>
                 <!-- /.box-body -->
-              </div>
+        
               <!-- /.tab pane 1 -->
-              <!-- tab pane 2-->
-              <div class="tab-pane" id="tab_2">
-                <div class="box-body">
-                  <div class="form-group">
-                    <label for="user_name_lama">Judul Video (
-                      <i>English
-                      </i> ) *
-                    </label>
-                    <input type="text" name="judul_english" class="form-control" value="{$data.judul_english}" size="100" maxlength="255" />
-                  </div>
-                  <div class="form-group">
-                    <label for="user_name_lama">Keterangan (
-                      <i>English
-                      </i> )
-                    </label>
-                    <textarea name="keterangan_english" class="form-control" cols="72" rows="4" >{$data.keterangan_english}
-                    </textarea>
-                  </div>
-                </div>
+             
                 <!-- /.box-body -->
                 <div class="box-footer">
                   <button type="submit" class="btn btn-primary">
@@ -195,8 +166,7 @@
                     </i>  Batal
                   </a>
                 </div>
-              </div>
-              <!-- /.tab pane 2 -->
+             
             </div>
             <!-- /.tab content -->
           </form>

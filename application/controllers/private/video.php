@@ -133,13 +133,16 @@
 		$this->load->library("uploader");
 		// set rules
 		$this->notification->check_post('judul_video', 'Judul Video', 'required');
-		$this->notification->check_post('judul_english', 'Judul Video English', 'required');
+
 		$this->notification->check_post('tipe', 'Tipe Video', 'required');
 		// run
 		
 		if ($this->notification->valid_input()) {
 			// params
-			$params = array(                    'judul' => $this->input->post('judul_video'),                    'keterangan' => $this->input->post('keterangan'),                    'sumber' => $this->input->post('sumber'),                'tipe' => $this->input->post('tipe'),                'judul_english' => $this->input->post('judul_english'),                'keterangan_english' => $this->input->post('keterangan_english'));
+			$params = array('judul' => $this->input->post('judul_video'),                    
+				'keterangan' => $this->input->post('keterangan'),                    
+				'sumber' => $this->input->post('sumber'),                
+				'tipe' => $this->input->post('tipe'));
 			// execute
 			
 			if($this->videomodel->process_video_add($params)) {
@@ -276,7 +279,11 @@
 		
 		if ($this->notification->valid_input()) {
 			// params
-			$params = array(                    'judul_video' => $this->input->post('judul_video'),                    'keterangan' => $this->input->post('keterangan'),                    'sumber' => $this->input->post('sumber'),'tipe' => $this->input->post('tipe'),'judul_english' => $this->input->post('judul_english'),'keterangan_english' => $this->input->post('keterangan_english'),                    'id_video' => $this->input->post('id_video'));
+			$params = array(     'judul_video' => $this->input->post('judul_video'),                    
+				'keterangan' => $this->input->post('keterangan'),                    
+				'sumber' => $this->input->post('sumber'),
+				'tipe' => $this->input->post('tipe'),
+				 'id_video' => $this->input->post('id_video'));
 			// execute
 			
 			if($this->videomodel->process_video_edit($params)) {

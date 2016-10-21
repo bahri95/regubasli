@@ -21,16 +21,6 @@
             //get data
             $data = $this->fotomodel->get_list_album_limit();
             
-            if(!empty($data)):
-            foreach($data as $k=>$row):
-            $pathdok = 'doc/album/image_album/'.$row['id_album'].'/'.$row['image_album'];
-            
-            if(!is_file($pathdok)):
-            $data[$k]['image_album'] = ''; else :
-            $data[$k]['image_album'] = BASEURL.$pathdok;
-            endif;
-            endforeach;
-            endif;
             $this->smarty->assign("data", $data);
             $this->smarty->assign("no",1);
             // $this->smarty->assign("total", $totaldata);
@@ -63,7 +53,7 @@
             $this->layout->load_javascript("js/admin/plugins/datatables/dataTables.bootstrap.js");
             //get data
             $params = $this->uri->segment(4,0);
-            $data = $this->fotomodel->get_list_foto_limit($params);
+            $data = $this->fotomodel->get_list_foto_limit_private($params);
             
             if(!empty($data)):
             foreach($data as $k=>$row):
@@ -171,80 +161,15 @@
         $this->load->library("uploader");
         // set rules
         $this->notification->check_post('nama_album', 'Nama Album', 'required');
-        $this->notification->check_post('nama_english', 'Nama Album English', 'required');
          $this->notification->check_post('tanggal', 'Tanggal', 'required');
         // run
         
         if ($this->notification->valid_input()) {
             // params
-            $params = array('nama_album' => $this->input->post('nama_album'),                    
-                'nama_english' => $this->input->post('nama_english'),
+            $params = array('nama_album' => $this->input->post('nama_album'),                  
                 'tanggal' => $this->input->post('tanggal'));
             // execute
-            if($this->fotomodel->process_album_add($params)):
-                $id_album = $this->db->insert_id();
-                if (!empty($_FILES['image_album']['tmp_name'])) {
-                   // set rules (kosongkan jika tidak menggunakan batasan sama sekali)
-                   $config['upload_path']  = "doc/album/image_album/" . $id_album . '/';
-
-                   $config['allowed_types']= 'gif|jpg|png|jpeg';
-                   $config['max_size'] = '4000';
-                   
-                   $config['file_name'] = $id_album.'_'.$_FILES['image_album']['name'];
-                    if(!is_dir($config['upload_path'])):
-                    mkdir($config['upload_path']);
-                    endif;
-                   $this->load->library('upload', $config);
-                    // proses upload
-                    if ($this->upload->do_upload("image_album")) {
-                    $id_album = $this->db->insert_id();
-                       $data       = $this->upload->data();
-                        $image_album = $data['file_name'];
-                        $tanggal = $this->input->post('tanggal');
-
-
-                        //image
-                        $config['image_library']    = 'gd2';
-                        $config['source_image'] = "doc/album/image_album/".$id_album.'/'.$image_album;
-                        $config['wm_type']          = 'overlay';
-                        $config['wm_overlay_path']  = 'doc/album/dmsi.png'; //the overlay image
-                        $config['wm_opacity']       = 20;
-                        $config['wm_vrt_alignment'] = 'middle';
-                        $config['wm_hor_alignment'] = 'center';
-                        $config['wm_padding'] = '1';
-
-
-                        $this->image_lib->initialize($config);
-
-                        $this->image_lib->watermark();
-                        //resize
-                         $config['image_library'] = 'gd2';
-                        $config['source_image']  = "doc/album/image_album/".$id_album.'/'.$image_album;
-                        $config['new_image']  = "doc/album/image_album/".$id_album.'/'.$image_album;
-                        
-                        $config['width']     = '772';
-                        $config['height']   = '514';
-                        
-                        $this->image_lib->initialize($config); 
-                        
-                        
-                        $this->image_lib->resize();
-                        $this->db->set("image_album",$image_album);
-
-                        $this->db->where("id_album", $id_album);
-
-                        $this->db->update("album_m");
-
-                    } else {
-                        //echo $this->upload->message;
-                        $this->notification->set_message("File Gambar gagal diupload, file gambar tidak memenuhi kriteria");
-                        $this->notification->sent_notification(false);
-                        redirect('private/foto/add_foto/'.$id_album);
-                    }
-
-                }
-
-               
+            if($this->fotomodel->process_album_add($params)):   
                 $this->notification->clear_post();
                 $this->notification->set_message("Data berhasil disimpan");
                 $this->notification->sent_notification(true);
@@ -303,15 +228,15 @@
         $this->load->library("uploader");
         // set rules
         $this->notification->check_post('judul_foto', 'Judul Foto', 'required');
-        $this->notification->check_post('judul_english', 'Judul Foto English', 'required');
+        $this->notification->check_post('urutan', 'Urutan', 'required');
+      
         // run
         
         if ($this->notification->valid_input()) {
             // params
             $params = array('id_album' => $this->input->post('id_album'),
                         'judul_foto' => $this->input->post('judul_foto'),
-                        'urutan' => $this->input->post('urutan'),                    
-                        'judul_english' => $this->input->post('judul_english'));
+                        'urutan' => $this->input->post('urutan'));
             // execute
             
             if($this->fotomodel->process_foto_add($params)) {
@@ -340,20 +265,20 @@
 					
 
 					if ($this->uploader->upload_image($dir,1000)) {
-					$image_foto = $_FILES['foto']['name'];
-						 $config['image_library']    = 'gd2';
-			                        $config['source_image'] = "doc/album/".$id_album.'/'.$id_foto .'/'.$image_foto ;
-			                        $config['wm_type']          = 'overlay';
-			                        $config['wm_overlay_path']  = 'doc/album/dmsi.png'; //the overlay image
-			                        $config['wm_opacity']       = 20;
-			                        $config['wm_vrt_alignment'] = 'middle';
-			                        $config['wm_hor_alignment'] = 'center';
-			                        $config['wm_padding'] = '1';
+					// $image_foto = $_FILES['foto']['name'];
+					// 	 $config['image_library']    = 'gd2';
+			  //                       $config['source_image'] = "doc/album/".$id_album.'/'.$id_foto .'/'.$image_foto ;
+			  //                       $config['wm_type']          = 'overlay';
+			  //                       $config['wm_overlay_path']  = 'doc/album/dmsi.png'; //the overlay image
+			  //                       $config['wm_opacity']       = 20;
+			  //                       $config['wm_vrt_alignment'] = 'middle';
+			  //                       $config['wm_hor_alignment'] = 'center';
+			  //                       $config['wm_padding'] = '1';
 			
 			
-			                        $this->image_lib->initialize($config);
+			  //                       $this->image_lib->initialize($config);
 			
-			                        $this->image_lib->watermark();
+			  //                       $this->image_lib->watermark();
 
 						$this->db->set("foto",$this->uploader->get_file_name());
 
@@ -413,16 +338,7 @@
         $this->smarty->assign("album", $album);
         $id_album = $this->uri->segment(4, 0);
         $data = $this->fotomodel->get_album_by_id($id_album);
-        $path = 'doc/album/image_album/'.$id_album."/";
-        
-        if(is_file($path.$data['image_album'])){
-            $url_hapus = site_url('private/foto/process/hapusgambar/')."/".$data['id_album'];
-            $data['image_album'] = '<img src="'.BASEURL.$path.$data['image_album'].'" border="0" height="200px"><br /><input type="button" value="Hapus Gambar" onClick="javascript:document.location=\''.$url_hapus.'\';">';
-        } else {
-            $data['image_album']= '-tidak ada gambar- ';
-        }
-
-        $this->smarty->assign("image_album", $data['image_album']);
+      
         ///ASIGN DATA variable nya ke smarty
         $this->smarty->assign("data", $data);
         // notification
@@ -449,13 +365,13 @@
       
         // set rules
         $this->notification->check_post('nama_album', 'Nama Album', 'required');
-        $this->notification->check_post('nama_english', 'Nama Album English', 'required');
+        
         $this->notification->check_post('tanggal', 'Tanggal', 'required');
         // run
         
         if ($this->notification->valid_input()) {
             // params
-            $params = array( 'nama_album' => $this->input->post('nama_album'),                     'nama_english' => $this->input->post('nama_english'), 
+            $params = array( 'nama_album' => $this->input->post('nama_album'),                     
                 'tanggal' => $this->input->post('tanggal'),
                 'id_album' => $this->input->post('id_album'));
             // execute
@@ -606,12 +522,14 @@
         // set rules
         $this->notification->check_post('judul_foto', 'Judul Foto', 'required');
         $this->notification->check_post('urutan', 'Urutan', 'required');
-        $this->notification->check_post('judul_english', 'Judul English', 'required');
+        
         // run
         
         if ($this->notification->valid_input()) {
             // params
-            $params = array( 'judul_foto' => $this->input->post('judul_foto'), 'urutan' => $this->input->post('urutan'),                     'judul_english' => $this->input->post('judul_english'), 'id_foto' => $this->input->post('id_foto'));
+            $params = array( 'judul_foto' => $this->input->post('judul_foto'), 
+                'urutan' => $this->input->post('urutan'),                     
+                 'id_foto' => $this->input->post('id_foto'));
             // execute
             
             if($this->fotomodel->process_foto_edit($params)) {
@@ -638,20 +556,20 @@
 					 $this->uploader->remove_dir('doc/album/'.$id_album."/".$id_foto);
 
 					if ($this->uploader->upload_image($dir,1000)) {
-					$image_foto = $_FILES['foto']['name'];
-						 $config['image_library']    = 'gd2';
-			                        $config['source_image'] = "doc/album/".$id_album.'/'.$id_foto .'/'.$image_foto ;
-			                        $config['wm_type']          = 'overlay';
-			                        $config['wm_overlay_path']  = 'doc/album/dmsi.png'; //the overlay image
-			                        $config['wm_opacity']       = 20;
-			                        $config['wm_vrt_alignment'] = 'middle';
-			                        $config['wm_hor_alignment'] = 'center';
-			                        $config['wm_padding'] = '1';
+					// $image_foto = $_FILES['foto']['name'];
+					// 	 $config['image_library']    = 'gd2';
+			  //                       $config['source_image'] = "doc/album/".$id_album.'/'.$id_foto .'/'.$image_foto ;
+			  //                       $config['wm_type']          = 'overlay';
+			  //                       $config['wm_overlay_path']  = 'doc/album/dmsi.png'; //the overlay image
+			  //                       $config['wm_opacity']       = 20;
+			  //                       $config['wm_vrt_alignment'] = 'middle';
+			  //                       $config['wm_hor_alignment'] = 'center';
+			  //                       $config['wm_padding'] = '1';
 			
 			
-			                        $this->image_lib->initialize($config);
+			  //                       $this->image_lib->initialize($config);
 			
-			                        $this->image_lib->watermark();
+			  //                       $this->image_lib->watermark();
 
 						$this->db->set("foto",$this->uploader->get_file_name());
 

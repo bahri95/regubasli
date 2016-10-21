@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-17 03:22:51
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 10:39:02
          compiled from "application\views\private\base-layout\document.html" */ ?>
 <?php /*%%SmartyHeaderCode:2591957ea41d4ef6163-08257629%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '985f90fb749eb9e3b279a3440dc676881793741a' => 
     array (
       0 => 'application\\views\\private\\base-layout\\document.html',
-      1 => 1476667369,
+      1 => 1476866308,
       2 => 'file',
     ),
   ),
@@ -24,15 +24,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'site_title' => 0,
     'THEMESPATH' => 0,
     'LOADSTYLE' => 1,
-    'data_aspirasi' => 1,
-    'jumlah_aspirasi' => 1,
-    'result' => 1,
-    'url_aspirasi_list' => 0,
-    'BASEURL' => 1,
-    'rs' => 1,
-    'data_anggota_baru' => 1,
-    'jumlah_anggota_baru' => 1,
-    'url_anggota_list' => 0,
     'user_account' => 1,
     'url_logout_admin_process' => 1,
     'LOADJS' => 1,
@@ -45,50 +36,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ' />    <meta name='robots' content='index,follow' />    <title><?php echo $_smarty_tpl->tpl_vars['site_title']->value;?>
     </title>    <link rel="stylesheet" type="text/css" href="<?php echo $_smarty_tpl->tpl_vars['THEMESPATH']->value;?>
 " />        <?php echo $_smarty_tpl->tpl_vars['LOADSTYLE']->value;?>
-      </head>  <body class="skin-blue" onmousemove="change()">    <!-- header logo: style can be found in header.less -->    <header class="header">      <a href="#" class="logo">        <!-- Add the class icon to your logo image or logo icon to add the margining -->        Dewan Minyak Sawit Indonesia      </a>      <!-- Header Navbar: style can be found in header.less -->      <nav class="navbar navbar-static-top" role="navigation">        <!-- Sidebar toggle button-->        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">          <span class="sr-only">Toggle navigation          </span>          <span class="icon-bar">          </span>          <span class="icon-bar">          </span>          <span class="icon-bar">          </span>        </a>        <div class="navbar-right">          <ul class="nav navbar-nav">            <!-- Messages: style can be found in dropdown.less-->            <!-- <li class="dropdown messages-menu">              <a href="#" class="dropdown-toggle" data-toggle="dropdown">                <i class="fa fa-envelope-o">                </i>                                <?php if ($_smarty_tpl->tpl_vars['data_aspirasi']->value!='') {?>                <span class="label label-success">                  <?php  $_smarty_tpl->tpl_vars['result'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['result']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['jumlah_aspirasi']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['result']->key => $_smarty_tpl->tpl_vars['result']->value) {
-$_smarty_tpl->tpl_vars['result']->_loop = true;
-?>                  <?php echo $_smarty_tpl->tpl_vars['result']->value['jumlah'];?>
-                  <?php } ?>                </span>                <?php }?>                              </a>              <ul class="dropdown-menu">                <li class="header">                   <?php if ($_smarty_tpl->tpl_vars['data_aspirasi']->value!='') {?>                  Ada<?php  $_smarty_tpl->tpl_vars['result'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['result']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['jumlah_aspirasi']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['result']->key => $_smarty_tpl->tpl_vars['result']->value) {
-$_smarty_tpl->tpl_vars['result']->_loop = true;
-?>                  <?php echo $_smarty_tpl->tpl_vars['result']->value['jumlah'];?>
-                  <?php } ?> Pesan Aspirasi yang belum diverifikasi                  <?php } else { ?>                  Tidak ada pesan                  <?php }?>                </li>                <li>                  <!-- inner menu: contains the actual data -->                 <!--  <ul class="menu">                                        <?php if ($_smarty_tpl->tpl_vars['data_aspirasi']->value!='') {?>                    <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['data_aspirasi']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
-$_smarty_tpl->tpl_vars['rs']->_loop = true;
-?>                    <li> -->                      <!-- start message -->                     <!--  <a href="<?php echo $_smarty_tpl->tpl_vars['url_aspirasi_list']->value;?>
-">                        <div class="pull-left">                          <img src="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
-doc/aspirasi/<?php echo $_smarty_tpl->tpl_vars['rs']->value['id_aspirasi'];?>
-/<?php echo $_smarty_tpl->tpl_vars['rs']->value['foto'];?>
-" class="img-circle" alt="User Image"/>                        </div>                        <h4>                          <?php echo $_smarty_tpl->tpl_vars['rs']->value['nama_pengirim'];?>
-                          <small>                            <i class="fa fa-clock-o">                            </i>&nbsp;<?php echo $_smarty_tpl->tpl_vars['rs']->value['tanggal'];?>
-                          </small>                        </h4>                        <p><?php echo $_smarty_tpl->tpl_vars['rs']->value['isi_aspirasi'];?>
-                        </p>                      </a>                    </li> -->                    <!-- end message -->                    <!-- <?php } ?>                    <?php }?>                                      </ul>                </li>                <li class="footer">                  <a href="<?php echo $_smarty_tpl->tpl_vars['url_aspirasi_list']->value;?>
-">Lihat Semua Pesan                  </a>                </li>              </ul>            </li>            anggota             <li class="dropdown messages-menu">              <a href="#" class="dropdown-toggle" data-toggle="dropdown">                <i class="fa fa-user">                </i>                                <?php if ($_smarty_tpl->tpl_vars['data_anggota_baru']->value!='') {?>                <span class="label label-success">                  <?php  $_smarty_tpl->tpl_vars['result'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['result']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['jumlah_anggota_baru']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['result']->key => $_smarty_tpl->tpl_vars['result']->value) {
-$_smarty_tpl->tpl_vars['result']->_loop = true;
-?>                  <?php echo $_smarty_tpl->tpl_vars['result']->value['jumlah'];?>
-                  <?php } ?>                </span>                <?php }?>                              </a>              <ul class="dropdown-menu">                <li class="header">                   <?php if ($_smarty_tpl->tpl_vars['data_anggota_baru']->value!='') {?>                  Ada<?php  $_smarty_tpl->tpl_vars['result'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['result']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['jumlah_anggota_baru']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['result']->key => $_smarty_tpl->tpl_vars['result']->value) {
-$_smarty_tpl->tpl_vars['result']->_loop = true;
-?>                  <?php echo $_smarty_tpl->tpl_vars['result']->value['jumlah'];?>
-                  <?php } ?> Permintaan Anggota baru yang belum disetujui                  <?php } else { ?>                  Tidak ada permintaan Anggota                  <?php }?>                </li>                <li> -->                  <!-- inner menu: contains the actual data -->                 <!--  <ul class="menu">                                        <?php if ($_smarty_tpl->tpl_vars['data_anggota_baru']->value!='') {?>                    <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['data_anggota_baru']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
-$_smarty_tpl->tpl_vars['rs']->_loop = true;
-?>                    <li> -->                      <!-- start message -->                      <!-- <a href="<?php echo $_smarty_tpl->tpl_vars['url_anggota_list']->value;?>
-">                        <div class="pull-left">                          <img src="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
-doc/registrasi/<?php echo $_smarty_tpl->tpl_vars['rs']->value['id_registrasi'];?>
-/<?php echo $_smarty_tpl->tpl_vars['rs']->value['image'];?>
-" class="img-circle" alt="User Image"/>                        </div>                        <h4>                          <?php echo $_smarty_tpl->tpl_vars['rs']->value['nama'];?>
-                        </h4>                        <p><?php echo $_smarty_tpl->tpl_vars['rs']->value['nama_asosiasi'];?>
-                        </p>                      </a>                    </li> -->                    <!-- end message -->                    <!-- <?php } ?>                    <?php }?>                                      </ul>                </li>                <li class="footer">                  <a href="<?php echo $_smarty_tpl->tpl_vars['url_anggota_list']->value;?>
-">                                  Lihat semua permintaan Anggota                                   </a>                </li>              </ul>            </li> -->            <!-- Notifications: style can be found in dropdown.less --> -->            <!-- User Account: style can be found in dropdown.less -->                        <li class="dropdown user user-menu">              <a href="#" class="dropdown-toggle" data-toggle="dropdown">                <i class="glyphicon glyphicon-user">                </i>                <span><?php echo $_smarty_tpl->tpl_vars['user_account']->value['admin_name'];?>
+      </head>  <body class="skin-blue" onmousemove="change()">    <!-- header logo: style can be found in header.less -->    <header class="header">      <a href="#" class="logo">        <!-- Add the class icon to your logo image or logo icon to add the margining -->        Relawan Jakarta ASLI      </a>      <!-- Header Navbar: style can be found in header.less -->      <nav class="navbar navbar-static-top" role="navigation">        <!-- Sidebar toggle button-->        <a href="#" class="navbar-btn sidebar-toggle" data-toggle="offcanvas" role="button">          <span class="sr-only">Toggle navigation          </span>          <span class="icon-bar">          </span>          <span class="icon-bar">          </span>          <span class="icon-bar">          </span>        </a>        <div class="navbar-right">          <ul class="nav navbar-nav">                                 <li class="dropdown user user-menu">              <a href="#" class="dropdown-toggle" data-toggle="dropdown">                <i class="glyphicon glyphicon-user">                </i>                <span><?php echo $_smarty_tpl->tpl_vars['user_account']->value['admin_name'];?>
                   <i class="caret">                  </i>                </span>              </a>              <ul class="dropdown-menu">                <!-- User image -->                <li class="user-header bg-light-blue">                  <img src="<?php echo $_smarty_tpl->tpl_vars['user_account']->value['photo'];?>
 " class="img-circle" alt="<?php echo $_smarty_tpl->tpl_vars['user_account']->value['admin_name'];?>
 " />                  <p>                    <?php echo $_smarty_tpl->tpl_vars['user_account']->value['admin_name'];?>
