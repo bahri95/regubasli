@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 11:16:22
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-22 11:43:51
          compiled from "application\views\web\base-layout\menu.html" */ ?>
 <?php /*%%SmartyHeaderCode:31215802fa18e9c632-59919313%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4ffd38ebb5448456c5114f4c15490d50ff0a950e' => 
     array (
       0 => 'application\\views\\web\\base-layout\\menu.html',
-      1 => 1476868581,
+      1 => 1476882410,
       2 => 'file',
     ),
   ),
@@ -116,7 +116,7 @@ index.php/public/relawan/detail/<?php echo $_smarty_tpl->tpl_vars['rs']->value['
                                     <?php } ?>
                                 </ul>
                             </li>
-                            <?php if ($_smarty_tpl->tpl_vars['menu_aktif']->value=='informasi'||$_smarty_tpl->tpl_vars['menu_aktif']->value=='berita'&&$_smarty_tpl->tpl_vars['menu_aktif']->value!='') {?> 
+                            <?php if ($_smarty_tpl->tpl_vars['menu_aktif']->value=='informasi'&&$_smarty_tpl->tpl_vars['menu_aktif']->value!=''||$_smarty_tpl->tpl_vars['menu_aktif']->value=='berita'&&$_smarty_tpl->tpl_vars['menu_aktif']->value!='') {?> 
                             <li class="current"><a href="#"><div>BERITA</div></a>
                             <?php } else { ?>
                             <li><a href="#"><div>BERITA</div></a>

@@ -153,15 +153,14 @@
                                 </div>
 
                               
-
-                                <div class="widget clearfix">
+                            <div class="widget clearfix">
 
                                     <div class="tabs nobottommargin clearfix" id="sidebar-tabs">
 
                                         <ul class="tab-nav clearfix">
-                                            <li><a href="#tabs-1">Agus-Sylvi</a></li>
-                                            <li><a href="#tabs-2">Rel. Rahmad</a></li>
-                                            <li><a href="#tabs-3">Rel. Lainnya</a></li>
+                                            <li><a href="#tabs-1">Asli</a></li>
+                                            <li><a href="#tabs-2">Rahmad</a></li>
+                                            <li><a href="#tabs-3">Lain2</a></li>
                                         </ul>
 
                                         <div class="tab-container">
@@ -169,7 +168,7 @@
                                             <div class="tab-content clearfix" id="tabs-1">
                                                 <div id="popular-post-list-sidebar">
 
-                                                     {foreach name=informasi_list from=$informasi_list item=rs}
+                                                     {foreach name=informasi_list_side from=$informasi_list_side item=rs}
                                                     <div class="spost clearfix">
                                                         <div class="entry-image">
                                                             <a href="{$rs.url_detail}" class="nobg"><img class="img-circle" src="{$rs.image}" alt=""></a>
@@ -190,7 +189,7 @@
                                             <div class="tab-content clearfix" id="tabs-2">
                                                 <div id="recent-post-list-sidebar">
 
-                                                   {foreach name=berita_list from=$berita_list item=rs}
+                                                   {foreach name=berita_list_side from=$berita_list_side item=rs}
                                                     <div class="spost clearfix">
                                                         <div class="entry-image">
                                                             <a href="{$rs.url_detail}" class="nobg"><img class="img-circle" src="{$rs.image}" alt=""></a>
@@ -208,7 +207,7 @@
                                                 </div>
                                             </div>
                                             <div class="tab-content clearfix" id="tabs-3">
-                                                   {foreach name=berita_list_anggota from=$berita_list_anggota item=rs}
+                                                   {foreach name=berita_list_anggota_side from=$berita_list_anggota_side item=rs}
 
                                                     <div class="spost clearfix">
                                                         <div class="entry-image">
@@ -232,7 +231,8 @@
 
                                 </div>
 
-                                <div class="widget clearfix">
+
+                            <div class="widget clearfix">
                                  {foreach name=video_list from=$video_list item=rs}
                                         <div class="oc-item">
                                         <div class="iportfolio">
@@ -246,14 +246,12 @@
                                                 </div>
                                             </div>
                                             <div class="portfolio-desc">
-                                                <h3>{$rs.judul_video}</h3>
+                                                <h3><a href="portfolio-single-video.html">{$rs.judul_video}</a></h3>
                                                 
                                             </div>
                                         </div>
                                     {/foreach}
                                     </div>
-                                </div>
-
 
                                 
                             </div>
@@ -263,4 +261,5 @@
                     </div>
 
                 </div>
+</div>
 

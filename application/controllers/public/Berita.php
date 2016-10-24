@@ -38,43 +38,23 @@
 
 			$this->load->helper('text');
 
-			$config['base_url'] = site_url("public/beritadmsi/index");
+			$config['base_url'] = site_url("public/berita/relawan/$id_relawan");
 
 			$config['total_rows'] = $this->beritamodel->get_total_berita();
 
-			$config['per_page'] = 8;
-
+			$config['per_page'] = 5;
 			$config['uri_segment'] = 5;
-
 			$config['num_links'] = 5;
-
-			$config['first_link'] = 'First';
-
-			$config['last_link'] = 'Last';
-
-			$config['next_link'] = 'Next';
-
-			$config['prev_link'] = 'Prev';
-
-			$config['first_tag_open'] = '<li><a>';
-
-			$config['first_tag_close'] = '</a></li>';
-
-			$config['prev_tag_open'] = '<li><a class="prev" href="#"><i class="fa fa-angle-left"></i>';
-
-			$config['prev_tag_close'] = '</a></li>';
-
-			$config['next_tag_open'] = '<li><a class="next" href="#"><i class="fa fa-angle-right"></i>';
-
-			$config['next_tag_close'] = '</a></li>';
-
-			$config['num_tag_open'] = '<li><a href="#">';
-
-			$config['num_tag_close'] = '</a></li>';
-
-			$config['cur_tag_open'] = '<li class="is-active-pagination"><a href="">';
-
-			$config['cur_tag_close'] = '</a></li>';
+			$config['next_link'] = 'Selanjutnya >>>';
+			$config['prev_link'] = '<<< Sebelumnya';
+			$config['prev_tag_open'] = '<li class="previous">';
+			$config['prev_tag_close'] = '</li>';
+			$config['next_tag_open'] = '<li class="next">';
+			$config['next_tag_close'] = '</li>';
+			$config['num_tag_open'] = '<li>';
+			$config['num_tag_close'] = '</li>';
+			$config['cur_tag_open'] = '<li><b>';
+			$config['cur_tag_close'] = '</b></li>';
 
 			$this->pagination->initialize($config);
 
@@ -88,7 +68,7 @@
 
 			$start = $this->uri->segment(5, 0) + 1;
 
-			$end = $this->uri->segment(5, 0) + 8;
+			$end = $this->uri->segment(5, 0) + 5;
 
 			$total = $config['total_rows'];
 
@@ -139,10 +119,6 @@
 				$result[$key]['image']= BASEURL.'doc/tmp.default.jpg';
 
 			}
-
-
-
-			
 
 
 				$result[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);

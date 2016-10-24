@@ -18,32 +18,29 @@
 			$this->load->model('informasimodel');
 			$this->load->helper('text');
 			$id_informasi = $this->uri->segment(3,0);
-			$config['base_url'] = site_url("public/informasi/");
+			$config['base_url'] = site_url("public/informasi/index");
 			$config['total_rows'] = $this->informasimodel->get_total_informasi();
 			$config['per_page'] = 5;
-			$config['uri_segment'] = 3;
+			$config['uri_segment'] = 4;
 			$config['num_links'] = 5;
-			$config['first_link'] = 'First';
-			$config['last_link'] = 'Last';
-			$config['next_link'] = 'Next';
-			$config['prev_link'] = 'Prev';
-			$config['first_tag_open'] = '<li><a>';
-			$config['first_tag_close'] = '</a></li>';
-			$config['prev_tag_open'] = '<li class="previous"><a href="#">&larr; Older</a>';
-			$config['prev_tag_close'] = '</a></li>';
-			$config['next_tag_open'] = ' <li class="next"><a href="#">Newer &rarr;</a></li>';
-			$config['next_tag_close'] = '</a></li>';
-			$config['num_tag_open'] = '<li><a href="#">';
-			$config['num_tag_close'] = '</a></li>';
-			$config['cur_tag_open'] = '<li class="previous"><a href="#">&larr; Older</a>';
-			$config['cur_tag_close'] = '</a></li>';
+			$config['next_link'] = 'Selanjutnya >>>';
+			$config['prev_link'] = '<<< Sebelumnya';
+			$config['prev_tag_open'] = '<li class="previous">';
+			$config['prev_tag_close'] = '</li>';
+			$config['next_tag_open'] = '<li class="next">';
+			$config['next_tag_close'] = '</li>';
+			$config['num_tag_open'] = '<li>';
+			$config['num_tag_close'] = '</li>';
+			$config['cur_tag_open'] = '<li><b>';
+			$config['cur_tag_close'] = '</b></li>';
+
 			$this->pagination->initialize($config);
 			$pagging = $this->pagination->create_links();
 			$this->smarty->assign("pagging", $pagging);
 			//list data dari DB
 			$totaldata = $config['total_rows'];
-			$start = $this->uri->segment(3, 0) + 1;
-			$end = $this->uri->segment(3, 0) + 5;
+			$start = $this->uri->segment(4, 0) + 1;
+			$end = $this->uri->segment(4, 0) + 5;
 			$total = $config['total_rows'];
 			
 			if ($end > $config['total_rows']) {

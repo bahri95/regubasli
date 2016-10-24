@@ -76,7 +76,7 @@
                 $result[$key]['content'] = strip_tags($this->getIntroText($data['content'],100));
             endforeach;
             endif;
-            $this->smarty->assign("berita_list", $result);
+            $this->smarty->assign("berita_list_side", $result);
             $this->smarty->assign("page_modul", 'Berita');
             $this->smarty->assign("page_modul_url", site_url('public/berita'));
         }
@@ -99,7 +99,7 @@
                 $result[$key]['content'] = strip_tags($this->getIntroText($data['content'],100));
             endforeach;
             endif;
-            $this->smarty->assign("berita_list_anggota", $result);
+            $this->smarty->assign("berita_list_anggota_side", $result);
             $this->smarty->assign("page_modul", 'Berita');
             $this->smarty->assign("page_modul_url", site_url('public/berita'));
         }
@@ -108,7 +108,7 @@
             //berita cagub-cawagub
             // get data
             $this->load->model('informasimodel');
-            $result = $this->informasimodel->get_list_informasi_home();
+            $result = $this->informasimodel->get_list_informasi_side();
            
             
             if(!empty($result)):
@@ -131,7 +131,7 @@
             
             endforeach;
             endif;
-            $this->smarty->assign("informasi_list", $result);
+            $this->smarty->assign("informasi_list_side", $result);
         }
    
        

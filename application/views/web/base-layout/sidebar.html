@@ -19,7 +19,7 @@
                                             <div class="tab-content clearfix" id="tabs-1">
                                                 <div id="popular-post-list-sidebar">
 
-                                                     {foreach name=informasi_list from=$informasi_list item=rs}
+                                                     {foreach name=informasi_list_side from=$informasi_list_side item=rs}
                                                     <div class="spost clearfix">
                                                         <div class="entry-image">
                                                             <a href="{$rs.url_detail}" class="nobg"><img class="img-circle" src="{$rs.image}" alt=""></a>
@@ -40,7 +40,7 @@
                                             <div class="tab-content clearfix" id="tabs-2">
                                                 <div id="recent-post-list-sidebar">
 
-                                                   {foreach name=berita_list from=$berita_list item=rs}
+                                                   {foreach name=berita_list_side from=$berita_list_side item=rs}
                                                     <div class="spost clearfix">
                                                         <div class="entry-image">
                                                             <a href="{$rs.url_detail}" class="nobg"><img class="img-circle" src="{$rs.image}" alt=""></a>
@@ -58,7 +58,7 @@
                                                 </div>
                                             </div>
                                             <div class="tab-content clearfix" id="tabs-3">
-                                                   {foreach name=berita_list_anggota from=$berita_list_anggota item=rs}
+                                                   {foreach name=berita_list_anggota_side from=$berita_list_anggota_side item=rs}
 
                                                     <div class="spost clearfix">
                                                         <div class="entry-image">

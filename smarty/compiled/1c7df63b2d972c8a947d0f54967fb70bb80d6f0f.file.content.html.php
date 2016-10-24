@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 11:09:40
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-22 11:43:52
          compiled from "application\views\web\home\content.html" */ ?>
 <?php /*%%SmartyHeaderCode:202465802fa19103f11-69857447%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1c7df63b2d972c8a947d0f54967fb70bb80d6f0f' => 
     array (
       0 => 'application\\views\\web\\home\\content.html',
-      1 => 1476868008,
+      1 => 1476975893,
       2 => 'file',
     ),
   ),
@@ -114,11 +114,13 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                                 <div class="col_one_third">
                                     <div class="ipost clearfix">
                                         <div class="entry-image">
-                                            <a href="#"><img class="image_fade" src="<?php echo $_smarty_tpl->tpl_vars['rs']->value['image'];?>
+                                            <a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
+"><img class="image_fade" src="<?php echo $_smarty_tpl->tpl_vars['rs']->value['image'];?>
 " alt="Image"></a>
                                         </div>
                                         <div class="entry-title">
-                                            <h3><a href="blog-single.html"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul'];?>
+                                            <h3><a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
+"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul'];?>
 </a></h3>
                                         </div>
                                         <ul class="entry-meta clearfix">
@@ -151,8 +153,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['
 $_smarty_tpl->tpl_vars['rs']->_loop = true;
 ?>
                                 <a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['foto'];?>
-" data-lightbox="gallery-item"><img class="image_fade" src="<?php echo $_smarty_tpl->tpl_vars['rs']->value['foto'];?>
-" alt="Gallery Thumb 1"></a>
+" data-lightbox="gallery-item" title="<?php echo $_smarty_tpl->tpl_vars['rs']->value['judul'];?>
+"><img class="image_fade" src="<?php echo $_smarty_tpl->tpl_vars['rs']->value['foto'];?>
+"  alt="Gallery Thumb 1"></a>
                                     <?php } ?>
                             </div>
 
@@ -358,8 +361,8 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                                                 </div>
                                             </div>
                                             <div class="portfolio-desc">
-                                                <h3><a href="portfolio-single-video.html"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul_video'];?>
-</a></h3>
+                                                <h3><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul_video'];?>
+</h3>
                                                 
                                             </div>
                                         </div>

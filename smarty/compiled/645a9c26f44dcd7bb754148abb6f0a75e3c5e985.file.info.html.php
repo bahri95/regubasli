@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 04:50:17
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-22 11:43:50
          compiled from "application\views\web\base-layout\info.html" */ ?>
 <?php /*%%SmartyHeaderCode:288885802fa18e3ab92-37966872%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '645a9c26f44dcd7bb754148abb6f0a75e3c5e985' => 
     array (
       0 => 'application\\views\\web\\base-layout\\info.html',
-      1 => 1476845416,
+      1 => 1476952189,
       2 => 'file',
     ),
   ),
@@ -44,7 +44,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 ">Home</a></li>
                             
                             <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
-index.php/public/kontak}">Kontak</a></li>
+index.php/public/kontak">Kontak</a></li>
                             
                         </ul>
                     </div><!-- .top-links end -->

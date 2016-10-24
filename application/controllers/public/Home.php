@@ -52,51 +52,6 @@ Sylvi (ASLI) menuju Gubernur DKI 2017 – 2022.
        
         }
 
-        public function berita_relawan_utama(){
-            // get data
-            $this->load->model('beritamodel');
-            $result = $this->beritamodel->get_berita_relawan_utama();
-        
-            if(!empty($result)):
-            foreach($result as $key=>$data):
-            $path = 'doc/berita/'.$data['id_berita']."/";
-            if(is_file($path.$data['image'])){
-                $result[$key]['image'] = BASEURL.$path.$data['image'];
-            } else {
-                $result[$key]['image']= BASEURL.'doc/tmp.default.jpg';
-            }
-                $result[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
-                $result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_relawan'].'/'.$data['id_berita'].'/'.url_title($data['judul']));
-                $result[$key]['content'] = strip_tags($this->getIntroText($data['content'],100));
-            endforeach;
-            endif;
-            $this->smarty->assign("berita_list", $result);
-            $this->smarty->assign("page_modul", 'Berita');
-            $this->smarty->assign("page_modul_url", site_url('public/berita'));
-        }
-
-        public function berita_relawan_anggota(){
-            // get data
-            $this->load->model('beritamodel');
-            $result = $this->beritamodel->get_berita_relawan_anggota();
-        
-            if(!empty($result)):
-            foreach($result as $key=>$data):
-            $path = 'doc/berita/'.$data['id_berita']."/";
-            if(is_file($path.$data['image'])){
-                $result[$key]['image'] = BASEURL.$path.$data['image'];
-            } else {
-                $result[$key]['image']= BASEURL.'doc/tmp.default.jpg';
-            }
-                $result[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
-                  $result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_relawan'].'/'.$data['id_berita'].'/'.url_title($data['judul']));
-                $result[$key]['content'] = strip_tags($this->getIntroText($data['content'],100));
-            endforeach;
-            endif;
-            $this->smarty->assign("berita_list_anggota", $result);
-            $this->smarty->assign("page_modul", 'Berita');
-            $this->smarty->assign("page_modul_url", site_url('public/berita'));
-        }
 
         public function beritacagub_cawagub(){
             //berita cagub-cawagub
