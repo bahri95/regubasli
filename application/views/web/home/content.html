@@ -1,22 +1,4 @@
 
-                <div class="section header-stick bottommargin-lg clearfix" style="padding: 20px 0;">
-                    <div>
-                        <div class="container clearfix">
-                            <span class="label label-danger bnews-title">Breaking News:</span>
-                            
-                            <div class="fslider bnews-slider nobottommargin" data-speed="800" data-pause="6000" data-arrows="false" data-pagi="false">
-                                <div class="flexslider">
-                                    <div class="slider-wrap">
-                                     {foreach name=gabungan from=$datagabungan item=rs}
-                                        <div class="slide"><a href="{$rs.url_detail}"><strong>{$rs.judul}...</strong></a></div>
-                                        {/foreach}
-                                    </div>
-                                </div>
-                            </div>
-                           
-                        </div>
-                    </div>
-                </div>
 
                 <div class="container clearfix">
 
@@ -27,11 +9,12 @@
                             <div class="col_full bottommargin-lg">
                                 <div class="fslider flex-thumb-grid grid-6" data-animation="fade" data-arrows="true" data-thumbs="true">
                                     <div class="flexslider">
-                                        <div class="slider-wrap">
+                                        <div class="slider-wrap" >
                                          {foreach name=informasi_list from=$informasi_list item=rs}
-                                            <div class="slide" data-thumb="{$rs.image}">
+                                            <div class="slide" data-thumb="{$rs.image}" >
+
                                                 <a href="{$rs.url_detail}">
-                                                    <img src="{$rs.image}" alt="">
+                                                    <img src="{$rs.image}" width="640px" height="360px" alt="">
                                                     <div class="overlay">
                                                         <div class="text-overlay">
                                                             <div class="text-overlay-title">
@@ -57,76 +40,110 @@
                             <div class="col_full nobottommargin clearfix">
 
                                 <div class="fancy-title title-border">
-                                    <h3>|BERITA RELAWAN RAHMAD - SUMUT</h3>
+                                    <h3>|BERITA RELAWAN GREEN JAKARTA</h3>
                                 </div>
-                                 {foreach name=berita_list from=$berita_list item=rs}
-                                <div class="col_one_third">
-                                    <div class="ipost clearfix">
-                                        <div class="entry-image">
-                                            <a href="{$rs.url_detail}"><img class="image_fade" src="{$rs.image}" alt="Image"></a>
+                            
+
+                            <div id="berita" class="owl-carousel portfolio-carousel">
+                            {foreach name=berita_list from=$berita_list item=rs}
+                                <div class="oc-item">
+                                    <div class="iportfolio">
+                                        <div class="portfolio-image">
+                                            <a href="portfolio-single.html">
+                                                <img src="{$rs.image}" width="400px" height="300px" alt="Image Berita">
+                                            </a>
+                                           
                                         </div>
-                                        <div class="entry-title">
+                                        <div class="portfolio-desc">
                                             <h3><a href="{$rs.url_detail}">{$rs.judul}</a></h3>
-                                        </div>
-                                        <ul class="entry-meta clearfix">
-                                            <li><i class="icon-calendar3"></i>{$rs.tanggal}</li>
-                                            
-                                        </ul>
-                                        <div class="entry-content">
-                                            <p>{$rs.content}</p>
+                                            <span>{$rs.tanggal}</span>
                                         </div>
                                     </div>
                                 </div>
-                                {/foreach}
-                                
+                            {/foreach}
 
+                            </div><!-- .berita-carousel end -->
+
+                   
                                 <div class="clear"></div>
 
                                 
 
                             </div>
                             <div class="fancy-title title-border">
-                                <h3>PHOTO DAN VIDEO</h3>
+                                <h3>FOTO</h3>
                             </div>
 
-                            <div class="col_full masonry-thumbs col-6 bottommargin-lg clearfix" data-big="5" data-lightbox="gallery">
-                                   {foreach name=foto from=$list_foto item=rs}
-                                <a href="{$rs.foto}" data-lightbox="gallery-item" title="{$rs.judul}"><img class="image_fade" src="{$rs.foto}"  alt="Gallery Thumb 1"></a>
-                                    {/foreach}
-                            </div>
-
-                          <div class="col_full nobottommargin clearfix">
-
-                                <div class="fancy-title title-border">
-                                    <h3>|BERITA RELAWAN LAINNYA</h3>
-                                </div>
-                                 {foreach name=berita_list_anggota from=$berita_list_anggota item=rs}
-
-                                <div class="col_one_third">
-                                    <div class="ipost clearfix">
-                                        <div class="entry-image">
-                                            <a href="{$rs.url_detail}"><img class="image_fade" src="{$rs.image}"></a>
-                                        </div>
-                                        <div class="entry-title">
-                                            <h3><a href="{$rs.url_detail}">{$rs.judul}</a></h3>
-                                        </div>
-                                        <ul class="entry-meta clearfix">
-                                            <li><i class="icon-calendar3"></i>{$rs.tanggal}</li>
-                                        
-                                        </ul>
-                                        <div class="entry-content">
-                                            <p>{$rs.content}</p>
+                          
+                            <div id="foto" class="owl-carousel portfolio-carousel">
+                            {if $album_list neq ''}
+                                {foreach name=album_list from=$album_list item=rs_album}
+                       <article class="portfolio-item pf-graphics pf-illustrations">
+                            <div class="portfolio-image">
+                                <div class="fslider" data-arrows="false">
+                                    <div class="flexslider">
+                                        <div class="slider-wrap">
+                                        {if $foto_list neq ''}
+                                            {foreach name=foto_list from=$foto_list item=rs}
+                                            {if $rs.id_album eq $rs_album.id_album}
+                                            <div class="slide"><a href="{$rs.foto}"><img src="{$rs.foto}" alt="Shake It"></a></div>
+                                            {/if}
+                                            {/foreach}
+                                        {/if}
                                         </div>
                                     </div>
                                 </div>
-
-                                {/foreach}
-
-                                <div class="clear"></div>
-
-                                
-
+                                <div class="portfolio-overlay" data-lightbox="gallery">
+                                 {if $foto_list neq ''}
+                                {foreach name=foto_list from=$foto_list item=rs}
+                                  {if $rs.id_album eq $rs_album.id_album}
+                                    <a href="{$rs.foto}" class="left-icon" data-lightbox="gallery-item"><i class="icon-line-stack-2"></i></a>
+                                    {/if}
+                                 {/foreach}
+                                 {/if}
+                                </div>
                             </div>
+                          <div class="portfolio-desc">
+                                <h3>{$rs_album.nama_album}</h3>
+                                <span>Published : {$rs_album.tanggal}</span>
+                            </div>
+                        </article>
+                        {/foreach}
+                        {/if}
+
+                            </div><!-- .foto-carousel end -->
+
+
+                            <!-- video -->
+
+                         <div class="fancy-title title-border">
+                                <h3>VIDEO</h3>
+                            </div>
+
+                          
+                            <div id="video" class="owl-carousel portfolio-carousel">
+                            {if $video_list neq ''}
+                                {foreach name=list_video from=$video_list item=rs}
+                                <article class="portfolio-item pf-graphics pf-uielements">
+                                    <div class="portfolio-image">
+                                        <a href="#">
+                                            <img src="{$rs.video_image}" alt="Mac Sunglasses">
+                                        </a>
+                                        <div class="portfolio-overlay">
+                                            <a href="{$rs.url_play}" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
+                                           
+                                        </div>
+                                    </div>
+                                    <div class="portfolio-desc">
+                                        <h3>{$rs.judul_video}</h3>
+                                    </div>
+                                </article>
+                                {/foreach}
+                                {/if}
+
+                            </div><!-- .foto-carousel end -->
+
+                          
                         </div>
 
 
@@ -152,15 +169,25 @@
                                     
                                 </div>
 
-                              
+
+                                <!-- twiiter -->
+                              <div class="widget clearfix">
+                                    <a class="twitter-timeline" data-lang="id" data-width="450" data-height="370" data-theme="light" href="https://twitter.com/RelawanGreenJkt">Tweets by RelawanGreenJkt</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+                                </div>
+                                <!-- facebook -->
+                                <div class="widget clearfix">
+                                <div class="fb-page" data-href="https://www.facebook.com/RelawanRahmatSumut/" data-tabs="timeline" data-width="450" data-height="370" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/RelawanRahmatSumut/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RelawanRahmatSumut/">Relawan Green Jakarta</a></blockquote></div>
+                                </div>
+
                             <div class="widget clearfix">
 
                                     <div class="tabs nobottommargin clearfix" id="sidebar-tabs">
 
                                         <ul class="tab-nav clearfix">
-                                            <li><a href="#tabs-1">Asli</a></li>
-                                            <li><a href="#tabs-2">Rahmad</a></li>
-                                            <li><a href="#tabs-3">Lain2</a></li>
+                                            <li><a href="#tabs-1">Berita Cagub-Cawagub</a></li>
+                                            <li><a href="#tabs-2">Berita Relawan</a></li>
+                                            
                                         </ul>
 
                                         <div class="tab-container">
@@ -206,60 +233,35 @@
                                                     {/foreach}
                                                 </div>
                                             </div>
-                                            <div class="tab-content clearfix" id="tabs-3">
-                                                   {foreach name=berita_list_anggota_side from=$berita_list_anggota_side item=rs}
-
-                                                    <div class="spost clearfix">
-                                                        <div class="entry-image">
-                                                            <a href="{$rs.url_detail}" class="nobg"><img class="img-circle" src="{$rs.image}" alt=""></a>
-                                                        </div>
-                                                        <div class="entry-c">
-                                                            <div class="entry-title">
-                                                                <h4><a href="{$rs.url_detail}">{$rs.judul}</a></h4>
-                                                            </div>
-                                                            <ul class="entry-meta">
-                                                                <li><i class="icon-calendar3"></i>{$rs.tanggal}</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    {/foreach}
-                                            </div>
-
+                                           
                                         </div>
 
                                     </div>
 
                                 </div>
-
-
-                            <div class="widget clearfix">
-                                 {foreach name=video_list from=$video_list item=rs}
-                                        <div class="oc-item">
-                                        <div class="iportfolio">
-                                            <div class="portfolio-image">
-                                                <a href="#">
-                                                    <img src="{$rs.video_image}" alt="Mac Sunglasses">
-                                                </a>
-                                                <div class="portfolio-overlay">
-                                                    <a href="{$rs.url_play}" class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-                                                   
-                                                </div>
-                                            </div>
-                                            <div class="portfolio-desc">
-                                                <h3><a href="portfolio-single-video.html">{$rs.judul_video}</a></h3>
-                                                
-                                            </div>
-                                        </div>
-                                    {/foreach}
-                                    </div>
-
-                                
-                            </div>
-
-                        </div>
-
+                        </div><!-- end berita -->
+                        <div class="line"></div>
+                         <div class="col-md-6">
+                        <!-- Histats.com  START (html only)-->
+                            <a href="/" alt="page hit counter" target="_blank" >
+                            <embed src="http://s10.histats.com/30.swf"  flashvars="jver=1&acsid=3626944&domi=4"  quality="high"  width="130" height="80" name="30.swf"  align="middle" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" wmode="transparent" /></a>
+                            <img  src="//sstatic1.histats.com/0.gif?3626944&101" alt="free page hit counter" border="0">
+                        <!-- Histats.com  END  -->
+                       </div>
+                       
                     </div>
 
                 </div>
 </div>
 
+<div id="fb-root"></div>
+{literal}
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.8&appId=146631999110903";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+{/literal}

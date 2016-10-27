@@ -1,0 +1,143 @@
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 10:43:06
+         compiled from "application\views\web\profil\detail.html" */ ?>
+<?php /*%%SmartyHeaderCode:363657ea4150c53ce0-75149352%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '5e5ed57d1df99ac03c086970d06ded7da4bb79b1' => 
+    array (
+      0 => 'application\\views\\web\\profil\\detail.html',
+      1 => 1476866558,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '363657ea4150c53ce0-75149352',
+  'function' => 
+  array (
+  ),
+  'version' => 'Smarty-3.1.17',
+  'unifunc' => 'content_57ea4150cb95f5_66109363',
+  'variables' => 
+  array (
+    'foto' => 0,
+    'data' => 0,
+  ),
+  'has_nocache_code' => false,
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_57ea4150cb95f5_66109363')) {function content_57ea4150cb95f5_66109363($_smarty_tpl) {?>
+<div class="single-product">
+
+                            <div class="product">
+
+                                <div class="col_half">
+
+                                    <!-- Product Single - Gallery
+                                    ============================================= -->
+                                    <div class="product-image">
+                                               
+                                                <div class="slider-wrap" data-lightbox="gallery">
+                                                    <div class="slide" data-thumb="<?php echo $_smarty_tpl->tpl_vars['foto']->value;?>
+"><a href="<?php echo $_smarty_tpl->tpl_vars['foto']->value;?>
+" title="<?php echo $_smarty_tpl->tpl_vars['data']->value['nama'];?>
+" data-lightbox="gallery-item"><img src="<?php echo $_smarty_tpl->tpl_vars['foto']->value;?>
+" alt="Pink Printed Dress"></a></div>
+                                                </div>
+                                                
+                                           
+                                      
+                                    </div><!-- Product Single - Gallery End -->
+
+                                </div>
+
+                                <div class="col_half col_last product-desc">
+
+                                    <!-- Product Single - Price
+                                    ============================================= -->
+                                    <div class="product-price"><ins><?php echo $_smarty_tpl->tpl_vars['data']->value['nama'];?>
+</ins></div><!-- Product Single - Price End -->
+
+                                    <!-- Product Single - Rating
+                                    ============================================= -->
+                                   
+                                    <div class="clear"></div>
+                                    <div class="line"></div>
+                                    <p><?php echo $_smarty_tpl->tpl_vars['data']->value['content'];?>
+</p>
+                                    
+
+                                </div>
+
+                                <div class="col_full nobottommargin">
+
+                                    <div class="tabs clearfix nobottommargin" id="tab-1">
+
+                                        <ul class="tab-nav clearfix">
+                                            <li><a href="#tabs-1"><i class="icon-align-justify2"></i><span class="hidden-xs">Biografi</span></a></li>
+                                            <li><a href="#tabs-2"><i class="icon-trophy"></i><span class="hidden-xs">Pendidikan</span></a></li>
+                                            <li><a href="#tabs-3"><i class="icon-shield"></i><span class="hidden-xs">Riwayat Jabatan</span></a></li>
+                                            <li><a href="#tabs-4"><i class="icon-star"></i><span class="hidden-xs">Penghargaan</span></a></li>
+                                            
+                                        </ul>
+
+                                        <div class="tab-container">
+
+                                            <div class="tab-content clearfix" id="tabs-1">
+                                                <p><?php echo $_smarty_tpl->tpl_vars['data']->value['deskripsi'];?>
+</p>
+                                            </div>
+                                            <div class="tab-content clearfix" id="tabs-2">
+                                                <p><?php echo $_smarty_tpl->tpl_vars['data']->value['pendidikan'];?>
+</p>
+                                            </div>
+                                            <div class="tab-content clearfix" id="tabs-3">
+                                                <p><?php echo $_smarty_tpl->tpl_vars['data']->value['riwayat'];?>
+</p>
+                                            </div>
+                                            <div class="tab-content clearfix" id="tabs-4">
+                                                <p><?php echo $_smarty_tpl->tpl_vars['data']->value['penghargaan'];?>
+</p>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                   
+
+                                   
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="clear"></div><div class="line"></div>
+
+                        <div class="col_full nobottommargin">
+
+                            <script type="text/javascript">
+
+                                jQuery(document).ready(function($) {
+
+                                    var ocProduct = $("#oc-product");
+
+                                    ocProduct.owlCarousel({
+                                        margin: 30,
+                                        nav: true,
+                                        navText : ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+                                        autoplayHoverPause: true,
+                                        dots: false,
+                                        responsive:{
+                                            0:{ items:1 },
+                                            600:{ items:2 },
+                                            1000:{ items:4 }
+                                        }
+                                    });
+
+                                });
+
+                            </script>
+
+                  </div>
+
+<?php }} ?>

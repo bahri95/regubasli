@@ -1,22 +1,22 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 10:35:00
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-25 04:39:11
          compiled from "application\views\web\berita\list.html" */ ?>
-<?php /*%%SmartyHeaderCode:232775804bb17386352-73774792%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:20696580ea66cad6d50-61013238%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'af50530f45a450c21fef39812867b0478059c92d' => 
     array (
       0 => 'application\\views\\web\\berita\\list.html',
-      1 => 1476779691,
+      1 => 1477363146,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '232775804bb17386352-73774792',
+  'nocache_hash' => '20696580ea66cad6d50-61013238',
   'function' => 
   array (
   ),
   'version' => 'Smarty-3.1.17',
-  'unifunc' => 'content_5804bb173e3f78_42782253',
+  'unifunc' => 'content_580ea66cb3c662_15614626',
   'variables' => 
   array (
     'berita_list' => 0,
@@ -26,7 +26,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5804bb173e3f78_42782253')) {function content_5804bb173e3f78_42782253($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_580ea66cb3c662_15614626')) {function content_580ea66cb3c662_15614626($_smarty_tpl) {?>
 
               
 
@@ -89,8 +89,8 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                         <?php if ($_smarty_tpl->tpl_vars['pagging']->value!='') {?>
 
                         <ul class="pager nomargin">
-                            <li class="previous"><a href="#">&larr; Older</a></li>
-                            <li class="next"><a href="#">Newer &rarr;</a></li>
+                            <?php echo $_smarty_tpl->tpl_vars['pagging']->value;?>
+
                         </ul><!-- .pager end -->
                         <?php }?>
 

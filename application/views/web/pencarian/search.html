@@ -1,0 +1,60 @@
+
+
+              
+
+                <div class="container clearfix">
+
+               
+
+                    <!-- Post Content
+                    ============================================= -->
+                    <div class="postcontent nobottommargin clearfix">
+
+                        <!-- Posts
+                        ============================================= -->
+                        <div id="posts" class="small-thumbs">
+      
+                              {if $data neq ''}
+                                {foreach name=data from=$data item=rs}
+                            <div class="entry clearfix">
+                                <div class="entry-image">
+                                  
+                                          
+                                                <img class="image_fade" src="{$rs.image}" alt="Standard Post with Gallery">
+                                               
+                                           
+                                       
+                                </div>
+                                <div class="entry-c">
+                                    <div class="entry-title">
+                                        <h2><a href="{$rs.url_detail}">{$rs.judul}</a></h2>
+                                    </div>
+                                    <ul class="entry-meta clearfix">
+                                        <li><i class="icon-calendar3"></i> {$rs.tanggal}</li>
+                                        <li><i class="icon-folder-open"></i> {$rs.kategori}</li>
+                                       
+                                    </ul>
+                                    <div class="entry-content">
+                                        <p>{$rs.content}</p>
+                                        <a href="{$rs.url_detail}"class="more-link">Selengkapnya...</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                         {/foreach}
+                         {/if}
+
+
+                        </div><!-- #posts end -->
+
+                        <!-- Pagination
+                        ============================================= -->
+                        {if $pagging neq ''}
+
+                        <ul class="pager nomargin">
+                            <li class="previous"><a href="#">&larr; Older</a></li>
+                            <li class="next"><a href="#">Newer &rarr;</a></li>
+                        </ul><!-- .pager end -->
+                        {/if}
+
+                </div>

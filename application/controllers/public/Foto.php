@@ -57,7 +57,7 @@
 			$params = $this->uri->segment(4,0);
 			// get data
 			$result = $this->fotomodel->get_list_foto_limit();
-			$this->smarty->assign("total", $totaldata);
+			
 			
 			if(!empty($result)):
 			foreach($result as $key=>$data):

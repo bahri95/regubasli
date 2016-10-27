@@ -1,4 +1,199 @@
+function getBaseURL() {
+
+
+
+    var url = location.href;  // entire url including querystring - also: window.location.href;
+
+
+
+    var baseURL = url.substring(0, url.indexOf('/', 14));
+
+
+
+
+
+
+
+    if (baseURL.indexOf('http://localhost') != -1) {
+
+
+
+        // Base Url for localhost
+
+
+
+        var url = location.href;  // window.location.href;
+
+
+
+        var pathname = location.pathname;  // window.location.pathname;
+
+
+
+        var index1 = url.indexOf(pathname);
+
+
+
+        var index2 = url.indexOf("/", index1 + 1);
+
+
+
+        var baseLocalUrl = url.substr(0, index2);
+
+
+
+
+
+
+
+        return baseLocalUrl + "/";
+
+
+
+    }
+
+
+
+    else {
+
+
+
+        // Root Url for domain name
+
+
+
+        return baseURL + "/";
+
+
+
+    }
+
+
+
+
+
+
+
+}
+
+
     jQuery(document).ready(function($){
+ 
+ var baseURL = getBaseURL();
+
+
+                         var relatedPortfolio = $("#berita");
+
+                            relatedPortfolio.owlCarousel({
+                                margin: 30,
+                                nav: true,
+                                loop: true,
+                                dots:false,
+                                autoplayTimeout:3000,
+                                 navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+                                autoplay: true,
+                                autoplayHoverPause: true,
+                                responsive:{
+                                    0:{ items:1 },
+                                    480:{ items:2 },
+                                    768:{ items:3 },
+                                   
+                                }
+                            });
+
+                             var relatedPortfolio = $("#foto");
+
+                            relatedPortfolio.owlCarousel({
+                                margin: 30,
+                                nav: true,
+                          
+                                dots:false,
+                                autoplayTimeout:4000,
+                                 navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+                                autoplay: true,
+                                autoplayHoverPause: true,
+                                responsive:{
+                                    0:{ items:1 },
+                                    480:{ items:2 },
+                                
+                             
+                                   
+                                }
+                            });
+
+                            var relatedPortfolio = $("#video");
+
+                            relatedPortfolio.owlCarousel({
+                                margin: 30,
+                                nav: true,
+                          
+                                dots:false,
+                                autoplayTimeout:4000,
+                                 navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+                                autoplay: true,
+                                autoplayHoverPause: true,
+                                responsive:{
+                                    0:{ items:1 },
+                                    480:{ items:2 },
+                                
+                             
+                                   
+                                }
+                            });
+
+                            var relatedPortfolio = $("#video_side");
+
+                            relatedPortfolio.owlCarousel({
+                               
+                                nav: true,
+                          
+                                dots:false,
+                                autoplayTimeout:3000,
+                                 navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+                                autoplay: true,
+                                autoplayHoverPause: true,
+                                responsive:{
+                                    0:{ items:1 },
+                                   
+                        
+                                   
+                                }
+                            });
+
+                            //google map
+                            $('#google-map').gMap({
+
+                                address: 'Jalan Gatot Subroto Kav. 94, Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12780',
+                                maptype: 'ROADMAP',
+                                html: 'Jakarta',
+                                zoom: 14,
+                                markers: [
+                                    {
+                                        address: "Jalan Gatot Subroto Kav. 94, Pancoran, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12780",
+                            
+                                        icon: {
+                                            image: baseURL+"doc/icons/map-icon-red.png",
+                                            iconsize: [32, 39],
+                                            iconanchor: [32,39]
+                                        }
+                                    }
+                                ],
+                                doubleclickzoom: true,
+                                controls: {
+                                    panControl: true,
+                                    zoomControl: true,
+                                    mapTypeControl: true,
+                                    scaleControl: true,
+                                    streetViewControl: true,
+                                    overviewMapControl: true
+                                }
+
+                            });
+
+
+                          
+               
+
         var swiperSlider = new Swiper('.swiper-parent',{
             paginationClickable: false,
             slidesPerView: 1,
@@ -92,6 +287,8 @@
                 1200:{ items:6 }
             }
         });
+
+
         
         
         $("#widget-subscribe-form").validate({

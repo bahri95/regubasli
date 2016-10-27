@@ -5,8 +5,8 @@
                 <!-- Logo
                 ============================================= -->
                 <div id="logo">
-                    <a href="index.html" class="standard-logo" data-dark-logo="{$BASEURL}/doc/banner/asli.png"><img src="{$BASEURL}/doc/banner/asli.png" alt="Canvas Logo"></a>
-                    <a href="index.html" class="retina-logo" data-dark-logo="{$BASEURL}/doc/banner/asli.png"><img src="{$BASEURL}/doc/banner/asli.png" alt="Canvas Logo"></a>
+                    <a href="{$BASEURL}" class="standard-logo" data-dark-logo="{$BASEURL}doc/banner/asli.png"><img src="{$BASEURL}doc/banner/asli.png" alt="Canvas Logo"></a>
+                    <a href="{$BASEURL}" class="retina-logo" data-dark-logo="{$BASEURL}/doc/banner/asli.png"><img src="{$BASEURL}doc/banner/asli.png" alt="Canvas Logo"></a>
                 </div><!-- #logo end -->
 
                 <div class="top-advert">
@@ -50,7 +50,8 @@
                                     
                                 
                             </li>
-                             {if $menu_aktif eq 'relawan' AND $menu_aktif neq ''} 
+                             {if $menu_aktif eq 'relawan' AND $menu_aktif neq ''}
+
                             <li class="current"><a href="#"><div>PROFIL RELAWAN</div></a>
                             {else}
                              <li><a href="#"><div>PROFIL RELAWAN</div></a>
@@ -58,8 +59,10 @@
                                 <ul>
                                     
                                     {foreach name=relawan from=$relawan item=rs}
+                                    {if $rs.id_relawan neq '1'}
                                     <li><a href="{$BASEURL}index.php/public/relawan/detail/{$rs.id_relawan}"><div>Relawan {$rs.nama}</div></a>
                                     </li>
+                                    {/if}
                                     {/foreach}
                                 </ul>
                             </li>
@@ -70,15 +73,13 @@
                             {/if}
                                 <ul>
                                     <li><a href="{$BASEURL}index.php/public/informasi"><div>KEGIATAN AGUS SILVY</div></a></li>
-                                    <li><a href="#"><div>KEGIATAN RELAWAN</div></a>
-                                        <ul>
-                                        {foreach name=relawan from=$relawan item=rs}
+                                    {foreach name=relawan from=$relawan item=rs}
+                                    {if $rs.id_relawan eq '1'}
                                     <li><a href="{$BASEURL}index.php/public/berita/relawan/{$rs.id_relawan}"><div>RELAWAN {$rs.nama}</div></a>
                                     </li>
+                                    {/if}
                                         {/foreach}
-                                   
-                                        </ul>
-                                    </li>
+                                    
                                     
                                 </ul>
                             </li>

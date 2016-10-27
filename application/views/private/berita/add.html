@@ -59,15 +59,10 @@
               <div class="tab-pane active" id="tab_1">
                 <div class="box-body">
                    <div class="form-group">
-                    <input type="hidden" name="id_berita" value="{$data.id_berita}">
-                    <label for="user_name_lama">Relawan * 
-                    </label>
+                   
+                   
                   
-                       <select name="id_relawan" class="form-control" style="width:40%; ">
-                      {foreach name=data from=$data item=result}
-                        <option value="{$result.id_relawan}">{$result.nama}</option>
-                      {/foreach}
-                    </select>
+                      <input type="hidden" name="id_relawan" value="1">
                 
                   </div>
                   <div class="form-group">
@@ -87,9 +82,8 @@
                     </textarea>
                   </div>
                   <div class="form-group">
-                    <label for="user_name_lama">File Gambar 
-                      <i>(Maks 5 Mb)
-                      </i>
+                    <label for="user_name_lama">File Gambar (300x400 pixel) 
+                    
                     </label>
                     <span>
                       <input type="file" accept="image/*" onchange="loadFile(event)" 

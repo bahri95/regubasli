@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-18 02:57:51
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-25 02:22:24
          compiled from "application\views\private\berita\edit.html" */ ?>
 <?php /*%%SmartyHeaderCode:670957ec5e577155f9-99830456%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '3dd96487477d0603c313d224719f480e0c4d8766' => 
     array (
       0 => 'application\\views\\private\\berita\\edit.html',
-      1 => 1476752193,
+      1 => 1477354942,
       2 => 'file',
     ),
   ),
@@ -25,8 +25,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'notification_status' => 0,
     'url_process' => 0,
     'data' => 0,
-    'relawan' => 0,
-    'result' => 0,
   ),
   'has_nocache_code' => false,
 ),false); /*/%%SmartyHeaderCode%%*/?>
@@ -97,20 +95,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                    <div class="form-group">
                     <input type="hidden" name="id_berita" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['id_berita'];?>
 ">
-                    <label for="user_name_lama">Relawan * 
-                    </label>
-                  
-                       <select name="id_relawan" class="form-control" style="width:40%; ">
-                      <?php  $_smarty_tpl->tpl_vars['result'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['result']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['relawan']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['result']->key => $_smarty_tpl->tpl_vars['result']->value) {
-$_smarty_tpl->tpl_vars['result']->_loop = true;
-?>
-                        <option <?php if ($_smarty_tpl->tpl_vars['result']->value['id_relawan']==$_smarty_tpl->tpl_vars['data']->value['id_relawan']) {?>selected="selected"<?php }?> value="<?php echo $_smarty_tpl->tpl_vars['result']->value['id_relawan'];?>
-"><?php echo $_smarty_tpl->tpl_vars['result']->value['nama'];?>
-</option>
-                      <?php } ?>
-                    </select>
+                   <input type="hidden" name="id_relawan" value="<?php echo $_smarty_tpl->tpl_vars['data']->value['id_relawan'];?>
+">
                 
                   </div>
                   <div class="form-group">
@@ -135,9 +121,8 @@ $_smarty_tpl->tpl_vars['result']->_loop = true;
                   <div align="center"><?php echo $_smarty_tpl->tpl_vars['data']->value['image_berita'];?>
 </div>
                   <div class="form-group">
-                    <label for="user_name_lama">File Gambar 
-                      <i>(Maks 5 Mb)
-                      </i>
+                   <label for="user_name_lama">File Gambar (300x400 pixel) 
+                    
                     </label>
                     <span>
                       <input type="file" accept="image/*" onchange="loadFile(event)" 

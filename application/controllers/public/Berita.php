@@ -45,16 +45,16 @@
 			$config['per_page'] = 5;
 			$config['uri_segment'] = 5;
 			$config['num_links'] = 5;
-			$config['next_link'] = 'Selanjutnya >>>';
-			$config['prev_link'] = '<<< Sebelumnya';
+			$config['next_link'] = 'Selanjutnya >>';
+			$config['prev_link'] = '<< Sebelumnya';
 			$config['prev_tag_open'] = '<li class="previous">';
 			$config['prev_tag_close'] = '</li>';
 			$config['next_tag_open'] = '<li class="next">';
 			$config['next_tag_close'] = '</li>';
 			$config['num_tag_open'] = '<li>';
 			$config['num_tag_close'] = '</li>';
-			$config['cur_tag_open'] = '<li><b>';
-			$config['cur_tag_close'] = '</b></li>';
+			$config['cur_tag_open'] = '<li>';
+			$config['cur_tag_close'] = '</li>';
 
 			$this->pagination->initialize($config);
 
@@ -126,7 +126,7 @@
 				
 				$result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_relawan'].'/'.$data['id_berita'].'/'.url_title($data['judul']));
 
-				$result[$key]['content'] = strip_tags($this->getIntroText($data['content'],100));
+				$result[$key]['content'] = strip_tags($this->getIntroText($data['content'],200));
 
 
 

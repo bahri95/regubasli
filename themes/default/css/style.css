@@ -127,7 +127,7 @@ blockquote,
 address,
 table,
 fieldset,
-form { margin-bottom: 30px; }
+form { margin-bottom: 10px; }
 
 small { font-family: 'Lato', sans-serif; }
 
@@ -3242,7 +3242,7 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 
 .content-wrap {
 	position: relative;
-	padding: 80px 0;
+	padding: 20px 0;
 }
 
 #content .container { position: relative; }
@@ -11293,7 +11293,7 @@ button.toast-close-button {
 
 .widget {
 	position: relative;
-	margin-top: 50px;
+	margin-top: 10px;
 }
 
 .sidebar-widgets-wrap .widget {

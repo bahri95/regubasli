@@ -266,7 +266,8 @@
                    $config['upload_path']  = "doc/berita/" . $id_berita . '/';
 
                    $config['allowed_types']= 'gif|jpg|png|jpeg';
-                   $config['max_size'] = '4000';
+                	$config['min_width']            = 400;
+                	$config['min_height']           = 300;
                    
                    $config['file_name'] = $id_berita.'_'.$_FILES['foto']['name'];
                     if(!is_dir($config['upload_path'])):
@@ -303,50 +304,6 @@
                     }
                 }
 
-
-				
-
-				if(!empty($_FILES['file']['name'])){
-
-					$this->load->library("uploader");
-
-					// set file attachment
-
-					$this->uploader->set_file($_FILES['file']);
-
-					// set rules (kosongkan jika tidak menggunakan batasan sama sekali)
-
-					$rules = array('allowed_filesize' => 11200000);
-
-					$this->uploader->set_rules($rules);
-
-					// direktori
-
-					$dir = 'doc/berita/'. $id_berita.'/';
-
-					
-
-					if ($this->uploader->upload_file($dir)) {
-
-						$this->db->set("file_berita",$this->uploader->get_file_name());
-
-						$this->db->where("id_berita", $id_berita);
-
-						$this->db->update("berita_m");
-
-					} else {
-
-						//echo $this->upload->message;
-
-						$this->notification->set_message("File lampiran gagal diupload");
-
-						$this->notification->sent_notification(false);
-
-					}
-
-
-
-				}
 
 
 
@@ -442,9 +399,7 @@
 
 		$this->smarty->assign("data", $data);
 
-		$tanggal_berita = $this->datetimemanipulation->format_full_date($data['tanggal']);
-
-		$this->smarty->assign("tanggal_berita", $tanggal_berita);
+	
 
 		// notification
 
@@ -583,7 +538,9 @@
                    $config['upload_path']  = "doc/berita/" . $id_berita . '/';
 
                    $config['allowed_types']= 'gif|jpg|png|jpeg';
-                   $config['max_size'] = '4000';
+              
+                	$config['min_width']            = 400;
+                	$config['min_height']           = 300;
                    
                    $config['file_name'] = $id_berita.'_'.$_FILES['foto']['name'];
                     if(!is_dir($config['upload_path'])):

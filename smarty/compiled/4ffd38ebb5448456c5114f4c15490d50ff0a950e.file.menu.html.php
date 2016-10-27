@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-22 11:43:51
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-26 13:39:00
          compiled from "application\views\web\base-layout\menu.html" */ ?>
 <?php /*%%SmartyHeaderCode:31215802fa18e9c632-59919313%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4ffd38ebb5448456c5114f4c15490d50ff0a950e' => 
     array (
       0 => 'application\\views\\web\\base-layout\\menu.html',
-      1 => 1476882410,
+      1 => 1477481892,
       2 => 'file',
     ),
   ),
@@ -37,12 +37,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                 <!-- Logo
                 ============================================= -->
                 <div id="logo">
-                    <a href="index.html" class="standard-logo" data-dark-logo="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+" class="standard-logo" data-dark-logo="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+doc/banner/asli.png"><img src="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+doc/banner/asli.png" alt="Canvas Logo"></a>
+                    <a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+" class="retina-logo" data-dark-logo="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
 /doc/banner/asli.png"><img src="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
-/doc/banner/asli.png" alt="Canvas Logo"></a>
-                    <a href="index.html" class="retina-logo" data-dark-logo="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
-/doc/banner/asli.png"><img src="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
-/doc/banner/asli.png" alt="Canvas Logo"></a>
+doc/banner/asli.png" alt="Canvas Logo"></a>
                 </div><!-- #logo end -->
 
                 <div class="top-advert">
@@ -96,7 +98,8 @@ index.php/public/profil/detail/<?php echo $_smarty_tpl->tpl_vars['rs']->value['i
                                     
                                 
                             </li>
-                             <?php if ($_smarty_tpl->tpl_vars['menu_aktif']->value=='relawan'&&$_smarty_tpl->tpl_vars['menu_aktif']->value!='') {?> 
+                             <?php if ($_smarty_tpl->tpl_vars['menu_aktif']->value=='relawan'&&$_smarty_tpl->tpl_vars['menu_aktif']->value!='') {?>
+
                             <li class="current"><a href="#"><div>PROFIL RELAWAN</div></a>
                             <?php } else { ?>
                              <li><a href="#"><div>PROFIL RELAWAN</div></a>
@@ -108,11 +111,13 @@ index.php/public/profil/detail/<?php echo $_smarty_tpl->tpl_vars['rs']->value['i
 foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
 $_smarty_tpl->tpl_vars['rs']->_loop = true;
 ?>
+                                    <?php if ($_smarty_tpl->tpl_vars['rs']->value['id_relawan']!='1') {?>
                                     <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
 index.php/public/relawan/detail/<?php echo $_smarty_tpl->tpl_vars['rs']->value['id_relawan'];?>
 "><div>Relawan <?php echo $_smarty_tpl->tpl_vars['rs']->value['nama'];?>
 </div></a>
                                     </li>
+                                    <?php }?>
                                     <?php } ?>
                                 </ul>
                             </li>
@@ -124,22 +129,20 @@ index.php/public/relawan/detail/<?php echo $_smarty_tpl->tpl_vars['rs']->value['
                                 <ul>
                                     <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
 index.php/public/informasi"><div>KEGIATAN AGUS SILVY</div></a></li>
-                                    <li><a href="#"><div>KEGIATAN RELAWAN</div></a>
-                                        <ul>
-                                        <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
+                                    <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['relawan']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
 $_smarty_tpl->tpl_vars['rs']->_loop = true;
 ?>
+                                    <?php if ($_smarty_tpl->tpl_vars['rs']->value['id_relawan']=='1') {?>
                                     <li><a href="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
 index.php/public/berita/relawan/<?php echo $_smarty_tpl->tpl_vars['rs']->value['id_relawan'];?>
 "><div>RELAWAN <?php echo $_smarty_tpl->tpl_vars['rs']->value['nama'];?>
 </div></a>
                                     </li>
+                                    <?php }?>
                                         <?php } ?>
-                                   
-                                        </ul>
-                                    </li>
+                                    
                                     
                                 </ul>
                             </li>

@@ -60,14 +60,7 @@
                 <div class="box-body">
                    <div class="form-group">
                     <input type="hidden" name="id_berita" value="{$data.id_berita}">
-                    <label for="user_name_lama">Relawan * 
-                    </label>
-                  
-                       <select name="id_relawan" class="form-control" style="width:40%; ">
-                      {foreach name=data from=$relawan item=result}
-                        <option {if $result.id_relawan eq $data.id_relawan}selected="selected"{/if} value="{$result.id_relawan}">{$result.nama}</option>
-                      {/foreach}
-                    </select>
+                   <input type="hidden" name="id_relawan" value="{$data.id_relawan}">
                 
                   </div>
                   <div class="form-group">
@@ -88,9 +81,8 @@
                   </div>
                   <div align="center">{$data.image_berita}</div>
                   <div class="form-group">
-                    <label for="user_name_lama">File Gambar 
-                      <i>(Maks 5 Mb)
-                      </i>
+                   <label for="user_name_lama">File Gambar (300x400 pixel) 
+                    
                     </label>
                     <span>
                       <input type="file" accept="image/*" onchange="loadFile(event)" 

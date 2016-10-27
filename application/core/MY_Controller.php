@@ -47,8 +47,7 @@
             //berita relawan utama
             $this->berita_relawan_utama();
 
-            //berita relawan anggota
-            $this->berita_relawan_anggota();
+      
 
             //berita gubernur
             $this->beritacagub_cawagub();
@@ -81,29 +80,7 @@
             $this->smarty->assign("page_modul_url", site_url('public/berita'));
         }
 
-        public function berita_relawan_anggota(){
-            // get data
-            $this->load->model('beritamodel');
-            $result = $this->beritamodel->get_berita_relawan_anggota();
         
-            if(!empty($result)):
-            foreach($result as $key=>$data):
-            $path = 'doc/berita/'.$data['id_berita']."/";
-            if(is_file($path.$data['image'])){
-                $result[$key]['image'] = BASEURL.$path.$data['image'];
-            } else {
-                $result[$key]['image']= BASEURL.'doc/tmp.default.jpg';
-            }
-                $result[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
-               $result[$key]['url_detail'] = site_url('public/berita/detail/'.$data['id_relawan'].'/'.$data['id_berita'].'/'.url_title($data['judul']));
-                $result[$key]['content'] = strip_tags($this->getIntroText($data['content'],100));
-            endforeach;
-            endif;
-            $this->smarty->assign("berita_list_anggota_side", $result);
-            $this->smarty->assign("page_modul", 'Berita');
-            $this->smarty->assign("page_modul_url", site_url('public/berita'));
-        }
-
         public function beritacagub_cawagub(){
             //berita cagub-cawagub
             // get data
@@ -232,6 +209,9 @@
             $this->layout->load_javascript("themes/js/front/jquery.js");
         $this->layout->load_javascript("themes/js/front/plugins.js");
         $this->layout->load_javascript("themes/js/front/functions.js");
+        $this->layout->load_javascript("themes/js/front/custom.js");
+        $this->layout->load_javascript("themes/js/front/jquery.gmap.js");
+
             
            
         }

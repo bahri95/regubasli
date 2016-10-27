@@ -72,7 +72,7 @@
 			
 				$result[$key]['tanggal'] = $this->datetimemanipulation->GetFullDateWithDay($data['tanggal']);
 				$result[$key]['url_detail'] = site_url('public/informasi/detail/'.$data['id_informasi'].'/'.url_title($data['judul']));
-				$result[$key]['content'] = strip_tags($this->getIntroText($data['content'],300));
+				$result[$key]['content'] = strip_tags($this->getIntroText($data['content'],200));
 			
 			endforeach;
 			endif;
@@ -129,7 +129,7 @@
 
 			
 		
-				$result[$key]['url_detail'] = site_url('public/informasi/detail/'.'/'.$data['id_informasi'].'/'.url_title($data['judul']));
+				$result[$key]['url_detail'] = site_url('public/informasi/detail'.'/'.$data['id_informasi'].'/'.url_title($data['judul']));
 				$result[$key]['content'] = strip_tags($this->getIntroText($data['content'],50));
 			
 			endforeach;
@@ -153,7 +153,7 @@
 
 			
 		
-				$result2[$key]['url_detail'] = site_url('public/informasi/detail/'.'/'.$data['id_informasi'].'/'.url_title($data['judul']));
+				$result2[$key]['url_detail'] = site_url('public/informasi/detail'.'/'.$data['id_informasi'].'/'.url_title($data['judul']));
 				$result2[$key]['content'] = strip_tags($this->getIntroText($data['content'],50));
 			
 			endforeach;

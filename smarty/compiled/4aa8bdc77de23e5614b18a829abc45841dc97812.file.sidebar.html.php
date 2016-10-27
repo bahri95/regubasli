@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 11:02:56
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-26 08:00:15
          compiled from "application\views\web\base-layout\sidebar.html" */ ?>
 <?php /*%%SmartyHeaderCode:132745805a6c1277104-40725526%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '4aa8bdc77de23e5614b18a829abc45841dc97812' => 
     array (
       0 => 'application\\views\\web\\base-layout\\sidebar.html',
-      1 => 1476867775,
+      1 => 1477461614,
       2 => 'file',
     ),
   ),
@@ -19,10 +19,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'unifunc' => 'content_5805a6c1303b26_49344125',
   'variables' => 
   array (
-    'informasi_list' => 0,
+    'informasi_list_side' => 0,
     'rs' => 0,
-    'berita_list' => 0,
-    'berita_list_anggota' => 0,
+    'berita_list_side' => 0,
     'video_list' => 0,
   ),
   'has_nocache_code' => false,
@@ -33,14 +32,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                         <div class="sidebar-widgets-wrap">
 
                            
+                              <!-- twiiter -->
+                              <div class="widget clearfix">
+                                    <a class="twitter-timeline" data-lang="id" data-width="450" data-height="370" data-theme="light" href="https://twitter.com/RelawanGreenJkt">Tweets by RelawanGreenJkt</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+                                </div>
+                                <!-- facebook -->
+                                <div class="widget clearfix">
+                                <div class="fb-page" data-href="https://www.facebook.com/RelawanRahmatSumut/" data-tabs="timeline" data-width="450" data-height="370" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/RelawanRahmatSumut/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RelawanRahmatSumut/">Relawan Green Jakarta</a></blockquote></div>
+                                </div>
+
                             <div class="widget clearfix">
 
                                     <div class="tabs nobottommargin clearfix" id="sidebar-tabs">
 
                                         <ul class="tab-nav clearfix">
-                                            <li><a href="#tabs-1">Asli</a></li>
-                                            <li><a href="#tabs-2">Rahmad</a></li>
-                                            <li><a href="#tabs-3">Lain2</a></li>
+                                            <li><a href="#tabs-1">GubernurDKI</a></li>
+                                            <li><a href="#tabs-2">Relawan</a></li>
+                                            
                                         </ul>
 
                                         <div class="tab-container">
@@ -49,7 +58,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                                 <div id="popular-post-list-sidebar">
 
                                                      <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['informasi_list']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['informasi_list_side']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
 $_smarty_tpl->tpl_vars['rs']->_loop = true;
 ?>
@@ -79,7 +88,7 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                                                 <div id="recent-post-list-sidebar">
 
                                                    <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['berita_list']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
+ $_from = $_smarty_tpl->tpl_vars['berita_list_side']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
 $_smarty_tpl->tpl_vars['rs']->_loop = true;
 ?>
@@ -104,71 +113,60 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                                                     <?php } ?>
                                                 </div>
                                             </div>
-                                            <div class="tab-content clearfix" id="tabs-3">
-                                                   <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
- $_from = $_smarty_tpl->tpl_vars['berita_list_anggota']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
-foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
-$_smarty_tpl->tpl_vars['rs']->_loop = true;
-?>
-
-                                                    <div class="spost clearfix">
-                                                        <div class="entry-image">
-                                                            <a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
-" class="nobg"><img class="img-circle" src="<?php echo $_smarty_tpl->tpl_vars['rs']->value['image'];?>
-" alt=""></a>
-                                                        </div>
-                                                        <div class="entry-c">
-                                                            <div class="entry-title">
-                                                                <h4><a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_detail'];?>
-"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul'];?>
-</a></h4>
-                                                            </div>
-                                                            <ul class="entry-meta">
-                                                                <li><i class="icon-calendar3"></i><?php echo $_smarty_tpl->tpl_vars['rs']->value['tanggal'];?>
-</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <?php } ?>
-                                            </div>
-
+                                           
                                         </div>
 
                                     </div>
 
                                 </div>
+                        </div><!-- end berita -->
 
 
-                            <div class="widget clearfix">
-                                 <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
+                           <div class="line"></div>
+                        <div class="widget clearfix">
+                          <div id="video_side" class="owl-carousel portfolio-carousel">
+                                <?php if ($_smarty_tpl->tpl_vars['video_list']->value!='') {?>
+                                    <?php  $_smarty_tpl->tpl_vars['rs'] = new Smarty_Variable; $_smarty_tpl->tpl_vars['rs']->_loop = false;
  $_from = $_smarty_tpl->tpl_vars['video_list']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['rs']->key => $_smarty_tpl->tpl_vars['rs']->value) {
 $_smarty_tpl->tpl_vars['rs']->_loop = true;
 ?>
-                                        <div class="oc-item">
-                                        <div class="iportfolio">
-                                            <div class="portfolio-image">
-                                                <a href="#">
-                                                    <img src="<?php echo $_smarty_tpl->tpl_vars['rs']->value['video_image'];?>
+                                    <article class="portfolio-item pf-graphics pf-uielements">
+                                        <div class="portfolio-image">
+                                            <a href="#">
+                                                <img src="<?php echo $_smarty_tpl->tpl_vars['rs']->value['video_image'];?>
 " alt="Mac Sunglasses">
-                                                </a>
-                                                <div class="portfolio-overlay">
-                                                    <a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_play'];?>
+                                            </a>
+                                            <div class="portfolio-overlay">
+                                                <a href="<?php echo $_smarty_tpl->tpl_vars['rs']->value['url_play'];?>
 " class="left-icon" data-lightbox="iframe"><i class="icon-line-play"></i></a>
-                                                   
-                                                </div>
-                                            </div>
-                                            <div class="portfolio-desc">
-                                                <h3><a href="portfolio-single-video.html"><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul_video'];?>
-</a></h3>
-                                                
+                                               
                                             </div>
                                         </div>
+                                        <div class="portfolio-desc">
+                                            <h6><?php echo $_smarty_tpl->tpl_vars['rs']->value['judul_video'];?>
+</h6>
+                                        </div>
+                                    </article>
                                     <?php } ?>
-                                    </div>
+                                    <?php }?>
+
+                                </div><!-- .foto-carousel end -->
+                        </div>
 
                             
 
                         </div>
 
-                    </div><!-- .sidebar end --><?php }} ?>
+                    </div><!-- .sidebar end -->
+<div id="fb-root"></div>
+
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v2.8&appId=146631999110903";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<?php }} ?>
