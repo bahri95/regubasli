@@ -121,6 +121,26 @@ function getBaseURL() {
                                 }
                             });
 
+                             var relatedPortfolio = $("#foto_page");
+
+                            relatedPortfolio.owlCarousel({
+                              
+                                nav: true,
+                          
+                                dots:false,
+                                autoplayTimeout:4000,
+                                 navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+                                autoplay: true,
+                                autoplayHoverPause: true,
+                                responsive:{
+                                    0:{ items:1 },
+                                    480:{ items:2 },
+                                    720:{ items:3 },
+                             
+                                   
+                                }
+                            });
+
                             var relatedPortfolio = $("#video");
 
                             relatedPortfolio.owlCarousel({
@@ -141,6 +161,25 @@ function getBaseURL() {
                                 }
                             });
 
+                            var relatedPortfolio = $("#video_page");
+
+                            relatedPortfolio.owlCarousel({
+                              
+                                nav: true,
+                          
+                                dots:false,
+                                autoplayTimeout:4000,
+                                 navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+                                autoplay: true,
+                                autoplayHoverPause: true,
+                                responsive:{
+                                    0:{ items:1 },
+                                    480:{ items:2 },
+                                    720:{ items:3 },
+                             
+                                   
+                                }
+                            });
                             var relatedPortfolio = $("#video_side");
 
                             relatedPortfolio.owlCarousel({
@@ -159,6 +198,8 @@ function getBaseURL() {
                                    
                                 }
                             });
+
+
 
                             //google map
                             $('#google-map').gMap({

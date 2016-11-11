@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-26 11:24:41
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-29 05:56:25
          compiled from "application\views\web\home\content.html" */ ?>
 <?php /*%%SmartyHeaderCode:202465802fa19103f11-69857447%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '1c7df63b2d972c8a947d0f54967fb70bb80d6f0f' => 
     array (
       0 => 'application\\views\\web\\home\\content.html',
-      1 => 1477472308,
+      1 => 1477713383,
       2 => 'file',
     ),
   ),
@@ -27,6 +27,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'rs_album' => 0,
     'video_list' => 0,
     'datasosmed' => 0,
+    'BASEURL' => 0,
     'informasi_list_side' => 0,
     'berita_list_side' => 0,
   ),
@@ -252,7 +253,10 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                                     
                                 </div>
 
-
+                                  <div class="widget clearfix">
+                                    <img class="aligncenter" src="<?php echo $_smarty_tpl->tpl_vars['BASEURL']->value;?>
+doc/home/stiker.png" alt="" width="70%" height="70%">
+                                </div>
                                 <!-- twiiter -->
                               <div class="widget clearfix">
                                     <a class="twitter-timeline" data-lang="id" data-width="450" data-height="370" data-theme="light" href="https://twitter.com/RelawanGreenJkt">Tweets by RelawanGreenJkt</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -260,7 +264,7 @@ $_smarty_tpl->tpl_vars['rs']->_loop = true;
                                 </div>
                                 <!-- facebook -->
                                 <div class="widget clearfix">
-                                <div class="fb-page" data-href="https://www.facebook.com/RelawanRahmatSumut/" data-tabs="timeline" data-width="450" data-height="370" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/RelawanRahmatSumut/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RelawanRahmatSumut/">Relawan Green Jakarta</a></blockquote></div>
+                                <div class="fb-page" data-href="https://www.facebook.com/RelawanRahmatSumut/" data-tabs="timeline" data-width="450" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/RelawanRahmatSumut/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RelawanRahmatSumut/">Relawan Green Jakarta</a></blockquote></div>
                                 </div>
 
                             <div class="widget clearfix">

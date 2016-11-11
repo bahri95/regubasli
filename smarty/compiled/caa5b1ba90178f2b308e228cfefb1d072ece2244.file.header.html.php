@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.17, created on 2016-10-19 10:11:00
+<?php /* Smarty version Smarty-3.1.17, created on 2016-10-31 12:41:40
          compiled from "application\views\web\base-layout\header.html" */ ?>
 <?php /*%%SmartyHeaderCode:6880580721ff1420e3-49553236%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'caa5b1ba90178f2b308e228cfefb1d072ece2244' => 
     array (
       0 => 'application\\views\\web\\base-layout\\header.html',
-      1 => 1476864549,
+      1 => 1477874867,
       2 => 'file',
     ),
   ),
@@ -30,7 +30,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Relawan Asli</title>
+    <title>RELAWAN GREEN JAKARTA</title>
     <link rel="shortcut icon" href="favicon.ico">
     <meta property="og:title" content="<?php echo $_smarty_tpl->tpl_vars['share']->value['judul'];?>
 " />

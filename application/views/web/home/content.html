@@ -49,7 +49,7 @@
                                 <div class="oc-item">
                                     <div class="iportfolio">
                                         <div class="portfolio-image">
-                                            <a href="portfolio-single.html">
+                                            <a href="{$rs.url_detail}">
                                                 <img src="{$rs.image}" width="400px" height="300px" alt="Image Berita">
                                             </a>
                                            
@@ -86,7 +86,7 @@
                                         {if $foto_list neq ''}
                                             {foreach name=foto_list from=$foto_list item=rs}
                                             {if $rs.id_album eq $rs_album.id_album}
-                                            <div class="slide"><a href="{$rs.foto}"><img src="{$rs.foto}" alt="Shake It"></a></div>
+                                            <div class="slide"><a href="{$rs.foto}"><img  src="{$rs.foto}"  alt="Shake It" style="height: 100%;"></a></div>
                                             {/if}
                                             {/foreach}
                                         {/if}
@@ -169,7 +169,9 @@
                                     
                                 </div>
 
-
+                                  <div class="widget clearfix">
+                                    <img class="aligncenter" src="{$BASEURL}doc/home/stiker.png" alt="" width="70%" height="70%">
+                                </div>
                                 <!-- twiiter -->
                               <div class="widget clearfix">
                                     <a class="twitter-timeline" data-lang="id" data-width="450" data-height="370" data-theme="light" href="https://twitter.com/RelawanGreenJkt">Tweets by RelawanGreenJkt</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -177,7 +179,7 @@
                                 </div>
                                 <!-- facebook -->
                                 <div class="widget clearfix">
-                                <div class="fb-page" data-href="https://www.facebook.com/RelawanRahmatSumut/" data-tabs="timeline" data-width="450" data-height="370" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/RelawanRahmatSumut/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RelawanRahmatSumut/">Relawan Green Jakarta</a></blockquote></div>
+                                <div class="fb-page" data-href="https://www.facebook.com/RelawanRahmatSumut/" data-tabs="timeline" data-width="450" data-height="300" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/RelawanRahmatSumut/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/RelawanRahmatSumut/">Relawan Green Jakarta</a></blockquote></div>
                                 </div>
 
                             <div class="widget clearfix">

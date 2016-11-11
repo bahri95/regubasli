@@ -1,0 +1,102 @@
+<section class="content-header">  
+  <h1>    Koordinator Akun    
+    <small>panel    
+    </small>  
+  </h1>  
+  <ol class="breadcrumb">    
+    <li>      
+      <a href="{$url_private}">        
+        <i class="fa fa-home">        
+        </i> Home      
+      </a>    
+    </li>    
+    <li>      
+      <a href="{$url_list}">        
+        <i class="fa ">        
+        </i> Koordinator Akun      
+      </a>    
+    </li>    
+    <li class="active">{$aksi_judul} Data    
+    </li>  
+  </ol>
+</section>
+<!-- Main content -->
+<section class="content">  
+  <!-- Small boxes (Stat box) -->  
+  <div class="row">    
+    <!-- notification template -->    
+    {if $notification_msg <> ""}    
+    <div class="col-md-12">      
+    {if $notification_status eq 'red'}      
+      <div class="alert alert-danger alert-dismissable">        
+        <i class="fa fa-ban">        
+        </i>        
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;        
+        </button>        
+        {$notification_msg}.      
+      </div>      
+      {/if}      
+      {if $notification_status eq 'green'}      
+      <div class="alert alert-success alert-dismissable">        
+        <i class="fa fa-check">        
+        </i>        
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;        
+        </button>        
+        {$notification_msg}.      
+      </div>      
+      {/if}    
+    </div>    
+    {/if}    
+    <form id="form" action="{$url_process}" method="post" nctype="multipart/form-data">		
+      <input type="hidden" name="id_koordinator" id="id_koordinator" value="{$koordinator.id_koordinator}" />		
+      <input type="hidden" name="id_user" id="id_user" value="{$akundata.id_user}" />		
+      <input type="hidden" name="aksi" id="aksi" value="{$aksi}" />     
+      <div class="row">      
+        <div class="col-md-6">        
+          <!-- form add -->        
+          <div class="box box-success">          
+            <div class="box-header">            
+              <h3 class="box-title">{$aksi_judul} Akun Login Koordinator            
+              </h3>          
+            </div>          
+            <!-- /.box-header -->          
+            <!-- form start -->          
+            <div class="box-body">			 
+              <div class="form-group">              
+                <label for="nama_koordinator">Kode Koordinator               
+                </label>              
+                <input type="text" name="kode_koordinator" value="{$koordinator.kode_koordinator}" maxlength="100" class="form-control" readonly/>            
+              </div>			 
+              <div class="form-group">              
+                <label for="nama_koordinator">Nama Koordinator               
+                </label>              
+                <input type="text" name="nama_koordinator" value="{$koordinator.nama_koordinator}" maxlength="100" class="form-control" readonly/>            
+              </div>            
+              <div class="form-group">              
+                <label for="admin_name">Username * {$akundata.user_name}              
+                </label>              
+                <input type="text" name="user_name_koordinator" value="{$akundata.user_name}" maxlength="100" id="user_name_koordinator" class="form-control" />            
+              </div>            
+              <div class="form-group">              
+                <label for="admin_name">Password *              
+                </label>              
+                <input type="text" name="user_pass_koordinator" value="{$akundata.user_pass}" maxlength="100" id="user_pass_koordinator" class="form-control" />            
+              </div>                      
+            </div>            
+            <div class="box-footer">            
+              <button type="submit" class="btn btn-success">              
+                <i class="fa fa-save">              
+                </i>  Simpan            
+              </button>            
+              <a href="{$url_list}"  class="btn btn-primary">              
+                <i class="fa fa-mail-reply">              
+                </i>  Kembali Ke Daftar Koordinator            
+              </a>          
+            </div>          
+          </div>      
+        </div>      
+        <!-- /.col -->      
+      </div>    
+      <!-- /.row -->    
+      </section>  
+    <!-- /.content --> 

@@ -1,0 +1,171 @@
+                <section class="content-header">
+                    <h1>
+                      Koordinator Relawan
+                        <small>panel</small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href="{$url_private}"><i class="fa fa-home"></i> Home</a></li>
+                        <li class="active">Koordinator Relawan</li>
+                    </ol>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+				<!-- Small boxes (Stat box) -->
+                    <div class="row">
+                     <!-- notification template -->
+                        {if $notification_msg <> ""}
+                        <div class="col-md-12">
+                        		{if $notification_status eq 'red'}
+                        		<div class="alert alert-danger alert-dismissable">
+                                        <i class="fa fa-ban"></i>
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                        {$notification_msg}.
+                                    </div>
+                                 {/if}
+                                 {if $notification_status eq 'green'}
+                                 <div class="alert alert-success alert-dismissable">
+                                        <i class="fa fa-check"></i>
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                         {$notification_msg}.
+                                    </div>
+                                 {/if}
+                         </div>
+                        {/if}
+                        <form id="form" action="{$url_process}" method="post">
+                         <div class="col-md-6">
+                        <!-- form update email-->
+                             <div class="box box-success">
+                                <div class="box-header">
+                                    <h3 class="box-title">{$aksi_title} Koordinator Relawan</h3>
+                                    {if $aksi eq 'edit'}
+                                    <div class="box-tools">
+                                    	<div class="btn-group pull-right"><a href="{$url_add}" title="Tambah Data" class="btn bg-olive btn-flat"><i class='fa fa-plus'></i> Tambah Data</a></div>
+                                    </div>
+                                    {/if}
+                                </div><!-- /.box-header -->
+                                <!-- form start -->
+                               		<input type="hidden" name="aksi" id="aksi" value="{$aksi}" />
+                                    <input type="hidden" name="id_koordinator" id="id_koordinator" value="{$data.id_koordinator}" />
+                                    <input type="hidden" name="kode_koordinator_lama" id="kode_koordinator_lama" value="{$data.kode_koordinator}" />
+                                   <div class="box-body">
+                                        <div style="clear:both;"></div>
+                                   		{if $data.nama_induk neq '-'}
+                                          <div class="form-group">
+                                            <label>Nama Induk Koordinator</label>
+                                            <input type="text" name="nama_induk" id="nama_induk" class="form-control" value="{$data.nama_induk}" size="50" maxlength="150"  disabled="disabled"/>
+                                        </div>
+                                        {/if}
+                                        <div class="form-group">
+                                            <label>Kode Koordinator * </label>
+                                            <input type="text" name="kode_koordinator" id="kode_koordinator" class="form-control" value="{$data.kode_koordinator}" size="50" maxlength="50" />
+                                        </div> 
+                                        <div class="form-group">
+                                            <label>Nama Koordinator * </label>
+                                            <input type="text" name="nama_koordinator" id="nama_koordinator" class="form-control" value="{$data.nama_koordinator}" size="50" maxlength="50" />
+                                        </div>
+                                        <div class="form-group">
+                                         <label>Kotamadya * </label>
+                                         <select name="id_kota" id="id_kota" class="form-control" onchange="javascript:LoadKecamatan('{$url_kecamatan}/'+this.value);">
+										  <option value="">----Pilih Kotamadya ----
+											  </option>
+											  {foreach name=list_kota item=result from=$data_kota}
+											  <option value="{$result.id}" {if $result.id == $data.id_kota}selected='selected'{/if}>{$result.nama}</option>
+											  {/foreach}
+											</select>
+										</div>
+										<div class="form-group">
+                                         <label>Kecamatan * </label>
+                                         <div id="kecamatan_area">
+											<select name="id_kecamatan" id="id_kecamatan" class="form-control" onchange="javascript:LoadKelurahan('{$url_kelurahan}/'+this.value);">
+											  <option value="">----Pilih Kecamatan----
+											  </option>
+											  {foreach name=list_kecamatan item=result from=$data_kecamatan}
+											  <option value="{$result.id}" {if $result.id == $data.id_kecamatan}selected='selected'{/if}>{$result.nama}</option>
+											  {/foreach}
+											</select>
+											</div>
+										</div>
+										<div class="form-group">
+                                         <label>Kelurahan * </label>
+                                         <div id="kelurahan_area">
+                                         <select name="id_kelurahan" id="id_kelurahan" class="form-control">
+												  <option value="">----Pilih Kelurahan ----
+												  </option>
+												  {foreach name=list_kelurahan item=result from=$data_kelurahan}
+												  <option value="{$result.id}" {if $result.id == $data.id_kelurahan}selected='selected'{/if}>{$result.nama}</option>
+												  {/foreach}
+												</select>
+											</div>
+										</div>
+                                        
+                                    </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div><!-- /.col -->
+                         <div class="col-md-6">
+                        <!-- form update email-->
+                             <div class="box box-success">
+                                <div class="box-header">
+                                    <h3 class="box-title">Data Lainnya</h3>
+                                </div><!-- /.box-header -->
+                                <!-- form start -->
+                               		<input type="hidden" name="aksi" value="{$aksi}" />
+                                    <input type="hidden" name="id_koordinator" value="{$data.id_koordinator}" />
+                                   
+                                   <div class="box-body">
+                                        <div class="form-group">
+                                            <label style="float:left;">Level Koordinator * </label>
+                                            <select name="id_level" id="id_level" class="form-control" >
+												{foreach name=list_data from=$datalevel item=rs}
+												<option value="{$rs.id_level}" {if $rs.id_level eq $data.id_level}selected="selected"{/if}>{$rs.level_koordinator}</option>
+												{/foreach}
+                                            </select>
+                                            
+                                        </div>
+										<div class="form-group">
+                                            <label style="float:left;">No KTP * </label>
+                                            <input type="text" name="no_ktp" id="no_ktp" class="form-control" value="{$data.no_ktp}" size="50" maxlength="50" />
+                                            <div style="clear:both;"></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label style="float:left;">No HP  </label>
+                                            <input type="text" name="no_hp" id="no_hp" class="form-control" value="{$data.no_hp}" size="50" maxlength="50" />
+                                            <div style="clear:both;"></div>
+                                        </div>
+                                     
+                                    </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div><!-- /.col -->
+                        <div class="col-md-12">
+                        	<div class="box">
+                                <div class="box-header">
+                                    <h3 class="box-title">Induk Koordinator</h3>
+                                </div><!-- /.box-header -->
+									<div class="box-footer">
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>  Simpan</button>                                       
+                                    </div>
+                                    <div class="box-body table-responsive">
+                                       {$koordinator_relawan}
+                                    </div><!-- /.box-body -->
+                                	<div class="box-footer">
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i>  Simpan</button>                                      
+                                    </div>
+                            </div><!-- /.box -->
+                        </div>
+                         </form>
+                    </div><!-- /.row -->
+                    
+                </section><!-- /.content -->
+                
+{literal}
+<script type="text/javascript">
+	function LoadKecamatan(url_kecamatan){
+		//alert(url_kecamatan);
+		$('#kecamatan_area').load(url_kecamatan);
+	}
+	
+	function LoadKelurahan(url_kelurahan){
+		//alert(url_kelurahan);
+		$('#kelurahan_area').load(url_kelurahan);
+	}
+</script>
+{/literal}

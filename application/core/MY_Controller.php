@@ -60,7 +60,7 @@
         public function berita_relawan_utama(){
             // get data
             $this->load->model('beritamodel');
-            $result = $this->beritamodel->get_berita_relawan_utama();
+            $result = $this->beritamodel->get_berita_relawan_utama_side();
         
             if(!empty($result)):
             foreach($result as $key=>$data):
@@ -358,8 +358,10 @@
                 $data = $this->accountmodel->get_administrator_details($this->id_user);
                 $data['admin_image'] = BASEURL.'doc/images/logo_icon.jpg';
                 //foto
+                if(!empty($data['foto'])){
                 $pathfoto = 'doc/admin/'.$data['id_user'].'/'.$data['photo'];
-                
+                }
+                if(!empty($data['jenis_kelamin'])):
                 if($data['jenis_kelamin'] == 'P'):
                 
                 if(!empty($data['photo']) AND is_file($pathfoto)) {
@@ -367,9 +369,9 @@
                 } else {
                     $data['photo'] = BASEURL.'doc/images/default_female.gif';
                 }
-
+               
                 endif;
-                
+               
                 if($data['jenis_kelamin'] == 'L'):
                 
                 if(!empty($data['photo']) AND is_file($pathfoto)) {
@@ -378,6 +380,10 @@
                     $data['photo'] = BASEURL.'doc/images/default_male.gif';
                 }
 
+             
+                endif;
+                   else:
+                   $data['photo'] = BASEURL.'doc/images/default_male.gif'; 
                 endif;
                 $data['profile_url'] = site_url('private/account/status');
                 $data['account_url'] = site_url('private/account/login');

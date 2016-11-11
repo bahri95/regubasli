@@ -50,22 +50,7 @@
                                     
                                 
                             </li>
-                             {if $menu_aktif eq 'relawan' AND $menu_aktif neq ''}
-
-                            <li class="current"><a href="#"><div>PROFIL RELAWAN</div></a>
-                            {else}
-                             <li><a href="#"><div>PROFIL RELAWAN</div></a>
-                             {/if}
-                                <ul>
-                                    
-                                    {foreach name=relawan from=$relawan item=rs}
-                                    {if $rs.id_relawan neq '1'}
-                                    <li><a href="{$BASEURL}index.php/public/relawan/detail/{$rs.id_relawan}"><div>Relawan {$rs.nama}</div></a>
-                                    </li>
-                                    {/if}
-                                    {/foreach}
-                                </ul>
-                            </li>
+                           
                             {if $menu_aktif eq 'informasi'   AND $menu_aktif neq '' or $menu_aktif eq 'berita'  AND $menu_aktif neq ''} 
                             <li class="current"><a href="#"><div>BERITA</div></a>
                             {else}
@@ -84,9 +69,9 @@
                                 </ul>
                             </li>
                              {if $menu_aktif eq 'foto' AND $menu_aktif neq ''} 
-                           <li class="current"><a href="{$BASEURL}index.php/public/foto"><div>PHOTO</div></a>
+                           <li class="current"><a href="{$BASEURL}index.php/public/foto"><div>FOTO</div></a>
                            {else}
-                           <li><a href="{$BASEURL}index.php/public/foto"><div>PHOTO</div></a>
+                           <li><a href="{$BASEURL}index.php/public/foto"><div>FOTO</div></a>
                            {/if}
                                 
                             </li>
@@ -111,7 +96,7 @@
                         <div id="top-search">
                             <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
                               <form method="post" action="{$url_search_base}" name="form-search"> 
-                                <input type="text" class="form-control" name="keyword" value="{$keyword}" placeholder="Masukan kata pencarian"/>
+                                <input type="text" class="form-control" name="keyword" value="{$keyword}"  style="color: #ffffff;" />
                               </form>
                         </div><!-- #top-search end -->
 

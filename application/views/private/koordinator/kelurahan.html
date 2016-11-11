@@ -1,0 +1,1 @@
+{nocache}<select name="id_kelurahan" id="id_kelurahan" class="form-control">  <option value="">----Pilih Kelurahan ----  </option>  {foreach name=list_kelurahan item=result from=$data_kelurahan}  <option value="{$result.id}" {if $result.id == $data.id_kelurahan}selected='selected'{/if}>{$result.nama}</option>  {/foreach}</select>{/nocache}
